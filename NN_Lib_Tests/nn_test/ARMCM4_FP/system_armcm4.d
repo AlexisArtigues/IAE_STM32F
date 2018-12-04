@@ -1,0 +1,9 @@
+.\armcm4_fp\system_armcm4.o: RTE\Device\ARMCM4_FP\system_ARMCM4.c
+.\armcm4_fp\system_armcm4.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.0\Device\ARM\ARMCM4\Include\ARMCM4_FP.h
+.\armcm4_fp\system_armcm4.o: ..\..\..\Core\Include\core_cm4.h
+.\armcm4_fp\system_armcm4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\armcm4_fp\system_armcm4.o: ..\..\..\Core\Include\cmsis_version.h
+.\armcm4_fp\system_armcm4.o: ..\..\..\Core\Include\cmsis_compiler.h
+.\armcm4_fp\system_armcm4.o: ..\..\..\Core\Include\cmsis_armcc.h
+.\armcm4_fp\system_armcm4.o: ..\..\..\Core\Include\mpu_armv7.h
+.\armcm4_fp\system_armcm4.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h

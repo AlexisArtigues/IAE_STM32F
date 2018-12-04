@@ -1,6 +1,7 @@
 stm32746g_discovery\main.o: ../Src/main.c
-stm32746g_discovery\main.o: ../Inc/main.h
+stm32746g_discovery\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32746g_discovery\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32746g_discovery\main.o: ../Inc/main.h
 stm32746g_discovery\main.o: ../../../../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery.h
 stm32746g_discovery\main.o: ../../../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 stm32746g_discovery\main.o: ../Inc/stm32f7xx_hal_conf.h
@@ -9,7 +10,6 @@ stm32746g_discovery\main.o: ../../../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm3
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/core_cm7.h
-stm32746g_discovery\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/core_cmInstr.h
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/cmsis_armcc.h
 stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/core_cmFunc.h
@@ -63,3 +63,14 @@ stm32746g_discovery\main.o: ../../../../../Drivers/BSP/STM32746G-Discovery/../Co
 stm32746g_discovery\main.o: ../../../../../Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_qspi.h
 stm32746g_discovery\main.o: ../../../../../Drivers/BSP/STM32746G-Discovery/../Components/n25q128a/n25q128a.h
 stm32746g_discovery\main.o: ../Inc/stlogo.h
+stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/arm_math.h
+stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/core_cm7.h
+stm32746g_discovery\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+stm32746g_discovery\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+stm32746g_discovery\main.o: ../Inc/arm_nnexamples_cifar10_parameter.h
+stm32746g_discovery\main.o: ../Inc/arm_nnexamples_cifar10_weights.h
+stm32746g_discovery\main.o: ../Inc/arm_nnfunctions.h
+stm32746g_discovery\main.o: ../Inc/arm_nnsupportfunctions.h
+stm32746g_discovery\main.o: ../../../../../Drivers/CMSIS/Include/arm_common_tables.h
+stm32746g_discovery\main.o: ../Inc/arm_nn_tables.h
+stm32746g_discovery\main.o: ../Inc/arm_nnexamples_cifar10_inputs.h
