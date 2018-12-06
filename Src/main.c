@@ -174,7 +174,7 @@ void run_nn(void)
 
   q7_t     *img_buffer1 = scratch_buffer;
   q7_t     *img_buffer2 = img_buffer1 + 32 * 32 * 32;
-	char* text;
+	char text[30];
   /* input pre-processing */
   int mean_data[3] = INPUT_MEAN_SHIFT;
   unsigned int scale_data[3] = INPUT_RIGHT_SHIFT;
@@ -225,9 +225,9 @@ void run_nn(void)
   arm_softmax_q7(output_data, 10, output_data);
   for (int i = 0; i < 10; i++)
   {
-      printf("%d: %d\n", i, output_data[i]);
-		//sprintf((char*)text, "%s : %d    ", classes[i], output_data[i]);
-		//BSP_LCD_DisplayStringAt(0, 110 + i*15, (uint8_t *)&text, LEFT_MODE);
+      //printf("%d: %d\n", i, output_data[i]);
+		  sprintf((char*)text, "%s : %d    ", classes[i], output_data[i]);
+		  BSP_LCD_DisplayStringAt(10, 110 + i*15, (uint8_t *)&text, LEFT_MODE);
   }
 }
 

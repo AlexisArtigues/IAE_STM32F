@@ -391,11 +391,13 @@ Section Cross References
     main.o(i.run_nn) refers to arm_convolve_hwc_q7_fast.o(i.arm_convolve_HWC_q7_fast) for arm_convolve_HWC_q7_fast
     main.o(i.run_nn) refers to arm_fully_connected_q7_opt.o(i.arm_fully_connected_q7_opt) for arm_fully_connected_q7_opt
     main.o(i.run_nn) refers to arm_softmax_q7.o(i.arm_softmax_q7) for arm_softmax_q7
-    main.o(i.run_nn) refers to printf6.o(i.__0printf$6) for __2printf
+    main.o(i.run_nn) refers to printf6.o(i.__0sprintf$6) for __2sprintf
+    main.o(i.run_nn) refers to stm32746g_discovery_lcd.o(i.BSP_LCD_DisplayStringAt) for BSP_LCD_DisplayStringAt
     main.o(i.run_nn) refers to main.o(.constdata) for .constdata
     main.o(i.run_nn) refers to main.o(.bss) for .bss
     main.o(i.run_nn) refers to camera.o(.bss) for image_data_cam
     main.o(i.run_nn) refers to main.o(.data) for .data
+    main.o(.data) refers to main.o(.conststring) for .conststring
     main.o(.data) refers to lcd.o(i.LCD_demo) for LCD_demo
     main.o(.data) refers to touchscreen.o(i.Touchscreen_demo) for Touchscreen_demo
     main.o(.data) refers to audio_rec.o(i.AudioRec_demo) for AudioRec_demo
@@ -407,7 +409,6 @@ Section Cross References
     main.o(.data) refers to sdram_dma.o(i.SDRAM_DMA_demo) for SDRAM_DMA_demo
     main.o(.data) refers to eeprom.o(i.EEPROM_demo) for EEPROM_demo
     main.o(.data) refers to qspi.o(i.QSPI_demo) for QSPI_demo
-    main.o(.data) refers to main.o(.conststring) for .conststring
     qspi.o(i.QSPI_SetHint) refers to stm32746g_discovery_lcd.o(i.BSP_LCD_Clear) for BSP_LCD_Clear
     qspi.o(i.QSPI_SetHint) refers to stm32746g_discovery_lcd.o(i.BSP_LCD_SetTextColor) for BSP_LCD_SetTextColor
     qspi.o(i.QSPI_SetHint) refers to stm32746g_discovery_lcd.o(i.BSP_LCD_GetXSize) for BSP_LCD_GetXSize
@@ -2312,9 +2313,7 @@ Removing Unused input sections from the image.
     Removing main.o(.rev16_text), (4 bytes).
     Removing main.o(.revsh_text), (4 bytes).
     Removing main.o(.rrx_text), (6 bytes).
-    Removing main.o(.conststring), (78 bytes).
     Removing main.o(.data), (3072 bytes).
-    Removing main.o(.data), (40 bytes).
     Removing qspi.o(.rev16_text), (4 bytes).
     Removing qspi.o(.revsh_text), (4 bytes).
     Removing qspi.o(.rrx_text), (6 bytes).
@@ -3270,7 +3269,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-990 unused section(s) (total 61070 bytes) removed from the image.
+988 unused section(s) (total 60952 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3350,8 +3349,8 @@ Image Symbol Table
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
@@ -3365,8 +3364,8 @@ Image Symbol Table
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
@@ -4002,29 +4001,30 @@ Image Symbol Table
     i.ov9655_Init                            0x0800cd44   Section        0  ov9655.o(i.ov9655_Init)
     i.ov9655_ReadID                          0x0800cde4   Section        0  ov9655.o(i.ov9655_ReadID)
     i.run_nn                                 0x0800cdf8   Section        0  main.o(i.run_nn)
-    i.wm8994_DeInit                          0x0800cfd8   Section        0  wm8994.o(i.wm8994_DeInit)
-    i.wm8994_Init                            0x0800cfdc   Section        0  wm8994.o(i.wm8994_Init)
-    i.wm8994_Pause                           0x0800d5ec   Section        0  wm8994.o(i.wm8994_Pause)
-    i.wm8994_Play                            0x0800d606   Section        0  wm8994.o(i.wm8994_Play)
-    i.wm8994_ReadID                          0x0800d60c   Section        0  wm8994.o(i.wm8994_ReadID)
-    i.wm8994_Reset                           0x0800d620   Section        0  wm8994.o(i.wm8994_Reset)
-    i.wm8994_Resume                          0x0800d63c   Section        0  wm8994.o(i.wm8994_Resume)
-    i.wm8994_SetFrequency                    0x0800d642   Section        0  wm8994.o(i.wm8994_SetFrequency)
-    i.wm8994_SetMute                         0x0800d6c4   Section        0  wm8994.o(i.wm8994_SetMute)
-    i.wm8994_SetOutputMode                   0x0800d71c   Section        0  wm8994.o(i.wm8994_SetOutputMode)
-    i.wm8994_SetVolume                       0x0800d7d8   Section        0  wm8994.o(i.wm8994_SetVolume)
-    i.wm8994_Stop                            0x0800d8f4   Section        0  wm8994.o(i.wm8994_Stop)
-    .constdata                               0x0800d970   Section       16  system_stm32f7xx.o(.constdata)
-    .constdata                               0x0800d980   Section      894  ov9655.o(.constdata)
-    .constdata                               0x0800dd00   Section       24  lcd.o(.constdata)
-    .constdata                               0x0800dd18   Section     9200  main.o(.constdata)
-    .constdata                               0x08010108   Section       24  stm32746g_discovery.o(.constdata)
-    .constdata                               0x08010120   Section     6840  stm32746g_discovery_lcd.o(.constdata)
-    .constdata                               0x08011bd8   Section     3800  stm32746g_discovery_lcd.o(.constdata)
-    .constdata                               0x08012ab0   Section     3040  stm32746g_discovery_lcd.o(.constdata)
-    .constdata                               0x08013690   Section     1140  stm32746g_discovery_lcd.o(.constdata)
-    .constdata                               0x08013b04   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x08013b04   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    i.wm8994_DeInit                          0x0800cff8   Section        0  wm8994.o(i.wm8994_DeInit)
+    i.wm8994_Init                            0x0800cffc   Section        0  wm8994.o(i.wm8994_Init)
+    i.wm8994_Pause                           0x0800d60c   Section        0  wm8994.o(i.wm8994_Pause)
+    i.wm8994_Play                            0x0800d626   Section        0  wm8994.o(i.wm8994_Play)
+    i.wm8994_ReadID                          0x0800d62c   Section        0  wm8994.o(i.wm8994_ReadID)
+    i.wm8994_Reset                           0x0800d640   Section        0  wm8994.o(i.wm8994_Reset)
+    i.wm8994_Resume                          0x0800d65c   Section        0  wm8994.o(i.wm8994_Resume)
+    i.wm8994_SetFrequency                    0x0800d662   Section        0  wm8994.o(i.wm8994_SetFrequency)
+    i.wm8994_SetMute                         0x0800d6e4   Section        0  wm8994.o(i.wm8994_SetMute)
+    i.wm8994_SetOutputMode                   0x0800d73c   Section        0  wm8994.o(i.wm8994_SetOutputMode)
+    i.wm8994_SetVolume                       0x0800d7f8   Section        0  wm8994.o(i.wm8994_SetVolume)
+    i.wm8994_Stop                            0x0800d914   Section        0  wm8994.o(i.wm8994_Stop)
+    .constdata                               0x0800d990   Section       16  system_stm32f7xx.o(.constdata)
+    .constdata                               0x0800d9a0   Section      894  ov9655.o(.constdata)
+    .constdata                               0x0800dd20   Section       24  lcd.o(.constdata)
+    .constdata                               0x0800dd38   Section     9200  main.o(.constdata)
+    .constdata                               0x08010128   Section       24  stm32746g_discovery.o(.constdata)
+    .constdata                               0x08010140   Section     6840  stm32746g_discovery_lcd.o(.constdata)
+    .constdata                               0x08011bf8   Section     3800  stm32746g_discovery_lcd.o(.constdata)
+    .constdata                               0x08012ad0   Section     3040  stm32746g_discovery_lcd.o(.constdata)
+    .constdata                               0x080136b0   Section     1140  stm32746g_discovery_lcd.o(.constdata)
+    .constdata                               0x08013b24   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x08013b24   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .conststring                             0x08013b2c   Section       80  main.o(.conststring)
     .data                                    0x20000000   Section        4  system_stm32f7xx.o(.data)
     .data                                    0x20000004   Section       12  ov9655.o(.data)
     .data                                    0x20000010   Section       40  ft5336.o(.data)
@@ -4047,7 +4047,7 @@ Image Symbol Table
     AudioFileSize                            0x2000029c   Data           4  audio_play.o(.data)
     AudioFreq                                0x200002a0   Data          36  audio_play.o(.data)
     .data                                    0x200002c4   Section        4  audio_rec.o(.data)
-    .data                                    0x200002c8   Section    33884  main.o(.data)
+    .data                                    0x200002c8   Section    33924  main.o(.data)
     DemoIndex                                0x200002c8   Data           1  main.o(.data)
     debounce_time                            0x200002d0   Data           4  main.o(.data)
     conv1_wt                                 0x200002d4   Data        2400  main.o(.data)
@@ -4058,92 +4058,92 @@ Image Symbol Table
     conv3_bias                               0x20007064   Data          32  main.o(.data)
     ip1_wt                                   0x20007084   Data        5120  main.o(.data)
     ip1_bias                                 0x20008484   Data          10  main.o(.data)
-    .data                                    0x20008724   Section        1  main.o(.data)
-    .data                                    0x20008728   Section       52  camera.o(.data)
-    CameraFrameBufferInitComplete            0x20008728   Data           4  camera.o(.data)
-    CameraFrameBufferInitError               0x2000872c   Data           4  camera.o(.data)
-    Camera_AllowDma2dCopyCamFrmBuffToLcdFrmBuff 0x20008730   Data           4  camera.o(.data)
-    offset_cam                               0x20008734   Data           4  camera.o(.data)
-    offset_lcd                               0x20008738   Data           4  camera.o(.data)
-    display_line_counter                     0x2000873c   Data           4  camera.o(.data)
-    special_effect                           0x20008740   Data           4  camera.o(.data)
-    color_effect                             0x20008744   Data           4  camera.o(.data)
-    contrast                                 0x20008748   Data           4  camera.o(.data)
-    brightness                               0x2000874c   Data           4  camera.o(.data)
-    CameraResX                               0x20008750   Data           4  camera.o(.data)
-    CameraResY                               0x20008754   Data           4  camera.o(.data)
-    CameraResIndex                           0x20008758   Data           4  camera.o(.data)
-    .data                                    0x2000875c   Section       24  stm32746g_discovery.o(.data)
-    .data                                    0x20008774   Section       12  stm32746g_discovery_lcd.o(.data)
-    ActiveLayer                              0x20008774   Data           4  stm32746g_discovery_lcd.o(.data)
-    .data                                    0x20008780   Section        8  stm32746g_discovery_lcd.o(.data)
-    .data                                    0x20008788   Section        8  stm32746g_discovery_lcd.o(.data)
-    .data                                    0x20008790   Section        8  stm32746g_discovery_lcd.o(.data)
-    .data                                    0x20008798   Section       12  stm32746g_discovery_ts.o(.data)
-    tsOrientation                            0x20008798   Data           1  stm32746g_discovery_ts.o(.data)
-    I2cAddress                               0x20008799   Data           1  stm32746g_discovery_ts.o(.data)
-    tsXBoundary                              0x2000879a   Data           2  stm32746g_discovery_ts.o(.data)
-    tsYBoundary                              0x2000879c   Data           2  stm32746g_discovery_ts.o(.data)
-    tsDriver                                 0x200087a0   Data           4  stm32746g_discovery_ts.o(.data)
-    .data                                    0x200087a4   Section        6  stm32746g_discovery_eeprom.o(.data)
-    .data                                    0x200087ac   Section        8  stm32746g_discovery_audio.o(.data)
-    .data                                    0x200087b4   Section       12  stm32746g_discovery_camera.o(.data)
-    CameraCurrentResolution                  0x200087b8   Data           4  stm32746g_discovery_camera.o(.data)
-    CameraHwAddress                          0x200087bc   Data           4  stm32746g_discovery_camera.o(.data)
-    .data                                    0x200087c0   Section        2  stm32746g_discovery_sdram.o(.data)
-    sdramstatus                              0x200087c0   Data           1  stm32746g_discovery_sdram.o(.data)
-    sdramstatus                              0x200087c1   Data           1  stm32746g_discovery_sdram.o(.data)
-    .data                                    0x200087c4   Section        4  stm32f7xx_hal.o(.data)
-    .data                                    0x200087c8   Section       20  lcd_log.o(.data)
-    .data                                    0x200087dc   Section        4  stdout.o(.data)
-    .bss                                     0x200087e0   Section     2048  sdram.o(.bss)
-    sdram_aTxBuffer                          0x200087e0   Data        1024  sdram.o(.bss)
-    sdram_aRxBuffer                          0x20008be0   Data        1024  sdram.o(.bss)
-    .bss                                     0x20008fe0   Section     1054  eeprom.o(.bss)
-    .bss                                     0x20009400   Section     2048  sdram_dma.o(.bss)
-    sdram_aTxBuffer                          0x20009400   Data        1024  sdram_dma.o(.bss)
-    sdram_aRxBuffer                          0x20009800   Data        1024  sdram_dma.o(.bss)
-    .bss                                     0x20009c00   Section     2056  audio_play.o(.bss)
-    buffer_ctl                               0x20009c00   Data        2056  audio_play.o(.bss)
-    .bss                                     0x2000a408   Section       44  touchscreen.o(.bss)
-    TS_State                                 0x2000a408   Data          44  touchscreen.o(.bss)
-    .bss                                     0x2000a434   Section    131068  audio_rec.o(.bss)
-    internal_buffer                          0x2000a434   Data       131068  audio_rec.o(.bss)
-    .bss                                     0x2002a430   Section    44170  main.o(.bss)
-    .bss                                     0x200350bc   Section     1044  qspi.o(.bss)
-    pQSPI_Info                               0x200350bc   Data          20  qspi.o(.bss)
-    .bss                                     0x200354d0   Section     3136  camera.o(.bss)
-    hdma2d_camera                            0x200354d0   Data          64  camera.o(.bss)
-    .bss                                     0x20036110   Section     5120  sd.o(.bss)
-    .bss                                     0x20037510   Section      152  stm32746g_discovery.o(.bss)
-    hI2cAudioHandler                         0x20037510   Data          76  stm32746g_discovery.o(.bss)
-    hI2cExtHandler                           0x2003755c   Data          76  stm32746g_discovery.o(.bss)
-    .bss                                     0x200375a8   Section       76  stm32746g_discovery_qspi.o(.bss)
-    .bss                                     0x200375f4   Section      388  stm32746g_discovery_lcd.o(.bss)
-    periph_clk_init_struct                   0x200375f4   Data         132  stm32746g_discovery_lcd.o(.bss)
-    hDma2dHandler                            0x20037720   Data          64  stm32746g_discovery_lcd.o(.bss)
-    DrawProp                                 0x20037760   Data          24  stm32746g_discovery_lcd.o(.bss)
-    .bss                                     0x20037778   Section       40  stm32746g_discovery_ts.o(.bss)
-    _x                                       0x20037778   Data          20  stm32746g_discovery_ts.o(.bss)
-    _y                                       0x2003778c   Data          20  stm32746g_discovery_ts.o(.bss)
-    .bss                                     0x200377a0   Section      552  stm32746g_discovery_audio.o(.bss)
-    hdma_sai_tx                              0x200378a8   Data          96  stm32746g_discovery_audio.o(.bss)
-    hdma_sai_rx                              0x20037908   Data          96  stm32746g_discovery_audio.o(.bss)
-    hdma_sai_rx                              0x20037968   Data          96  stm32746g_discovery_audio.o(.bss)
-    .bss                                     0x200379c8   Section      176  stm32746g_discovery_camera.o(.bss)
-    hdma_handler                             0x200379c8   Data          96  stm32746g_discovery_camera.o(.bss)
-    .bss                                     0x20037a78   Section      288  stm32746g_discovery_sdram.o(.bss)
-    dma_handle                               0x20037a78   Data          96  stm32746g_discovery_sdram.o(.bss)
-    dma_handle                               0x20037ad8   Data          96  stm32746g_discovery_sdram.o(.bss)
-    Timing                                   0x20037b6c   Data          28  stm32746g_discovery_sdram.o(.bss)
-    Command                                  0x20037b88   Data          16  stm32746g_discovery_sdram.o(.bss)
-    .bss                                     0x20037b98   Section      516  stm32746g_discovery_sd.o(.bss)
-    dma_rx_handle                            0x20037b98   Data          96  stm32746g_discovery_sd.o(.bss)
-    dma_tx_handle                            0x20037bf8   Data          96  stm32746g_discovery_sd.o(.bss)
-    dma_rx_handle                            0x20037c58   Data          96  stm32746g_discovery_sd.o(.bss)
-    dma_tx_handle                            0x20037cb8   Data          96  stm32746g_discovery_sd.o(.bss)
-    .bss                                     0x20037d9c   Section    15444  lcd_log.o(.bss)
-    STACK                                    0x2003b9f0   Section     1024  startup_stm32f746xx.o(STACK)
+    .data                                    0x2000874c   Section        1  main.o(.data)
+    .data                                    0x20008750   Section       52  camera.o(.data)
+    CameraFrameBufferInitComplete            0x20008750   Data           4  camera.o(.data)
+    CameraFrameBufferInitError               0x20008754   Data           4  camera.o(.data)
+    Camera_AllowDma2dCopyCamFrmBuffToLcdFrmBuff 0x20008758   Data           4  camera.o(.data)
+    offset_cam                               0x2000875c   Data           4  camera.o(.data)
+    offset_lcd                               0x20008760   Data           4  camera.o(.data)
+    display_line_counter                     0x20008764   Data           4  camera.o(.data)
+    special_effect                           0x20008768   Data           4  camera.o(.data)
+    color_effect                             0x2000876c   Data           4  camera.o(.data)
+    contrast                                 0x20008770   Data           4  camera.o(.data)
+    brightness                               0x20008774   Data           4  camera.o(.data)
+    CameraResX                               0x20008778   Data           4  camera.o(.data)
+    CameraResY                               0x2000877c   Data           4  camera.o(.data)
+    CameraResIndex                           0x20008780   Data           4  camera.o(.data)
+    .data                                    0x20008784   Section       24  stm32746g_discovery.o(.data)
+    .data                                    0x2000879c   Section       12  stm32746g_discovery_lcd.o(.data)
+    ActiveLayer                              0x2000879c   Data           4  stm32746g_discovery_lcd.o(.data)
+    .data                                    0x200087a8   Section        8  stm32746g_discovery_lcd.o(.data)
+    .data                                    0x200087b0   Section        8  stm32746g_discovery_lcd.o(.data)
+    .data                                    0x200087b8   Section        8  stm32746g_discovery_lcd.o(.data)
+    .data                                    0x200087c0   Section       12  stm32746g_discovery_ts.o(.data)
+    tsOrientation                            0x200087c0   Data           1  stm32746g_discovery_ts.o(.data)
+    I2cAddress                               0x200087c1   Data           1  stm32746g_discovery_ts.o(.data)
+    tsXBoundary                              0x200087c2   Data           2  stm32746g_discovery_ts.o(.data)
+    tsYBoundary                              0x200087c4   Data           2  stm32746g_discovery_ts.o(.data)
+    tsDriver                                 0x200087c8   Data           4  stm32746g_discovery_ts.o(.data)
+    .data                                    0x200087cc   Section        6  stm32746g_discovery_eeprom.o(.data)
+    .data                                    0x200087d4   Section        8  stm32746g_discovery_audio.o(.data)
+    .data                                    0x200087dc   Section       12  stm32746g_discovery_camera.o(.data)
+    CameraCurrentResolution                  0x200087e0   Data           4  stm32746g_discovery_camera.o(.data)
+    CameraHwAddress                          0x200087e4   Data           4  stm32746g_discovery_camera.o(.data)
+    .data                                    0x200087e8   Section        2  stm32746g_discovery_sdram.o(.data)
+    sdramstatus                              0x200087e8   Data           1  stm32746g_discovery_sdram.o(.data)
+    sdramstatus                              0x200087e9   Data           1  stm32746g_discovery_sdram.o(.data)
+    .data                                    0x200087ec   Section        4  stm32f7xx_hal.o(.data)
+    .data                                    0x200087f0   Section       20  lcd_log.o(.data)
+    .data                                    0x20008804   Section        4  stdout.o(.data)
+    .bss                                     0x20008808   Section     2048  sdram.o(.bss)
+    sdram_aTxBuffer                          0x20008808   Data        1024  sdram.o(.bss)
+    sdram_aRxBuffer                          0x20008c08   Data        1024  sdram.o(.bss)
+    .bss                                     0x20009008   Section     1054  eeprom.o(.bss)
+    .bss                                     0x20009428   Section     2048  sdram_dma.o(.bss)
+    sdram_aTxBuffer                          0x20009428   Data        1024  sdram_dma.o(.bss)
+    sdram_aRxBuffer                          0x20009828   Data        1024  sdram_dma.o(.bss)
+    .bss                                     0x20009c28   Section     2056  audio_play.o(.bss)
+    buffer_ctl                               0x20009c28   Data        2056  audio_play.o(.bss)
+    .bss                                     0x2000a430   Section       44  touchscreen.o(.bss)
+    TS_State                                 0x2000a430   Data          44  touchscreen.o(.bss)
+    .bss                                     0x2000a45c   Section    131068  audio_rec.o(.bss)
+    internal_buffer                          0x2000a45c   Data       131068  audio_rec.o(.bss)
+    .bss                                     0x2002a458   Section    44170  main.o(.bss)
+    .bss                                     0x200350e4   Section     1044  qspi.o(.bss)
+    pQSPI_Info                               0x200350e4   Data          20  qspi.o(.bss)
+    .bss                                     0x200354f8   Section     3136  camera.o(.bss)
+    hdma2d_camera                            0x200354f8   Data          64  camera.o(.bss)
+    .bss                                     0x20036138   Section     5120  sd.o(.bss)
+    .bss                                     0x20037538   Section      152  stm32746g_discovery.o(.bss)
+    hI2cAudioHandler                         0x20037538   Data          76  stm32746g_discovery.o(.bss)
+    hI2cExtHandler                           0x20037584   Data          76  stm32746g_discovery.o(.bss)
+    .bss                                     0x200375d0   Section       76  stm32746g_discovery_qspi.o(.bss)
+    .bss                                     0x2003761c   Section      388  stm32746g_discovery_lcd.o(.bss)
+    periph_clk_init_struct                   0x2003761c   Data         132  stm32746g_discovery_lcd.o(.bss)
+    hDma2dHandler                            0x20037748   Data          64  stm32746g_discovery_lcd.o(.bss)
+    DrawProp                                 0x20037788   Data          24  stm32746g_discovery_lcd.o(.bss)
+    .bss                                     0x200377a0   Section       40  stm32746g_discovery_ts.o(.bss)
+    _x                                       0x200377a0   Data          20  stm32746g_discovery_ts.o(.bss)
+    _y                                       0x200377b4   Data          20  stm32746g_discovery_ts.o(.bss)
+    .bss                                     0x200377c8   Section      552  stm32746g_discovery_audio.o(.bss)
+    hdma_sai_tx                              0x200378d0   Data          96  stm32746g_discovery_audio.o(.bss)
+    hdma_sai_rx                              0x20037930   Data          96  stm32746g_discovery_audio.o(.bss)
+    hdma_sai_rx                              0x20037990   Data          96  stm32746g_discovery_audio.o(.bss)
+    .bss                                     0x200379f0   Section      176  stm32746g_discovery_camera.o(.bss)
+    hdma_handler                             0x200379f0   Data          96  stm32746g_discovery_camera.o(.bss)
+    .bss                                     0x20037aa0   Section      288  stm32746g_discovery_sdram.o(.bss)
+    dma_handle                               0x20037aa0   Data          96  stm32746g_discovery_sdram.o(.bss)
+    dma_handle                               0x20037b00   Data          96  stm32746g_discovery_sdram.o(.bss)
+    Timing                                   0x20037b94   Data          28  stm32746g_discovery_sdram.o(.bss)
+    Command                                  0x20037bb0   Data          16  stm32746g_discovery_sdram.o(.bss)
+    .bss                                     0x20037bc0   Section      516  stm32746g_discovery_sd.o(.bss)
+    dma_rx_handle                            0x20037bc0   Data          96  stm32746g_discovery_sd.o(.bss)
+    dma_tx_handle                            0x20037c20   Data          96  stm32746g_discovery_sd.o(.bss)
+    dma_rx_handle                            0x20037c80   Data          96  stm32746g_discovery_sd.o(.bss)
+    dma_tx_handle                            0x20037ce0   Data          96  stm32746g_discovery_sd.o(.bss)
+    .bss                                     0x20037dc4   Section    15444  lcd_log.o(.bss)
+    STACK                                    0x2003ba18   Section     1024  startup_stm32f746xx.o(STACK)
 
     Global Symbols
 
@@ -4641,37 +4641,37 @@ Image Symbol Table
     ov9655_Config                            0x0800cbe9   Thumb Code   174  ov9655.o(i.ov9655_Config)
     ov9655_Init                              0x0800cd45   Thumb Code   146  ov9655.o(i.ov9655_Init)
     ov9655_ReadID                            0x0800cde5   Thumb Code    20  ov9655.o(i.ov9655_ReadID)
-    run_nn                                   0x0800cdf9   Thumb Code   440  main.o(i.run_nn)
-    wm8994_DeInit                            0x0800cfd9   Thumb Code     4  wm8994.o(i.wm8994_DeInit)
-    wm8994_Init                              0x0800cfdd   Thumb Code  1546  wm8994.o(i.wm8994_Init)
-    wm8994_Pause                             0x0800d5ed   Thumb Code    26  wm8994.o(i.wm8994_Pause)
-    wm8994_Play                              0x0800d607   Thumb Code     6  wm8994.o(i.wm8994_Play)
-    wm8994_ReadID                            0x0800d60d   Thumb Code    20  wm8994.o(i.wm8994_ReadID)
-    wm8994_Reset                             0x0800d621   Thumb Code    22  wm8994.o(i.wm8994_Reset)
-    wm8994_Resume                            0x0800d63d   Thumb Code     6  wm8994.o(i.wm8994_Resume)
-    wm8994_SetFrequency                      0x0800d643   Thumb Code   130  wm8994.o(i.wm8994_SetFrequency)
-    wm8994_SetMute                           0x0800d6c5   Thumb Code    82  wm8994.o(i.wm8994_SetMute)
-    wm8994_SetOutputMode                     0x0800d71d   Thumb Code   188  wm8994.o(i.wm8994_SetOutputMode)
-    wm8994_SetVolume                         0x0800d7d9   Thumb Code   280  wm8994.o(i.wm8994_SetVolume)
-    wm8994_Stop                              0x0800d8f5   Thumb Code   120  wm8994.o(i.wm8994_Stop)
-    AHBPrescTable                            0x0800d970   Data          16  system_stm32f7xx.o(.constdata)
-    OV9655_VGA                               0x0800d980   Data         294  ov9655.o(.constdata)
-    OV9655_QVGA                              0x0800daa6   Data         300  ov9655.o(.constdata)
-    OV9655_QQVGA                             0x0800dbd2   Data         300  ov9655.o(.constdata)
-    stlogo                                   0x0800dd18   Data        9174  main.o(.constdata)
-    COM_TX_PIN                               0x08010108   Data           2  stm32746g_discovery.o(.constdata)
-    COM_RX_PIN                               0x0801010a   Data           2  stm32746g_discovery.o(.constdata)
-    COM_TX_AF                                0x0801010c   Data           2  stm32746g_discovery.o(.constdata)
-    COM_RX_AF                                0x0801010e   Data           2  stm32746g_discovery.o(.constdata)
-    GPIO_PIN                                 0x08010110   Data           4  stm32746g_discovery.o(.constdata)
-    BUTTON_PIN                               0x08010114   Data           6  stm32746g_discovery.o(.constdata)
-    BUTTON_IRQn                              0x0801011a   Data           6  stm32746g_discovery.o(.constdata)
-    Font24_Table                             0x08010120   Data        6840  stm32746g_discovery_lcd.o(.constdata)
-    Font20_Table                             0x08011bd8   Data        3800  stm32746g_discovery_lcd.o(.constdata)
-    Font16_Table                             0x08012ab0   Data        3040  stm32746g_discovery_lcd.o(.constdata)
-    Font12_Table                             0x08013690   Data        1140  stm32746g_discovery_lcd.o(.constdata)
-    Region$$Table$$Base                      0x08013b0c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08013b2c   Number         0  anon$$obj.o(Region$$Table)
+    run_nn                                   0x0800cdf9   Thumb Code   466  main.o(i.run_nn)
+    wm8994_DeInit                            0x0800cff9   Thumb Code     4  wm8994.o(i.wm8994_DeInit)
+    wm8994_Init                              0x0800cffd   Thumb Code  1546  wm8994.o(i.wm8994_Init)
+    wm8994_Pause                             0x0800d60d   Thumb Code    26  wm8994.o(i.wm8994_Pause)
+    wm8994_Play                              0x0800d627   Thumb Code     6  wm8994.o(i.wm8994_Play)
+    wm8994_ReadID                            0x0800d62d   Thumb Code    20  wm8994.o(i.wm8994_ReadID)
+    wm8994_Reset                             0x0800d641   Thumb Code    22  wm8994.o(i.wm8994_Reset)
+    wm8994_Resume                            0x0800d65d   Thumb Code     6  wm8994.o(i.wm8994_Resume)
+    wm8994_SetFrequency                      0x0800d663   Thumb Code   130  wm8994.o(i.wm8994_SetFrequency)
+    wm8994_SetMute                           0x0800d6e5   Thumb Code    82  wm8994.o(i.wm8994_SetMute)
+    wm8994_SetOutputMode                     0x0800d73d   Thumb Code   188  wm8994.o(i.wm8994_SetOutputMode)
+    wm8994_SetVolume                         0x0800d7f9   Thumb Code   280  wm8994.o(i.wm8994_SetVolume)
+    wm8994_Stop                              0x0800d915   Thumb Code   120  wm8994.o(i.wm8994_Stop)
+    AHBPrescTable                            0x0800d990   Data          16  system_stm32f7xx.o(.constdata)
+    OV9655_VGA                               0x0800d9a0   Data         294  ov9655.o(.constdata)
+    OV9655_QVGA                              0x0800dac6   Data         300  ov9655.o(.constdata)
+    OV9655_QQVGA                             0x0800dbf2   Data         300  ov9655.o(.constdata)
+    stlogo                                   0x0800dd38   Data        9174  main.o(.constdata)
+    COM_TX_PIN                               0x08010128   Data           2  stm32746g_discovery.o(.constdata)
+    COM_RX_PIN                               0x0801012a   Data           2  stm32746g_discovery.o(.constdata)
+    COM_TX_AF                                0x0801012c   Data           2  stm32746g_discovery.o(.constdata)
+    COM_RX_AF                                0x0801012e   Data           2  stm32746g_discovery.o(.constdata)
+    GPIO_PIN                                 0x08010130   Data           4  stm32746g_discovery.o(.constdata)
+    BUTTON_PIN                               0x08010134   Data           6  stm32746g_discovery.o(.constdata)
+    BUTTON_IRQn                              0x0801013a   Data           6  stm32746g_discovery.o(.constdata)
+    Font24_Table                             0x08010140   Data        6840  stm32746g_discovery_lcd.o(.constdata)
+    Font20_Table                             0x08011bf8   Data        3800  stm32746g_discovery_lcd.o(.constdata)
+    Font16_Table                             0x08012ad0   Data        3040  stm32746g_discovery_lcd.o(.constdata)
+    Font12_Table                             0x080136b0   Data        1140  stm32746g_discovery_lcd.o(.constdata)
+    Region$$Table$$Base                      0x08013b7c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08013b9c   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f7xx.o(.data)
     ov9655_drv                               0x20000004   Data          12  ov9655.o(.data)
     ft5336_ts_drv                            0x20000010   Data          40  ft5336.o(.data)
@@ -4683,54 +4683,55 @@ Image Symbol Table
     uwPauseEnabledStatus                     0x20000294   Data           4  audio_play.o(.data)
     audio_rec_buffer_state                   0x200002c4   Data           4  audio_rec.o(.data)
     ErrorCounter                             0x200002cc   Data           4  main.o(.data)
-    BSP_examples                             0x20008490   Data         660  main.o(.data)
-    NbLoop                                   0x20008724   Data           1  main.o(.data)
-    COM_USART                                0x2000875c   Data           4  stm32746g_discovery.o(.data)
-    COM_TX_PORT                              0x20008760   Data           4  stm32746g_discovery.o(.data)
-    COM_RX_PORT                              0x20008764   Data           4  stm32746g_discovery.o(.data)
-    BUTTON_PORT                              0x20008768   Data          12  stm32746g_discovery.o(.data)
-    Font24                                   0x20008778   Data           8  stm32746g_discovery_lcd.o(.data)
-    Font20                                   0x20008780   Data           8  stm32746g_discovery_lcd.o(.data)
-    Font16                                   0x20008788   Data           8  stm32746g_discovery_lcd.o(.data)
-    Font12                                   0x20008790   Data           8  stm32746g_discovery_lcd.o(.data)
-    EEPROMDataWrite                          0x200087a4   Data           1  stm32746g_discovery_eeprom.o(.data)
-    EEPROMAddress                            0x200087a6   Data           2  stm32746g_discovery_eeprom.o(.data)
-    EEPROMDataRead                           0x200087a8   Data           2  stm32746g_discovery_eeprom.o(.data)
-    AudioInVolume                            0x200087ac   Data           2  stm32746g_discovery_audio.o(.data)
-    audio_drv                                0x200087b0   Data           4  stm32746g_discovery_audio.o(.data)
-    camera_drv                               0x200087b4   Data           4  stm32746g_discovery_camera.o(.data)
-    uwTick                                   0x200087c4   Data           4  stm32f7xx_hal.o(.data)
-    LCD_CacheBuffer_yptr_invert              0x200087c8   Data           1  lcd_log.o(.data)
-    LCD_ScrollActive                         0x200087c9   Data           1  lcd_log.o(.data)
-    LCD_Lock                                 0x200087ca   Data           1  lcd_log.o(.data)
-    LCD_Scrolled                             0x200087cb   Data           1  lcd_log.o(.data)
-    LCD_CacheBuffer_xptr                     0x200087cc   Data           2  lcd_log.o(.data)
-    LCD_CacheBuffer_yptr_top                 0x200087ce   Data           2  lcd_log.o(.data)
-    LCD_CacheBuffer_yptr_bottom              0x200087d0   Data           2  lcd_log.o(.data)
-    LCD_CacheBuffer_yptr_top_bak             0x200087d2   Data           2  lcd_log.o(.data)
-    LCD_CacheBuffer_yptr_bottom_bak          0x200087d4   Data           2  lcd_log.o(.data)
-    LCD_ScrollBackStep                       0x200087d6   Data           2  lcd_log.o(.data)
-    LCD_LineColor                            0x200087d8   Data           4  lcd_log.o(.data)
-    __stdout                                 0x200087dc   Data           4  stdout.o(.data)
-    Rx1Buffer                                0x20008fe0   Data         527  eeprom.o(.bss)
-    Tx2Buffer                                0x200091ef   Data         527  eeprom.o(.bss)
-    output_data                              0x2002a430   Data          10  main.o(.bss)
-    col_buffer                               0x2002a43a   Data        3200  main.o(.bss)
-    scratch_buffer                           0x2002b0ba   Data       40960  main.o(.bss)
-    qspi_aTxBuffer                           0x200350d0   Data         512  qspi.o(.bss)
-    qspi_aRxBuffer                           0x200352d0   Data         512  qspi.o(.bss)
-    image_data_cam                           0x20035510   Data        3072  camera.o(.bss)
-    aTxBuffer                                0x20036110   Data        2560  sd.o(.bss)
-    aRxBuffer                                0x20036b10   Data        2560  sd.o(.bss)
-    QSPIHandle                               0x200375a8   Data          76  stm32746g_discovery_qspi.o(.bss)
-    hLtdcHandler                             0x20037678   Data         168  stm32746g_discovery_lcd.o(.bss)
-    haudio_out_sai                           0x200377a0   Data         132  stm32746g_discovery_audio.o(.bss)
-    haudio_in_sai                            0x20037824   Data         132  stm32746g_discovery_audio.o(.bss)
-    hDcmiHandler                             0x20037a28   Data          80  stm32746g_discovery_camera.o(.bss)
-    sdramHandle                              0x20037b38   Data          52  stm32746g_discovery_sdram.o(.bss)
-    uSdHandle                                0x20037d18   Data         132  stm32746g_discovery_sd.o(.bss)
-    LCD_CacheBuffer                          0x20037d9c   Data       15444  lcd_log.o(.bss)
-    __initial_sp                             0x2003bdf0   Data           0  startup_stm32f746xx.o(STACK)
+    classes                                  0x20008490   Data          40  main.o(.data)
+    BSP_examples                             0x200084b8   Data         660  main.o(.data)
+    NbLoop                                   0x2000874c   Data           1  main.o(.data)
+    COM_USART                                0x20008784   Data           4  stm32746g_discovery.o(.data)
+    COM_TX_PORT                              0x20008788   Data           4  stm32746g_discovery.o(.data)
+    COM_RX_PORT                              0x2000878c   Data           4  stm32746g_discovery.o(.data)
+    BUTTON_PORT                              0x20008790   Data          12  stm32746g_discovery.o(.data)
+    Font24                                   0x200087a0   Data           8  stm32746g_discovery_lcd.o(.data)
+    Font20                                   0x200087a8   Data           8  stm32746g_discovery_lcd.o(.data)
+    Font16                                   0x200087b0   Data           8  stm32746g_discovery_lcd.o(.data)
+    Font12                                   0x200087b8   Data           8  stm32746g_discovery_lcd.o(.data)
+    EEPROMDataWrite                          0x200087cc   Data           1  stm32746g_discovery_eeprom.o(.data)
+    EEPROMAddress                            0x200087ce   Data           2  stm32746g_discovery_eeprom.o(.data)
+    EEPROMDataRead                           0x200087d0   Data           2  stm32746g_discovery_eeprom.o(.data)
+    AudioInVolume                            0x200087d4   Data           2  stm32746g_discovery_audio.o(.data)
+    audio_drv                                0x200087d8   Data           4  stm32746g_discovery_audio.o(.data)
+    camera_drv                               0x200087dc   Data           4  stm32746g_discovery_camera.o(.data)
+    uwTick                                   0x200087ec   Data           4  stm32f7xx_hal.o(.data)
+    LCD_CacheBuffer_yptr_invert              0x200087f0   Data           1  lcd_log.o(.data)
+    LCD_ScrollActive                         0x200087f1   Data           1  lcd_log.o(.data)
+    LCD_Lock                                 0x200087f2   Data           1  lcd_log.o(.data)
+    LCD_Scrolled                             0x200087f3   Data           1  lcd_log.o(.data)
+    LCD_CacheBuffer_xptr                     0x200087f4   Data           2  lcd_log.o(.data)
+    LCD_CacheBuffer_yptr_top                 0x200087f6   Data           2  lcd_log.o(.data)
+    LCD_CacheBuffer_yptr_bottom              0x200087f8   Data           2  lcd_log.o(.data)
+    LCD_CacheBuffer_yptr_top_bak             0x200087fa   Data           2  lcd_log.o(.data)
+    LCD_CacheBuffer_yptr_bottom_bak          0x200087fc   Data           2  lcd_log.o(.data)
+    LCD_ScrollBackStep                       0x200087fe   Data           2  lcd_log.o(.data)
+    LCD_LineColor                            0x20008800   Data           4  lcd_log.o(.data)
+    __stdout                                 0x20008804   Data           4  stdout.o(.data)
+    Rx1Buffer                                0x20009008   Data         527  eeprom.o(.bss)
+    Tx2Buffer                                0x20009217   Data         527  eeprom.o(.bss)
+    output_data                              0x2002a458   Data          10  main.o(.bss)
+    col_buffer                               0x2002a462   Data        3200  main.o(.bss)
+    scratch_buffer                           0x2002b0e2   Data       40960  main.o(.bss)
+    qspi_aTxBuffer                           0x200350f8   Data         512  qspi.o(.bss)
+    qspi_aRxBuffer                           0x200352f8   Data         512  qspi.o(.bss)
+    image_data_cam                           0x20035538   Data        3072  camera.o(.bss)
+    aTxBuffer                                0x20036138   Data        2560  sd.o(.bss)
+    aRxBuffer                                0x20036b38   Data        2560  sd.o(.bss)
+    QSPIHandle                               0x200375d0   Data          76  stm32746g_discovery_qspi.o(.bss)
+    hLtdcHandler                             0x200376a0   Data         168  stm32746g_discovery_lcd.o(.bss)
+    haudio_out_sai                           0x200377c8   Data         132  stm32746g_discovery_audio.o(.bss)
+    haudio_in_sai                            0x2003784c   Data         132  stm32746g_discovery_audio.o(.bss)
+    hDcmiHandler                             0x20037a50   Data          80  stm32746g_discovery_camera.o(.bss)
+    sdramHandle                              0x20037b60   Data          52  stm32746g_discovery_sdram.o(.bss)
+    uSdHandle                                0x20037d40   Data         132  stm32746g_discovery_sd.o(.bss)
+    LCD_CacheBuffer                          0x20037dc4   Data       15444  lcd_log.o(.bss)
+    __initial_sp                             0x2003be18   Data           0  startup_stm32f746xx.o(STACK)
 
 
 
@@ -4740,33 +4741,33 @@ Memory Map of the image
 
   Image Entry point : 0x080001c9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0001c30c, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0001c3a4, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00013b2c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00013b9c, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001c8   Data   RO            3    RESET               startup_stm32f746xx.o
-    0x080001c8   0x080001c8   0x00000000   Code   RO         8557  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001c8   0x080001c8   0x00000004   Code   RO         8829    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001cc   0x080001cc   0x00000004   Code   RO         8832    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001d0   0x080001d0   0x00000000   Code   RO         8834    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001d0   0x080001d0   0x00000000   Code   RO         8836    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001d0   0x080001d0   0x00000008   Code   RO         8837    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001d8   0x080001d8   0x00000000   Code   RO         8839    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001d8   0x080001d8   0x00000000   Code   RO         8841    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001d8   0x080001d8   0x00000004   Code   RO         8830    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001c8   0x080001c8   0x00000000   Code   RO         8556  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001c8   0x080001c8   0x00000004   Code   RO         8828    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001cc   0x080001cc   0x00000004   Code   RO         8831    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001d0   0x080001d0   0x00000000   Code   RO         8833    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001d0   0x080001d0   0x00000000   Code   RO         8835    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001d0   0x080001d0   0x00000008   Code   RO         8836    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001d8   0x080001d8   0x00000000   Code   RO         8838    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001d8   0x080001d8   0x00000000   Code   RO         8840    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001d8   0x080001d8   0x00000004   Code   RO         8829    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001dc   0x080001dc   0x00000024   Code   RO            4    .text               startup_stm32f746xx.o
-    0x08000200   0x08000200   0x00000024   Code   RO         8562    .text               mc_w.l(memcpya.o)
-    0x08000224   0x08000224   0x00000024   Code   RO         8564    .text               mc_w.l(memseta.o)
-    0x08000248   0x08000248   0x0000002c   Code   RO         8844    .text               mc_w.l(uidiv.o)
-    0x08000274   0x08000274   0x00000024   Code   RO         8859    .text               mc_w.l(init.o)
-    0x08000298   0x08000298   0x00000002   Code   RO         1223    i.AUDIO_IO_DeInit   stm32746g_discovery.o
-    0x0800029a   0x0800029a   0x00000004   Code   RO         1224    i.AUDIO_IO_Delay    stm32746g_discovery.o
+    0x08000200   0x08000200   0x00000024   Code   RO         8561    .text               mc_w.l(memcpya.o)
+    0x08000224   0x08000224   0x00000024   Code   RO         8563    .text               mc_w.l(memseta.o)
+    0x08000248   0x08000248   0x0000002c   Code   RO         8843    .text               mc_w.l(uidiv.o)
+    0x08000274   0x08000274   0x00000024   Code   RO         8858    .text               mc_w.l(init.o)
+    0x08000298   0x08000298   0x00000002   Code   RO         1222    i.AUDIO_IO_DeInit   stm32746g_discovery.o
+    0x0800029a   0x0800029a   0x00000004   Code   RO         1223    i.AUDIO_IO_Delay    stm32746g_discovery.o
     0x0800029e   0x0800029e   0x00000002   PAD
-    0x080002a0   0x080002a0   0x0000000c   Code   RO         1225    i.AUDIO_IO_Init     stm32746g_discovery.o
-    0x080002ac   0x080002ac   0x00000034   Code   RO         1226    i.AUDIO_IO_Read     stm32746g_discovery.o
-    0x080002e0   0x080002e0   0x00000034   Code   RO         1227    i.AUDIO_IO_Write    stm32746g_discovery.o
+    0x080002a0   0x080002a0   0x0000000c   Code   RO         1224    i.AUDIO_IO_Init     stm32746g_discovery.o
+    0x080002ac   0x080002ac   0x00000034   Code   RO         1225    i.AUDIO_IO_Read     stm32746g_discovery.o
+    0x080002e0   0x080002e0   0x00000034   Code   RO         1226    i.AUDIO_IO_Write    stm32746g_discovery.o
     0x08000314   0x08000314   0x00000080   Code   RO          664    i.AUDIO_Process     audio_play.o
     0x08000394   0x08000394   0x00000048   Code   RO          665    i.AUDIO_Start       audio_play.o
     0x080003dc   0x080003dc   0x000000d8   Code   RO          585    i.AudioLoopback_SetHint  audio_loopback.o
@@ -4777,412 +4778,412 @@ Memory Map of the image
     0x08000cbc   0x08000cbc   0x00000178   Code   RO          667    i.Audio_SetHint     audio_play.o
     0x08000e34   0x08000e34   0x0000004c   Code   RO          770    i.BSP_AUDIO_IN_Error_CallBack  audio_rec.o
     0x08000e80   0x08000e80   0x0000000c   Code   RO          771    i.BSP_AUDIO_IN_HalfTransfer_CallBack  audio_rec.o
-    0x08000e8c   0x08000e8c   0x0000000e   Code   RO         2061    i.BSP_AUDIO_IN_Init  stm32746g_discovery_audio.o
+    0x08000e8c   0x08000e8c   0x0000000e   Code   RO         2060    i.BSP_AUDIO_IN_Init  stm32746g_discovery_audio.o
     0x08000e9a   0x08000e9a   0x00000002   PAD
-    0x08000e9c   0x08000e9c   0x00000098   Code   RO         2062    i.BSP_AUDIO_IN_InitEx  stm32746g_discovery_audio.o
-    0x08000f34   0x08000f34   0x00000100   Code   RO         2064    i.BSP_AUDIO_IN_MspInit  stm32746g_discovery_audio.o
-    0x08001034   0x08001034   0x000000a0   Code   RO         2065    i.BSP_AUDIO_IN_OUT_Init  stm32746g_discovery_audio.o
-    0x080010d4   0x080010d4   0x00000014   Code   RO         2067    i.BSP_AUDIO_IN_Record  stm32746g_discovery_audio.o
-    0x080010e8   0x080010e8   0x00000034   Code   RO         2070    i.BSP_AUDIO_IN_Stop  stm32746g_discovery_audio.o
+    0x08000e9c   0x08000e9c   0x00000098   Code   RO         2061    i.BSP_AUDIO_IN_InitEx  stm32746g_discovery_audio.o
+    0x08000f34   0x08000f34   0x00000100   Code   RO         2063    i.BSP_AUDIO_IN_MspInit  stm32746g_discovery_audio.o
+    0x08001034   0x08001034   0x000000a0   Code   RO         2064    i.BSP_AUDIO_IN_OUT_Init  stm32746g_discovery_audio.o
+    0x080010d4   0x080010d4   0x00000014   Code   RO         2066    i.BSP_AUDIO_IN_Record  stm32746g_discovery_audio.o
+    0x080010e8   0x080010e8   0x00000034   Code   RO         2069    i.BSP_AUDIO_IN_Stop  stm32746g_discovery_audio.o
     0x0800111c   0x0800111c   0x0000000c   Code   RO          772    i.BSP_AUDIO_IN_TransferComplete_CallBack  audio_rec.o
-    0x08001128   0x08001128   0x00000052   Code   RO         2073    i.BSP_AUDIO_OUT_ClockConfig  stm32746g_discovery_audio.o
+    0x08001128   0x08001128   0x00000052   Code   RO         2072    i.BSP_AUDIO_OUT_ClockConfig  stm32746g_discovery_audio.o
     0x0800117a   0x0800117a   0x00000002   PAD
-    0x0800117c   0x0800117c   0x00000014   Code   RO         2074    i.BSP_AUDIO_OUT_DeInit  stm32746g_discovery_audio.o
+    0x0800117c   0x0800117c   0x00000014   Code   RO         2073    i.BSP_AUDIO_OUT_DeInit  stm32746g_discovery_audio.o
     0x08001190   0x08001190   0x00000038   Code   RO          668    i.BSP_AUDIO_OUT_Error_CallBack  audio_play.o
     0x080011c8   0x080011c8   0x0000001c   Code   RO          669    i.BSP_AUDIO_OUT_HalfTransfer_CallBack  audio_play.o
-    0x080011e4   0x080011e4   0x00000074   Code   RO         2077    i.BSP_AUDIO_OUT_Init  stm32746g_discovery_audio.o
-    0x08001258   0x08001258   0x0000005c   Code   RO         2078    i.BSP_AUDIO_OUT_MspDeInit  stm32746g_discovery_audio.o
-    0x080012b4   0x080012b4   0x00000138   Code   RO         2079    i.BSP_AUDIO_OUT_MspInit  stm32746g_discovery_audio.o
-    0x080013ec   0x080013ec   0x00000024   Code   RO         2080    i.BSP_AUDIO_OUT_Pause  stm32746g_discovery_audio.o
-    0x08001410   0x08001410   0x00000040   Code   RO         2081    i.BSP_AUDIO_OUT_Play  stm32746g_discovery_audio.o
-    0x08001450   0x08001450   0x00000024   Code   RO         2082    i.BSP_AUDIO_OUT_Resume  stm32746g_discovery_audio.o
-    0x08001474   0x08001474   0x00000028   Code   RO         2083    i.BSP_AUDIO_OUT_SetAudioFrameSlot  stm32746g_discovery_audio.o
-    0x0800149c   0x0800149c   0x00000034   Code   RO         2084    i.BSP_AUDIO_OUT_SetFrequency  stm32746g_discovery_audio.o
-    0x080014d0   0x080014d0   0x0000001c   Code   RO         2087    i.BSP_AUDIO_OUT_SetVolume  stm32746g_discovery_audio.o
-    0x080014ec   0x080014ec   0x00000034   Code   RO         2088    i.BSP_AUDIO_OUT_Stop  stm32746g_discovery_audio.o
+    0x080011e4   0x080011e4   0x00000074   Code   RO         2076    i.BSP_AUDIO_OUT_Init  stm32746g_discovery_audio.o
+    0x08001258   0x08001258   0x0000005c   Code   RO         2077    i.BSP_AUDIO_OUT_MspDeInit  stm32746g_discovery_audio.o
+    0x080012b4   0x080012b4   0x00000138   Code   RO         2078    i.BSP_AUDIO_OUT_MspInit  stm32746g_discovery_audio.o
+    0x080013ec   0x080013ec   0x00000024   Code   RO         2079    i.BSP_AUDIO_OUT_Pause  stm32746g_discovery_audio.o
+    0x08001410   0x08001410   0x00000040   Code   RO         2080    i.BSP_AUDIO_OUT_Play  stm32746g_discovery_audio.o
+    0x08001450   0x08001450   0x00000024   Code   RO         2081    i.BSP_AUDIO_OUT_Resume  stm32746g_discovery_audio.o
+    0x08001474   0x08001474   0x00000028   Code   RO         2082    i.BSP_AUDIO_OUT_SetAudioFrameSlot  stm32746g_discovery_audio.o
+    0x0800149c   0x0800149c   0x00000034   Code   RO         2083    i.BSP_AUDIO_OUT_SetFrequency  stm32746g_discovery_audio.o
+    0x080014d0   0x080014d0   0x0000001c   Code   RO         2086    i.BSP_AUDIO_OUT_SetVolume  stm32746g_discovery_audio.o
+    0x080014ec   0x080014ec   0x00000034   Code   RO         2087    i.BSP_AUDIO_OUT_Stop  stm32746g_discovery_audio.o
     0x08001520   0x08001520   0x00000018   Code   RO          670    i.BSP_AUDIO_OUT_TransferComplete_CallBack  audio_play.o
-    0x08001538   0x08001538   0x00000024   Code   RO         2326    i.BSP_CAMERA_BlackWhiteConfig  stm32746g_discovery_camera.o
-    0x0800155c   0x0800155c   0x00000024   Code   RO         2327    i.BSP_CAMERA_ColorEffectConfig  stm32746g_discovery_camera.o
-    0x08001580   0x08001580   0x00000024   Code   RO         2328    i.BSP_CAMERA_ContinuousStart  stm32746g_discovery_camera.o
-    0x080015a4   0x080015a4   0x00000024   Code   RO         2329    i.BSP_CAMERA_ContrastBrightnessConfig  stm32746g_discovery_camera.o
-    0x080015c8   0x080015c8   0x00000002   Code   RO         2331    i.BSP_CAMERA_ErrorCallback  stm32746g_discovery_camera.o
+    0x08001538   0x08001538   0x00000024   Code   RO         2325    i.BSP_CAMERA_BlackWhiteConfig  stm32746g_discovery_camera.o
+    0x0800155c   0x0800155c   0x00000024   Code   RO         2326    i.BSP_CAMERA_ColorEffectConfig  stm32746g_discovery_camera.o
+    0x08001580   0x08001580   0x00000024   Code   RO         2327    i.BSP_CAMERA_ContinuousStart  stm32746g_discovery_camera.o
+    0x080015a4   0x080015a4   0x00000024   Code   RO         2328    i.BSP_CAMERA_ContrastBrightnessConfig  stm32746g_discovery_camera.o
+    0x080015c8   0x080015c8   0x00000002   Code   RO         2330    i.BSP_CAMERA_ErrorCallback  stm32746g_discovery_camera.o
     0x080015ca   0x080015ca   0x00000002   PAD
-    0x080015cc   0x080015cc   0x00000094   Code   RO         2333    i.BSP_CAMERA_Init   stm32746g_discovery_camera.o
-    0x08001660   0x08001660   0x00000108   Code   RO          959    i.BSP_CAMERA_LineEventCallback  camera.o
-    0x08001768   0x08001768   0x00000168   Code   RO         2336    i.BSP_CAMERA_MspInit  stm32746g_discovery_camera.o
-    0x080018d0   0x080018d0   0x00000048   Code   RO         2337    i.BSP_CAMERA_PwrDown  stm32746g_discovery_camera.o
-    0x08001918   0x08001918   0x00000050   Code   RO         2338    i.BSP_CAMERA_PwrUp  stm32746g_discovery_camera.o
-    0x08001968   0x08001968   0x0000001c   Code   RO         2341    i.BSP_CAMERA_Stop   stm32746g_discovery_camera.o
-    0x08001984   0x08001984   0x00000034   Code   RO         1996    i.BSP_EEPROM_Init   stm32746g_discovery_eeprom.o
-    0x080019b8   0x080019b8   0x00000020   Code   RO         1997    i.BSP_EEPROM_ReadBuffer  stm32746g_discovery_eeprom.o
+    0x080015cc   0x080015cc   0x00000094   Code   RO         2332    i.BSP_CAMERA_Init   stm32746g_discovery_camera.o
+    0x08001660   0x08001660   0x00000108   Code   RO          958    i.BSP_CAMERA_LineEventCallback  camera.o
+    0x08001768   0x08001768   0x00000168   Code   RO         2335    i.BSP_CAMERA_MspInit  stm32746g_discovery_camera.o
+    0x080018d0   0x080018d0   0x00000048   Code   RO         2336    i.BSP_CAMERA_PwrDown  stm32746g_discovery_camera.o
+    0x08001918   0x08001918   0x00000050   Code   RO         2337    i.BSP_CAMERA_PwrUp  stm32746g_discovery_camera.o
+    0x08001968   0x08001968   0x0000001c   Code   RO         2340    i.BSP_CAMERA_Stop   stm32746g_discovery_camera.o
+    0x08001984   0x08001984   0x00000034   Code   RO         1995    i.BSP_EEPROM_Init   stm32746g_discovery_eeprom.o
+    0x080019b8   0x080019b8   0x00000020   Code   RO         1996    i.BSP_EEPROM_ReadBuffer  stm32746g_discovery_eeprom.o
     0x080019d8   0x080019d8   0x0000000c   Code   RO          504    i.BSP_EEPROM_TIMEOUT_UserCallback  eeprom.o
-    0x080019e4   0x080019e4   0x00000020   Code   RO         1999    i.BSP_EEPROM_WaitEepromStandbyState  stm32746g_discovery_eeprom.o
-    0x08001a04   0x08001a04   0x000000f0   Code   RO         2000    i.BSP_EEPROM_WriteBuffer  stm32746g_discovery_eeprom.o
-    0x08001af4   0x08001af4   0x00000030   Code   RO         2001    i.BSP_EEPROM_WritePage  stm32746g_discovery_eeprom.o
-    0x08001b24   0x08001b24   0x00000038   Code   RO         1546    i.BSP_LCD_Clear     stm32746g_discovery_lcd.o
-    0x08001b5c   0x08001b5c   0x0000005c   Code   RO         1547    i.BSP_LCD_ClearStringLine  stm32746g_discovery_lcd.o
-    0x08001bb8   0x08001bb8   0x00000020   Code   RO         1548    i.BSP_LCD_ClockConfig  stm32746g_discovery_lcd.o
-    0x08001bd8   0x08001bd8   0x0000000c   Code   RO          960    i.BSP_LCD_DMA2D_IRQHandler  camera.o
-    0x08001be4   0x08001be4   0x00000034   Code   RO         1550    i.BSP_LCD_DisplayChar  stm32746g_discovery_lcd.o
-    0x08001c18   0x08001c18   0x000000c8   Code   RO         1553    i.BSP_LCD_DisplayStringAt  stm32746g_discovery_lcd.o
-    0x08001ce0   0x08001ce0   0x0000001c   Code   RO         1554    i.BSP_LCD_DisplayStringAtLine  stm32746g_discovery_lcd.o
-    0x08001cfc   0x08001cfc   0x000000d0   Code   RO         1555    i.BSP_LCD_DrawBitmap  stm32746g_discovery_lcd.o
-    0x08001dcc   0x08001dcc   0x00000118   Code   RO         1556    i.BSP_LCD_DrawCircle  stm32746g_discovery_lcd.o
-    0x08001ee4   0x08001ee4   0x0000011c   Code   RO         1557    i.BSP_LCD_DrawEllipse  stm32746g_discovery_lcd.o
-    0x08002000   0x08002000   0x0000007c   Code   RO         1558    i.BSP_LCD_DrawHLine  stm32746g_discovery_lcd.o
-    0x0800207c   0x0800207c   0x000000c4   Code   RO         1559    i.BSP_LCD_DrawLine  stm32746g_discovery_lcd.o
-    0x08002140   0x08002140   0x00000064   Code   RO         1560    i.BSP_LCD_DrawPixel  stm32746g_discovery_lcd.o
-    0x080021a4   0x080021a4   0x00000038   Code   RO         1561    i.BSP_LCD_DrawPolygon  stm32746g_discovery_lcd.o
-    0x080021dc   0x080021dc   0x00000036   Code   RO         1562    i.BSP_LCD_DrawRect  stm32746g_discovery_lcd.o
+    0x080019e4   0x080019e4   0x00000020   Code   RO         1998    i.BSP_EEPROM_WaitEepromStandbyState  stm32746g_discovery_eeprom.o
+    0x08001a04   0x08001a04   0x000000f0   Code   RO         1999    i.BSP_EEPROM_WriteBuffer  stm32746g_discovery_eeprom.o
+    0x08001af4   0x08001af4   0x00000030   Code   RO         2000    i.BSP_EEPROM_WritePage  stm32746g_discovery_eeprom.o
+    0x08001b24   0x08001b24   0x00000038   Code   RO         1545    i.BSP_LCD_Clear     stm32746g_discovery_lcd.o
+    0x08001b5c   0x08001b5c   0x0000005c   Code   RO         1546    i.BSP_LCD_ClearStringLine  stm32746g_discovery_lcd.o
+    0x08001bb8   0x08001bb8   0x00000020   Code   RO         1547    i.BSP_LCD_ClockConfig  stm32746g_discovery_lcd.o
+    0x08001bd8   0x08001bd8   0x0000000c   Code   RO          959    i.BSP_LCD_DMA2D_IRQHandler  camera.o
+    0x08001be4   0x08001be4   0x00000034   Code   RO         1549    i.BSP_LCD_DisplayChar  stm32746g_discovery_lcd.o
+    0x08001c18   0x08001c18   0x000000c8   Code   RO         1552    i.BSP_LCD_DisplayStringAt  stm32746g_discovery_lcd.o
+    0x08001ce0   0x08001ce0   0x0000001c   Code   RO         1553    i.BSP_LCD_DisplayStringAtLine  stm32746g_discovery_lcd.o
+    0x08001cfc   0x08001cfc   0x000000d0   Code   RO         1554    i.BSP_LCD_DrawBitmap  stm32746g_discovery_lcd.o
+    0x08001dcc   0x08001dcc   0x00000118   Code   RO         1555    i.BSP_LCD_DrawCircle  stm32746g_discovery_lcd.o
+    0x08001ee4   0x08001ee4   0x0000011c   Code   RO         1556    i.BSP_LCD_DrawEllipse  stm32746g_discovery_lcd.o
+    0x08002000   0x08002000   0x0000007c   Code   RO         1557    i.BSP_LCD_DrawHLine  stm32746g_discovery_lcd.o
+    0x0800207c   0x0800207c   0x000000c4   Code   RO         1558    i.BSP_LCD_DrawLine  stm32746g_discovery_lcd.o
+    0x08002140   0x08002140   0x00000064   Code   RO         1559    i.BSP_LCD_DrawPixel  stm32746g_discovery_lcd.o
+    0x080021a4   0x080021a4   0x00000038   Code   RO         1560    i.BSP_LCD_DrawPolygon  stm32746g_discovery_lcd.o
+    0x080021dc   0x080021dc   0x00000036   Code   RO         1561    i.BSP_LCD_DrawRect  stm32746g_discovery_lcd.o
     0x08002212   0x08002212   0x00000002   PAD
-    0x08002214   0x08002214   0x00000088   Code   RO         1563    i.BSP_LCD_DrawVLine  stm32746g_discovery_lcd.o
-    0x0800229c   0x0800229c   0x000000c4   Code   RO         1564    i.BSP_LCD_FillCircle  stm32746g_discovery_lcd.o
-    0x08002360   0x08002360   0x000000d0   Code   RO         1565    i.BSP_LCD_FillEllipse  stm32746g_discovery_lcd.o
-    0x08002430   0x08002430   0x00000114   Code   RO         1566    i.BSP_LCD_FillPolygon  stm32746g_discovery_lcd.o
-    0x08002544   0x08002544   0x0000009c   Code   RO         1567    i.BSP_LCD_FillRect  stm32746g_discovery_lcd.o
-    0x080025e0   0x080025e0   0x0000001c   Code   RO         1569    i.BSP_LCD_GetFont   stm32746g_discovery_lcd.o
-    0x080025fc   0x080025fc   0x00000020   Code   RO         1571    i.BSP_LCD_GetXSize  stm32746g_discovery_lcd.o
-    0x0800261c   0x0800261c   0x00000020   Code   RO         1572    i.BSP_LCD_GetYSize  stm32746g_discovery_lcd.o
-    0x0800263c   0x0800263c   0x000000a4   Code   RO         1573    i.BSP_LCD_Init      stm32746g_discovery_lcd.o
-    0x080026e0   0x080026e0   0x00000078   Code   RO         1574    i.BSP_LCD_LayerDefaultInit  stm32746g_discovery_lcd.o
-    0x08002758   0x08002758   0x00000138   Code   RO         1577    i.BSP_LCD_MspInit   stm32746g_discovery_lcd.o
-    0x08002890   0x08002890   0x0000000c   Code   RO         1582    i.BSP_LCD_SelectLayer  stm32746g_discovery_lcd.o
-    0x0800289c   0x0800289c   0x0000001c   Code   RO         1583    i.BSP_LCD_SetBackColor  stm32746g_discovery_lcd.o
-    0x080028b8   0x080028b8   0x0000001c   Code   RO         1586    i.BSP_LCD_SetFont   stm32746g_discovery_lcd.o
-    0x080028d4   0x080028d4   0x00000018   Code   RO         1593    i.BSP_LCD_SetTextColor  stm32746g_discovery_lcd.o
-    0x080028ec   0x080028ec   0x00000050   Code   RO         1232    i.BSP_LED_Init      stm32746g_discovery.o
-    0x0800293c   0x0800293c   0x00000018   Code   RO         1237    i.BSP_PB_GetState   stm32746g_discovery.o
-    0x08002954   0x08002954   0x00000094   Code   RO         1238    i.BSP_PB_Init       stm32746g_discovery.o
-    0x080029e8   0x080029e8   0x00000054   Code   RO         1441    i.BSP_QSPI_Erase_Block  stm32746g_discovery_qspi.o
-    0x08002a3c   0x08002a3c   0x0000001a   Code   RO         1443    i.BSP_QSPI_GetInfo  stm32746g_discovery_qspi.o
+    0x08002214   0x08002214   0x00000088   Code   RO         1562    i.BSP_LCD_DrawVLine  stm32746g_discovery_lcd.o
+    0x0800229c   0x0800229c   0x000000c4   Code   RO         1563    i.BSP_LCD_FillCircle  stm32746g_discovery_lcd.o
+    0x08002360   0x08002360   0x000000d0   Code   RO         1564    i.BSP_LCD_FillEllipse  stm32746g_discovery_lcd.o
+    0x08002430   0x08002430   0x00000114   Code   RO         1565    i.BSP_LCD_FillPolygon  stm32746g_discovery_lcd.o
+    0x08002544   0x08002544   0x0000009c   Code   RO         1566    i.BSP_LCD_FillRect  stm32746g_discovery_lcd.o
+    0x080025e0   0x080025e0   0x0000001c   Code   RO         1568    i.BSP_LCD_GetFont   stm32746g_discovery_lcd.o
+    0x080025fc   0x080025fc   0x00000020   Code   RO         1570    i.BSP_LCD_GetXSize  stm32746g_discovery_lcd.o
+    0x0800261c   0x0800261c   0x00000020   Code   RO         1571    i.BSP_LCD_GetYSize  stm32746g_discovery_lcd.o
+    0x0800263c   0x0800263c   0x000000a4   Code   RO         1572    i.BSP_LCD_Init      stm32746g_discovery_lcd.o
+    0x080026e0   0x080026e0   0x00000078   Code   RO         1573    i.BSP_LCD_LayerDefaultInit  stm32746g_discovery_lcd.o
+    0x08002758   0x08002758   0x00000138   Code   RO         1576    i.BSP_LCD_MspInit   stm32746g_discovery_lcd.o
+    0x08002890   0x08002890   0x0000000c   Code   RO         1581    i.BSP_LCD_SelectLayer  stm32746g_discovery_lcd.o
+    0x0800289c   0x0800289c   0x0000001c   Code   RO         1582    i.BSP_LCD_SetBackColor  stm32746g_discovery_lcd.o
+    0x080028b8   0x080028b8   0x0000001c   Code   RO         1585    i.BSP_LCD_SetFont   stm32746g_discovery_lcd.o
+    0x080028d4   0x080028d4   0x00000018   Code   RO         1592    i.BSP_LCD_SetTextColor  stm32746g_discovery_lcd.o
+    0x080028ec   0x080028ec   0x00000050   Code   RO         1231    i.BSP_LED_Init      stm32746g_discovery.o
+    0x0800293c   0x0800293c   0x00000018   Code   RO         1236    i.BSP_PB_GetState   stm32746g_discovery.o
+    0x08002954   0x08002954   0x00000094   Code   RO         1237    i.BSP_PB_Init       stm32746g_discovery.o
+    0x080029e8   0x080029e8   0x00000054   Code   RO         1440    i.BSP_QSPI_Erase_Block  stm32746g_discovery_qspi.o
+    0x08002a3c   0x08002a3c   0x0000001a   Code   RO         1442    i.BSP_QSPI_GetInfo  stm32746g_discovery_qspi.o
     0x08002a56   0x08002a56   0x00000002   PAD
-    0x08002a58   0x08002a58   0x0000006c   Code   RO         1445    i.BSP_QSPI_Init     stm32746g_discovery_qspi.o
-    0x08002ac4   0x08002ac4   0x00000118   Code   RO         1447    i.BSP_QSPI_MspInit  stm32746g_discovery_qspi.o
-    0x08002bdc   0x08002bdc   0x0000007c   Code   RO         1448    i.BSP_QSPI_Read     stm32746g_discovery_qspi.o
-    0x08002c58   0x08002c58   0x0000009c   Code   RO         1449    i.BSP_QSPI_Write    stm32746g_discovery_qspi.o
-    0x08002cf4   0x08002cf4   0x00000078   Code   RO         2486    i.BSP_SDRAM_Init    stm32746g_discovery_sdram.o
-    0x08002d6c   0x08002d6c   0x0000008c   Code   RO         2487    i.BSP_SDRAM_Initialization_sequence  stm32746g_discovery_sdram.o
-    0x08002df8   0x08002df8   0x00000168   Code   RO         2489    i.BSP_SDRAM_MspInit  stm32746g_discovery_sdram.o
-    0x08002f60   0x08002f60   0x0000001c   Code   RO         2490    i.BSP_SDRAM_ReadData  stm32746g_discovery_sdram.o
-    0x08002f7c   0x08002f7c   0x0000001c   Code   RO         2491    i.BSP_SDRAM_ReadData_DMA  stm32746g_discovery_sdram.o
-    0x08002f98   0x08002f98   0x0000001c   Code   RO         2493    i.BSP_SDRAM_WriteData  stm32746g_discovery_sdram.o
-    0x08002fb4   0x08002fb4   0x0000001c   Code   RO         2494    i.BSP_SDRAM_WriteData_DMA  stm32746g_discovery_sdram.o
-    0x08002fd0   0x08002fd0   0x00000038   Code   RO         2569    i.BSP_SD_Detect_MspInit  stm32746g_discovery_sd.o
-    0x08003008   0x08003008   0x00000018   Code   RO         2570    i.BSP_SD_Erase      stm32746g_discovery_sd.o
-    0x08003020   0x08003020   0x00000018   Code   RO         2572    i.BSP_SD_GetCardState  stm32746g_discovery_sd.o
-    0x08003038   0x08003038   0x00000058   Code   RO         2574    i.BSP_SD_Init       stm32746g_discovery_sd.o
-    0x08003090   0x08003090   0x00000024   Code   RO         2575    i.BSP_SD_IsDetected  stm32746g_discovery_sd.o
-    0x080030b4   0x080030b4   0x0000014c   Code   RO         2577    i.BSP_SD_MspInit    stm32746g_discovery_sd.o
-    0x08003200   0x08003200   0x0000001c   Code   RO         2578    i.BSP_SD_ReadBlocks  stm32746g_discovery_sd.o
-    0x0800321c   0x0800321c   0x0000001c   Code   RO         2581    i.BSP_SD_WriteBlocks  stm32746g_discovery_sd.o
-    0x08003238   0x08003238   0x00000170   Code   RO         1927    i.BSP_TS_GetState   stm32746g_discovery_ts.o
-    0x080033a8   0x080033a8   0x0000005c   Code   RO         1928    i.BSP_TS_Get_GestureId  stm32746g_discovery_ts.o
-    0x08003404   0x08003404   0x0000003c   Code   RO         1932    i.BSP_TS_Init       stm32746g_discovery_ts.o
-    0x08003440   0x08003440   0x00000002   Code   RO         1030    i.BusFault_Handler  stm32f7xx_it.o
-    0x08003442   0x08003442   0x00000004   Code   RO         1239    i.CAMERA_Delay      stm32746g_discovery.o
+    0x08002a58   0x08002a58   0x0000006c   Code   RO         1444    i.BSP_QSPI_Init     stm32746g_discovery_qspi.o
+    0x08002ac4   0x08002ac4   0x00000118   Code   RO         1446    i.BSP_QSPI_MspInit  stm32746g_discovery_qspi.o
+    0x08002bdc   0x08002bdc   0x0000007c   Code   RO         1447    i.BSP_QSPI_Read     stm32746g_discovery_qspi.o
+    0x08002c58   0x08002c58   0x0000009c   Code   RO         1448    i.BSP_QSPI_Write    stm32746g_discovery_qspi.o
+    0x08002cf4   0x08002cf4   0x00000078   Code   RO         2485    i.BSP_SDRAM_Init    stm32746g_discovery_sdram.o
+    0x08002d6c   0x08002d6c   0x0000008c   Code   RO         2486    i.BSP_SDRAM_Initialization_sequence  stm32746g_discovery_sdram.o
+    0x08002df8   0x08002df8   0x00000168   Code   RO         2488    i.BSP_SDRAM_MspInit  stm32746g_discovery_sdram.o
+    0x08002f60   0x08002f60   0x0000001c   Code   RO         2489    i.BSP_SDRAM_ReadData  stm32746g_discovery_sdram.o
+    0x08002f7c   0x08002f7c   0x0000001c   Code   RO         2490    i.BSP_SDRAM_ReadData_DMA  stm32746g_discovery_sdram.o
+    0x08002f98   0x08002f98   0x0000001c   Code   RO         2492    i.BSP_SDRAM_WriteData  stm32746g_discovery_sdram.o
+    0x08002fb4   0x08002fb4   0x0000001c   Code   RO         2493    i.BSP_SDRAM_WriteData_DMA  stm32746g_discovery_sdram.o
+    0x08002fd0   0x08002fd0   0x00000038   Code   RO         2568    i.BSP_SD_Detect_MspInit  stm32746g_discovery_sd.o
+    0x08003008   0x08003008   0x00000018   Code   RO         2569    i.BSP_SD_Erase      stm32746g_discovery_sd.o
+    0x08003020   0x08003020   0x00000018   Code   RO         2571    i.BSP_SD_GetCardState  stm32746g_discovery_sd.o
+    0x08003038   0x08003038   0x00000058   Code   RO         2573    i.BSP_SD_Init       stm32746g_discovery_sd.o
+    0x08003090   0x08003090   0x00000024   Code   RO         2574    i.BSP_SD_IsDetected  stm32746g_discovery_sd.o
+    0x080030b4   0x080030b4   0x0000014c   Code   RO         2576    i.BSP_SD_MspInit    stm32746g_discovery_sd.o
+    0x08003200   0x08003200   0x0000001c   Code   RO         2577    i.BSP_SD_ReadBlocks  stm32746g_discovery_sd.o
+    0x0800321c   0x0800321c   0x0000001c   Code   RO         2580    i.BSP_SD_WriteBlocks  stm32746g_discovery_sd.o
+    0x08003238   0x08003238   0x00000170   Code   RO         1926    i.BSP_TS_GetState   stm32746g_discovery_ts.o
+    0x080033a8   0x080033a8   0x0000005c   Code   RO         1927    i.BSP_TS_Get_GestureId  stm32746g_discovery_ts.o
+    0x08003404   0x08003404   0x0000003c   Code   RO         1931    i.BSP_TS_Init       stm32746g_discovery_ts.o
+    0x08003440   0x08003440   0x00000002   Code   RO         1029    i.BusFault_Handler  stm32f7xx_it.o
+    0x08003442   0x08003442   0x00000004   Code   RO         1238    i.CAMERA_Delay      stm32746g_discovery.o
     0x08003446   0x08003446   0x00000002   PAD
-    0x08003448   0x08003448   0x0000000c   Code   RO         1240    i.CAMERA_IO_Init    stm32746g_discovery.o
-    0x08003454   0x08003454   0x00000028   Code   RO         1241    i.CAMERA_IO_Read    stm32746g_discovery.o
-    0x0800347c   0x0800347c   0x00000020   Code   RO         1242    i.CAMERA_IO_Write   stm32746g_discovery.o
+    0x08003448   0x08003448   0x0000000c   Code   RO         1239    i.CAMERA_IO_Init    stm32746g_discovery.o
+    0x08003454   0x08003454   0x00000028   Code   RO         1240    i.CAMERA_IO_Read    stm32746g_discovery.o
+    0x0800347c   0x0800347c   0x00000020   Code   RO         1241    i.CAMERA_IO_Write   stm32746g_discovery.o
     0x0800349c   0x0800349c   0x0000000a   Code   RO          309    i.CODEC_IO_Write    wm8994.o
     0x080034a6   0x080034a6   0x00000002   PAD
     0x080034a8   0x080034a8   0x00000074   Code   RO          819    i.CPU_CACHE_Enable  main.o
-    0x0800351c   0x0800351c   0x00000078   Code   RO          961    i.CameraFrameBufferRgb565_Init  camera.o
-    0x08003594   0x08003594   0x0000000c   Code   RO          962    i.Camera_FrameBuffer_Init_TransferComplete  camera.o
-    0x080035a0   0x080035a0   0x0000000c   Code   RO          963    i.Camera_FrameBuffer_Init_TransferError  camera.o
-    0x080035ac   0x080035ac   0x000000b0   Code   RO          964    i.Camera_SetHint    camera.o
-    0x0800365c   0x0800365c   0x00000678   Code   RO          965    i.Camera_demo       camera.o
+    0x0800351c   0x0800351c   0x00000078   Code   RO          960    i.CameraFrameBufferRgb565_Init  camera.o
+    0x08003594   0x08003594   0x0000000c   Code   RO          961    i.Camera_FrameBuffer_Init_TransferComplete  camera.o
+    0x080035a0   0x080035a0   0x0000000c   Code   RO          962    i.Camera_FrameBuffer_Init_TransferError  camera.o
+    0x080035ac   0x080035ac   0x000000b0   Code   RO          963    i.Camera_SetHint    camera.o
+    0x0800365c   0x0800365c   0x00000678   Code   RO          964    i.Camera_demo       camera.o
     0x08003cd4   0x08003cd4   0x00000020   Code   RO          820    i.CheckForUserInput  main.o
-    0x08003cf4   0x08003cf4   0x00000074   Code   RO          966    i.ConvertCameraLineRgb565ToLcdLineARGB8888  camera.o
-    0x08003d68   0x08003d68   0x00000020   Code   RO         5440    i.DCMI_DMAError     stm32f7xx_hal_dcmi.o
-    0x08003d88   0x08003d88   0x00000084   Code   RO         5441    i.DCMI_DMAXferCplt  stm32f7xx_hal_dcmi.o
-    0x08003e0c   0x08003e0c   0x00000004   Code   RO         1031    i.DCMI_IRQHandler   stm32f7xx_it.o
-    0x08003e10   0x08003e10   0x00000004   Code   RO         1032    i.DMA2D_IRQHandler  stm32f7xx_it.o
-    0x08003e14   0x08003e14   0x00000092   Code   RO         4156    i.DMA2D_SetConfig   stm32f7xx_hal_dma2d.o
+    0x08003cf4   0x08003cf4   0x00000074   Code   RO          965    i.ConvertCameraLineRgb565ToLcdLineARGB8888  camera.o
+    0x08003d68   0x08003d68   0x00000020   Code   RO         5439    i.DCMI_DMAError     stm32f7xx_hal_dcmi.o
+    0x08003d88   0x08003d88   0x00000084   Code   RO         5440    i.DCMI_DMAXferCplt  stm32f7xx_hal_dcmi.o
+    0x08003e0c   0x08003e0c   0x00000004   Code   RO         1030    i.DCMI_IRQHandler   stm32f7xx_it.o
+    0x08003e10   0x08003e10   0x00000004   Code   RO         1031    i.DMA2D_IRQHandler  stm32f7xx_it.o
+    0x08003e14   0x08003e14   0x00000092   Code   RO         4155    i.DMA2D_SetConfig   stm32f7xx_hal_dma2d.o
     0x08003ea6   0x08003ea6   0x00000002   PAD
-    0x08003ea8   0x08003ea8   0x0000000c   Code   RO         1033    i.DMA2_Stream0_IRQHandler  stm32f7xx_it.o
-    0x08003eb4   0x08003eb4   0x00000004   Code   RO         1034    i.DMA2_Stream1_IRQHandler  stm32f7xx_it.o
-    0x08003eb8   0x08003eb8   0x0000000c   Code   RO         1035    i.DMA2_Stream4_IRQHandler  stm32f7xx_it.o
-    0x08003ec4   0x08003ec4   0x0000000c   Code   RO         1036    i.DMA2_Stream7_IRQHandler  stm32f7xx_it.o
-    0x08003ed0   0x08003ed0   0x00000028   Code   RO         3876    i.DMA_CalcBaseAndBitshift  stm32f7xx_hal_dma.o
-    0x08003ef8   0x08003ef8   0x00000054   Code   RO         3877    i.DMA_CheckFifoParam  stm32f7xx_hal_dma.o
-    0x08003f4c   0x08003f4c   0x0000001e   Code   RO         6536    i.DMA_MultiBufferSetConfig  stm32f7xx_hal_dma_ex.o
-    0x08003f6a   0x08003f6a   0x00000028   Code   RO         3878    i.DMA_SetConfig     stm32f7xx_hal_dma.o
-    0x08003f92   0x08003f92   0x00000002   Code   RO         1037    i.DebugMon_Handler  stm32f7xx_it.o
+    0x08003ea8   0x08003ea8   0x0000000c   Code   RO         1032    i.DMA2_Stream0_IRQHandler  stm32f7xx_it.o
+    0x08003eb4   0x08003eb4   0x00000004   Code   RO         1033    i.DMA2_Stream1_IRQHandler  stm32f7xx_it.o
+    0x08003eb8   0x08003eb8   0x0000000c   Code   RO         1034    i.DMA2_Stream4_IRQHandler  stm32f7xx_it.o
+    0x08003ec4   0x08003ec4   0x0000000c   Code   RO         1035    i.DMA2_Stream7_IRQHandler  stm32f7xx_it.o
+    0x08003ed0   0x08003ed0   0x00000028   Code   RO         3875    i.DMA_CalcBaseAndBitshift  stm32f7xx_hal_dma.o
+    0x08003ef8   0x08003ef8   0x00000054   Code   RO         3876    i.DMA_CheckFifoParam  stm32f7xx_hal_dma.o
+    0x08003f4c   0x08003f4c   0x0000001e   Code   RO         6535    i.DMA_MultiBufferSetConfig  stm32f7xx_hal_dma_ex.o
+    0x08003f6a   0x08003f6a   0x00000028   Code   RO         3877    i.DMA_SetConfig     stm32f7xx_hal_dma.o
+    0x08003f92   0x08003f92   0x00000002   Code   RO         1036    i.DebugMon_Handler  stm32f7xx_it.o
     0x08003f94   0x08003f94   0x0000017c   Code   RO          821    i.Display_DemoDescription  main.o
-    0x08004110   0x08004110   0x000000b0   Code   RO         1598    i.DrawChar          stm32746g_discovery_lcd.o
-    0x080041c0   0x080041c0   0x0000000c   Code   RO         1243    i.EEPROM_IO_Init    stm32746g_discovery.o
-    0x080041cc   0x080041cc   0x00000014   Code   RO         1244    i.EEPROM_IO_IsDeviceReady  stm32746g_discovery.o
-    0x080041e0   0x080041e0   0x0000001c   Code   RO         1245    i.EEPROM_IO_ReadData  stm32746g_discovery.o
-    0x080041fc   0x080041fc   0x0000001c   Code   RO         1246    i.EEPROM_IO_WriteData  stm32746g_discovery.o
+    0x08004110   0x08004110   0x000000b0   Code   RO         1597    i.DrawChar          stm32746g_discovery_lcd.o
+    0x080041c0   0x080041c0   0x0000000c   Code   RO         1242    i.EEPROM_IO_Init    stm32746g_discovery.o
+    0x080041cc   0x080041cc   0x00000014   Code   RO         1243    i.EEPROM_IO_IsDeviceReady  stm32746g_discovery.o
+    0x080041e0   0x080041e0   0x0000001c   Code   RO         1244    i.EEPROM_IO_ReadData  stm32746g_discovery.o
+    0x080041fc   0x080041fc   0x0000001c   Code   RO         1245    i.EEPROM_IO_WriteData  stm32746g_discovery.o
     0x08004218   0x08004218   0x00000120   Code   RO          505    i.EEPROM_SetHint    eeprom.o
     0x08004338   0x08004338   0x0000048c   Code   RO          506    i.EEPROM_Show_Feature  eeprom.o
     0x080047c4   0x080047c4   0x00000034   Code   RO          507    i.EEPROM_demo       eeprom.o
-    0x080047f8   0x080047f8   0x00000008   Code   RO         1038    i.EXTI0_IRQHandler  stm32f7xx_it.o
-    0x08004800   0x08004800   0x0000001c   Code   RO         1039    i.EXTI15_10_IRQHandler  stm32f7xx_it.o
-    0x0800481c   0x0800481c   0x00000006   Code   RO         1040    i.EXTI2_IRQHandler  stm32f7xx_it.o
-    0x08004822   0x08004822   0x0000005e   Code   RO         4386    i.FMC_SDRAM_Init    stm32f7xx_ll_fmc.o
-    0x08004880   0x08004880   0x0000000c   Code   RO         4387    i.FMC_SDRAM_ProgramRefreshRate  stm32f7xx_ll_fmc.o
-    0x0800488c   0x0800488c   0x00000048   Code   RO         4388    i.FMC_SDRAM_SendCommand  stm32f7xx_ll_fmc.o
-    0x080048d4   0x080048d4   0x0000008c   Code   RO         4390    i.FMC_SDRAM_Timing_Init  stm32f7xx_ll_fmc.o
-    0x08004960   0x08004960   0x000000be   Code   RO         1599    i.FillTriangle      stm32746g_discovery_lcd.o
+    0x080047f8   0x080047f8   0x00000008   Code   RO         1037    i.EXTI0_IRQHandler  stm32f7xx_it.o
+    0x08004800   0x08004800   0x0000001c   Code   RO         1038    i.EXTI15_10_IRQHandler  stm32f7xx_it.o
+    0x0800481c   0x0800481c   0x00000006   Code   RO         1039    i.EXTI2_IRQHandler  stm32f7xx_it.o
+    0x08004822   0x08004822   0x0000005e   Code   RO         4385    i.FMC_SDRAM_Init    stm32f7xx_ll_fmc.o
+    0x08004880   0x08004880   0x0000000c   Code   RO         4386    i.FMC_SDRAM_ProgramRefreshRate  stm32f7xx_ll_fmc.o
+    0x0800488c   0x0800488c   0x00000048   Code   RO         4387    i.FMC_SDRAM_SendCommand  stm32f7xx_ll_fmc.o
+    0x080048d4   0x080048d4   0x0000008c   Code   RO         4389    i.FMC_SDRAM_Timing_Init  stm32f7xx_ll_fmc.o
+    0x08004960   0x08004960   0x000000be   Code   RO         1598    i.FillTriangle      stm32746g_discovery_lcd.o
     0x08004a1e   0x08004a1e   0x00000002   PAD
     0x08004a20   0x08004a20   0x00000024   Code   RO          671    i.GetData           audio_play.o
-    0x08004a44   0x08004a44   0x0000002c   Code   RO         2344    i.GetSize           stm32746g_discovery_camera.o
-    0x08004a70   0x08004a70   0x00000036   Code   RO         5442    i.HAL_DCMI_ConfigCrop  stm32f7xx_hal_dcmi.o
-    0x08004aa6   0x08004aa6   0x00000030   Code   RO         5444    i.HAL_DCMI_DisableCrop  stm32f7xx_hal_dcmi.o
-    0x08004ad6   0x08004ad6   0x00000030   Code   RO         5445    i.HAL_DCMI_EnableCrop  stm32f7xx_hal_dcmi.o
-    0x08004b06   0x08004b06   0x00000008   Code   RO         2345    i.HAL_DCMI_ErrorCallback  stm32746g_discovery_camera.o
+    0x08004a44   0x08004a44   0x0000002c   Code   RO         2343    i.GetSize           stm32746g_discovery_camera.o
+    0x08004a70   0x08004a70   0x00000036   Code   RO         5441    i.HAL_DCMI_ConfigCrop  stm32f7xx_hal_dcmi.o
+    0x08004aa6   0x08004aa6   0x00000030   Code   RO         5443    i.HAL_DCMI_DisableCrop  stm32f7xx_hal_dcmi.o
+    0x08004ad6   0x08004ad6   0x00000030   Code   RO         5444    i.HAL_DCMI_EnableCrop  stm32f7xx_hal_dcmi.o
+    0x08004b06   0x08004b06   0x00000008   Code   RO         2344    i.HAL_DCMI_ErrorCallback  stm32746g_discovery_camera.o
     0x08004b0e   0x08004b0e   0x00000002   PAD
-    0x08004b10   0x08004b10   0x0000008c   Code   RO         5451    i.HAL_DCMI_Init     stm32f7xx_hal_dcmi.o
-    0x08004b9c   0x08004b9c   0x00000002   Code   RO         5454    i.HAL_DCMI_MspInit  stm32f7xx_hal_dcmi.o
+    0x08004b10   0x08004b10   0x0000008c   Code   RO         5450    i.HAL_DCMI_Init     stm32f7xx_hal_dcmi.o
+    0x08004b9c   0x08004b9c   0x00000002   Code   RO         5453    i.HAL_DCMI_MspInit  stm32f7xx_hal_dcmi.o
     0x08004b9e   0x08004b9e   0x00000002   PAD
-    0x08004ba0   0x08004ba0   0x000000bc   Code   RO         5456    i.HAL_DCMI_Start_DMA  stm32f7xx_hal_dcmi.o
-    0x08004c5c   0x08004c5c   0x00000074   Code   RO         5457    i.HAL_DCMI_Stop     stm32f7xx_hal_dcmi.o
-    0x08004cd0   0x08004cd0   0x00000002   Code   RO         4162    i.HAL_DMA2D_CLUTLoadingCpltCallback  stm32f7xx_hal_dma2d.o
+    0x08004ba0   0x08004ba0   0x000000bc   Code   RO         5455    i.HAL_DCMI_Start_DMA  stm32f7xx_hal_dcmi.o
+    0x08004c5c   0x08004c5c   0x00000074   Code   RO         5456    i.HAL_DCMI_Stop     stm32f7xx_hal_dcmi.o
+    0x08004cd0   0x08004cd0   0x00000002   Code   RO         4161    i.HAL_DMA2D_CLUTLoadingCpltCallback  stm32f7xx_hal_dma2d.o
     0x08004cd2   0x08004cd2   0x00000002   PAD
-    0x08004cd4   0x08004cd4   0x000000a4   Code   RO         4168    i.HAL_DMA2D_ConfigLayer  stm32f7xx_hal_dma2d.o
-    0x08004d78   0x08004d78   0x0000011c   Code   RO         4175    i.HAL_DMA2D_IRQHandler  stm32f7xx_hal_dma2d.o
-    0x08004e94   0x08004e94   0x0000005a   Code   RO         4176    i.HAL_DMA2D_Init    stm32f7xx_hal_dma2d.o
-    0x08004eee   0x08004eee   0x00000002   Code   RO         4177    i.HAL_DMA2D_LineEventCallback  stm32f7xx_hal_dma2d.o
-    0x08004ef0   0x08004ef0   0x0000002c   Code   RO          967    i.HAL_DMA2D_MspInit  camera.o
-    0x08004f1c   0x08004f1c   0x0000010c   Code   RO         4180    i.HAL_DMA2D_PollForTransfer  stm32f7xx_hal_dma2d.o
-    0x08005028   0x08005028   0x00000034   Code   RO         4183    i.HAL_DMA2D_Start   stm32f7xx_hal_dma2d.o
-    0x0800505c   0x0800505c   0x0000003e   Code   RO         4184    i.HAL_DMA2D_Start_IT  stm32f7xx_hal_dma2d.o
-    0x0800509a   0x0800509a   0x0000000e   Code   RO         6537    i.HAL_DMAEx_ChangeMemory  stm32f7xx_hal_dma_ex.o
-    0x080050a8   0x080050a8   0x00000990   Code   RO         6539    i.HAL_DMAEx_MultiBufferStart_IT  stm32f7xx_hal_dma_ex.o
-    0x08005a38   0x08005a38   0x00000092   Code   RO         3879    i.HAL_DMA_Abort     stm32f7xx_hal_dma.o
-    0x08005aca   0x08005aca   0x00000056   Code   RO         3881    i.HAL_DMA_DeInit    stm32f7xx_hal_dma.o
-    0x08005b20   0x08005b20   0x000001a8   Code   RO         3884    i.HAL_DMA_IRQHandler  stm32f7xx_hal_dma.o
-    0x08005cc8   0x08005cc8   0x000000e4   Code   RO         3885    i.HAL_DMA_Init      stm32f7xx_hal_dma.o
-    0x08005dac   0x08005dac   0x0000007a   Code   RO         3889    i.HAL_DMA_Start_IT  stm32f7xx_hal_dma.o
-    0x08005e26   0x08005e26   0x00000016   Code   RO         3706    i.HAL_Delay         stm32f7xx_hal.o
-    0x08005e3c   0x08005e3c   0x00000154   Code   RO         6697    i.HAL_GPIO_DeInit   stm32f7xx_hal_gpio.o
+    0x08004cd4   0x08004cd4   0x000000a4   Code   RO         4167    i.HAL_DMA2D_ConfigLayer  stm32f7xx_hal_dma2d.o
+    0x08004d78   0x08004d78   0x0000011c   Code   RO         4174    i.HAL_DMA2D_IRQHandler  stm32f7xx_hal_dma2d.o
+    0x08004e94   0x08004e94   0x0000005a   Code   RO         4175    i.HAL_DMA2D_Init    stm32f7xx_hal_dma2d.o
+    0x08004eee   0x08004eee   0x00000002   Code   RO         4176    i.HAL_DMA2D_LineEventCallback  stm32f7xx_hal_dma2d.o
+    0x08004ef0   0x08004ef0   0x0000002c   Code   RO          966    i.HAL_DMA2D_MspInit  camera.o
+    0x08004f1c   0x08004f1c   0x0000010c   Code   RO         4179    i.HAL_DMA2D_PollForTransfer  stm32f7xx_hal_dma2d.o
+    0x08005028   0x08005028   0x00000034   Code   RO         4182    i.HAL_DMA2D_Start   stm32f7xx_hal_dma2d.o
+    0x0800505c   0x0800505c   0x0000003e   Code   RO         4183    i.HAL_DMA2D_Start_IT  stm32f7xx_hal_dma2d.o
+    0x0800509a   0x0800509a   0x0000000e   Code   RO         6536    i.HAL_DMAEx_ChangeMemory  stm32f7xx_hal_dma_ex.o
+    0x080050a8   0x080050a8   0x00000990   Code   RO         6538    i.HAL_DMAEx_MultiBufferStart_IT  stm32f7xx_hal_dma_ex.o
+    0x08005a38   0x08005a38   0x00000092   Code   RO         3878    i.HAL_DMA_Abort     stm32f7xx_hal_dma.o
+    0x08005aca   0x08005aca   0x00000056   Code   RO         3880    i.HAL_DMA_DeInit    stm32f7xx_hal_dma.o
+    0x08005b20   0x08005b20   0x000001a8   Code   RO         3883    i.HAL_DMA_IRQHandler  stm32f7xx_hal_dma.o
+    0x08005cc8   0x08005cc8   0x000000e4   Code   RO         3884    i.HAL_DMA_Init      stm32f7xx_hal_dma.o
+    0x08005dac   0x08005dac   0x0000007a   Code   RO         3888    i.HAL_DMA_Start_IT  stm32f7xx_hal_dma.o
+    0x08005e26   0x08005e26   0x00000016   Code   RO         3705    i.HAL_Delay         stm32f7xx_hal.o
+    0x08005e3c   0x08005e3c   0x00000154   Code   RO         6696    i.HAL_GPIO_DeInit   stm32f7xx_hal_gpio.o
     0x08005f90   0x08005f90   0x00000024   Code   RO          822    i.HAL_GPIO_EXTI_Callback  main.o
-    0x08005fb4   0x08005fb4   0x00000018   Code   RO         6699    i.HAL_GPIO_EXTI_IRQHandler  stm32f7xx_hal_gpio.o
-    0x08005fcc   0x08005fcc   0x000001d8   Code   RO         6700    i.HAL_GPIO_Init     stm32f7xx_hal_gpio.o
-    0x080061a4   0x080061a4   0x0000000a   Code   RO         6702    i.HAL_GPIO_ReadPin  stm32f7xx_hal_gpio.o
-    0x080061ae   0x080061ae   0x0000000a   Code   RO         6704    i.HAL_GPIO_WritePin  stm32f7xx_hal_gpio.o
-    0x080061b8   0x080061b8   0x0000000c   Code   RO         3714    i.HAL_GetTick       stm32f7xx_hal.o
-    0x080061c4   0x080061c4   0x00000034   Code   RO         7084    i.HAL_I2C_DeInit    stm32f7xx_hal_i2c.o
-    0x080061f8   0x080061f8   0x00000006   Code   RO         7092    i.HAL_I2C_GetState  stm32f7xx_hal_i2c.o
+    0x08005fb4   0x08005fb4   0x00000018   Code   RO         6698    i.HAL_GPIO_EXTI_IRQHandler  stm32f7xx_hal_gpio.o
+    0x08005fcc   0x08005fcc   0x000001d8   Code   RO         6699    i.HAL_GPIO_Init     stm32f7xx_hal_gpio.o
+    0x080061a4   0x080061a4   0x0000000a   Code   RO         6701    i.HAL_GPIO_ReadPin  stm32f7xx_hal_gpio.o
+    0x080061ae   0x080061ae   0x0000000a   Code   RO         6703    i.HAL_GPIO_WritePin  stm32f7xx_hal_gpio.o
+    0x080061b8   0x080061b8   0x0000000c   Code   RO         3713    i.HAL_GetTick       stm32f7xx_hal.o
+    0x080061c4   0x080061c4   0x00000034   Code   RO         7083    i.HAL_I2C_DeInit    stm32f7xx_hal_i2c.o
+    0x080061f8   0x080061f8   0x00000006   Code   RO         7091    i.HAL_I2C_GetState  stm32f7xx_hal_i2c.o
     0x080061fe   0x080061fe   0x00000002   PAD
-    0x08006200   0x08006200   0x000000b8   Code   RO         7093    i.HAL_I2C_Init      stm32f7xx_hal_i2c.o
-    0x080062b8   0x080062b8   0x00000120   Code   RO         7094    i.HAL_I2C_IsDeviceReady  stm32f7xx_hal_i2c.o
-    0x080063d8   0x080063d8   0x0000016c   Code   RO         7109    i.HAL_I2C_Mem_Read  stm32f7xx_hal_i2c.o
-    0x08006544   0x08006544   0x00000168   Code   RO         7112    i.HAL_I2C_Mem_Write  stm32f7xx_hal_i2c.o
-    0x080066ac   0x080066ac   0x00000002   Code   RO         7115    i.HAL_I2C_MspDeInit  stm32f7xx_hal_i2c.o
-    0x080066ae   0x080066ae   0x00000002   Code   RO         7116    i.HAL_I2C_MspInit   stm32f7xx_hal_i2c.o
-    0x080066b0   0x080066b0   0x00000010   Code   RO         3718    i.HAL_IncTick       stm32f7xx_hal.o
-    0x080066c0   0x080066c0   0x00000024   Code   RO         3719    i.HAL_Init          stm32f7xx_hal.o
-    0x080066e4   0x080066e4   0x00000028   Code   RO         3720    i.HAL_InitTick      stm32f7xx_hal.o
-    0x0800670c   0x0800670c   0x00000052   Code   RO         4524    i.HAL_LTDC_ConfigLayer  stm32f7xx_hal_ltdc.o
-    0x0800675e   0x0800675e   0x00000006   Code   RO         4539    i.HAL_LTDC_GetState  stm32f7xx_hal_ltdc.o
-    0x08006764   0x08006764   0x00000100   Code   RO         4541    i.HAL_LTDC_Init     stm32f7xx_hal_ltdc.o
-    0x08006864   0x08006864   0x00000002   Code   RO         4544    i.HAL_LTDC_MspInit  stm32f7xx_hal_ltdc.o
+    0x08006200   0x08006200   0x000000b8   Code   RO         7092    i.HAL_I2C_Init      stm32f7xx_hal_i2c.o
+    0x080062b8   0x080062b8   0x00000120   Code   RO         7093    i.HAL_I2C_IsDeviceReady  stm32f7xx_hal_i2c.o
+    0x080063d8   0x080063d8   0x0000016c   Code   RO         7108    i.HAL_I2C_Mem_Read  stm32f7xx_hal_i2c.o
+    0x08006544   0x08006544   0x00000168   Code   RO         7111    i.HAL_I2C_Mem_Write  stm32f7xx_hal_i2c.o
+    0x080066ac   0x080066ac   0x00000002   Code   RO         7114    i.HAL_I2C_MspDeInit  stm32f7xx_hal_i2c.o
+    0x080066ae   0x080066ae   0x00000002   Code   RO         7115    i.HAL_I2C_MspInit   stm32f7xx_hal_i2c.o
+    0x080066b0   0x080066b0   0x00000010   Code   RO         3717    i.HAL_IncTick       stm32f7xx_hal.o
+    0x080066c0   0x080066c0   0x00000024   Code   RO         3718    i.HAL_Init          stm32f7xx_hal.o
+    0x080066e4   0x080066e4   0x00000028   Code   RO         3719    i.HAL_InitTick      stm32f7xx_hal.o
+    0x0800670c   0x0800670c   0x00000052   Code   RO         4523    i.HAL_LTDC_ConfigLayer  stm32f7xx_hal_ltdc.o
+    0x0800675e   0x0800675e   0x00000006   Code   RO         4538    i.HAL_LTDC_GetState  stm32f7xx_hal_ltdc.o
+    0x08006764   0x08006764   0x00000100   Code   RO         4540    i.HAL_LTDC_Init     stm32f7xx_hal_ltdc.o
+    0x08006864   0x08006864   0x00000002   Code   RO         4543    i.HAL_LTDC_MspInit  stm32f7xx_hal_ltdc.o
     0x08006866   0x08006866   0x00000002   PAD
-    0x08006868   0x08006868   0x0000005c   Code   RO         6947    i.HAL_MPU_ConfigRegion  stm32f7xx_hal_cortex.o
-    0x080068c4   0x080068c4   0x0000001c   Code   RO         6948    i.HAL_MPU_Disable   stm32f7xx_hal_cortex.o
-    0x080068e0   0x080068e0   0x00000024   Code   RO         6949    i.HAL_MPU_Enable    stm32f7xx_hal_cortex.o
-    0x08006904   0x08006904   0x00000002   Code   RO         3722    i.HAL_MspInit       stm32f7xx_hal.o
-    0x08006906   0x08006906   0x00000016   Code   RO         6951    i.HAL_NVIC_DisableIRQ  stm32f7xx_hal_cortex.o
-    0x0800691c   0x0800691c   0x00000016   Code   RO         6952    i.HAL_NVIC_EnableIRQ  stm32f7xx_hal_cortex.o
+    0x08006868   0x08006868   0x0000005c   Code   RO         6946    i.HAL_MPU_ConfigRegion  stm32f7xx_hal_cortex.o
+    0x080068c4   0x080068c4   0x0000001c   Code   RO         6947    i.HAL_MPU_Disable   stm32f7xx_hal_cortex.o
+    0x080068e0   0x080068e0   0x00000024   Code   RO         6948    i.HAL_MPU_Enable    stm32f7xx_hal_cortex.o
+    0x08006904   0x08006904   0x00000002   Code   RO         3721    i.HAL_MspInit       stm32f7xx_hal.o
+    0x08006906   0x08006906   0x00000016   Code   RO         6950    i.HAL_NVIC_DisableIRQ  stm32f7xx_hal_cortex.o
+    0x0800691c   0x0800691c   0x00000016   Code   RO         6951    i.HAL_NVIC_EnableIRQ  stm32f7xx_hal_cortex.o
     0x08006932   0x08006932   0x00000002   PAD
-    0x08006934   0x08006934   0x00000040   Code   RO         6958    i.HAL_NVIC_SetPriority  stm32f7xx_hal_cortex.o
-    0x08006974   0x08006974   0x00000024   Code   RO         6959    i.HAL_NVIC_SetPriorityGrouping  stm32f7xx_hal_cortex.o
-    0x08006998   0x08006998   0x0000006c   Code   RO         6322    i.HAL_PWREx_EnableOverDrive  stm32f7xx_hal_pwr_ex.o
-    0x08006a04   0x08006a04   0x0000007c   Code   RO         3251    i.HAL_QSPI_Abort    stm32f7xx_hal_qspi.o
-    0x08006a80   0x08006a80   0x000000ac   Code   RO         3254    i.HAL_QSPI_AutoPolling  stm32f7xx_hal_qspi.o
-    0x08006b2c   0x08006b2c   0x00000086   Code   RO         3257    i.HAL_QSPI_Command  stm32f7xx_hal_qspi.o
-    0x08006bb2   0x08006bb2   0x0000003a   Code   RO         3259    i.HAL_QSPI_DeInit   stm32f7xx_hal_qspi.o
-    0x08006bec   0x08006bec   0x000000c0   Code   RO         3266    i.HAL_QSPI_Init     stm32f7xx_hal_qspi.o
-    0x08006cac   0x08006cac   0x00000002   Code   RO         3268    i.HAL_QSPI_MspDeInit  stm32f7xx_hal_qspi.o
-    0x08006cae   0x08006cae   0x00000002   Code   RO         3269    i.HAL_QSPI_MspInit  stm32f7xx_hal_qspi.o
-    0x08006cb0   0x08006cb0   0x000000c2   Code   RO         3270    i.HAL_QSPI_Receive  stm32f7xx_hal_qspi.o
+    0x08006934   0x08006934   0x00000040   Code   RO         6957    i.HAL_NVIC_SetPriority  stm32f7xx_hal_cortex.o
+    0x08006974   0x08006974   0x00000024   Code   RO         6958    i.HAL_NVIC_SetPriorityGrouping  stm32f7xx_hal_cortex.o
+    0x08006998   0x08006998   0x0000006c   Code   RO         6321    i.HAL_PWREx_EnableOverDrive  stm32f7xx_hal_pwr_ex.o
+    0x08006a04   0x08006a04   0x0000007c   Code   RO         3250    i.HAL_QSPI_Abort    stm32f7xx_hal_qspi.o
+    0x08006a80   0x08006a80   0x000000ac   Code   RO         3253    i.HAL_QSPI_AutoPolling  stm32f7xx_hal_qspi.o
+    0x08006b2c   0x08006b2c   0x00000086   Code   RO         3256    i.HAL_QSPI_Command  stm32f7xx_hal_qspi.o
+    0x08006bb2   0x08006bb2   0x0000003a   Code   RO         3258    i.HAL_QSPI_DeInit   stm32f7xx_hal_qspi.o
+    0x08006bec   0x08006bec   0x000000c0   Code   RO         3265    i.HAL_QSPI_Init     stm32f7xx_hal_qspi.o
+    0x08006cac   0x08006cac   0x00000002   Code   RO         3267    i.HAL_QSPI_MspDeInit  stm32f7xx_hal_qspi.o
+    0x08006cae   0x08006cae   0x00000002   Code   RO         3268    i.HAL_QSPI_MspInit  stm32f7xx_hal_qspi.o
+    0x08006cb0   0x08006cb0   0x000000c2   Code   RO         3269    i.HAL_QSPI_Receive  stm32f7xx_hal_qspi.o
     0x08006d72   0x08006d72   0x00000002   PAD
-    0x08006d74   0x08006d74   0x000000ba   Code   RO         3279    i.HAL_QSPI_Transmit  stm32f7xx_hal_qspi.o
+    0x08006d74   0x08006d74   0x000000ba   Code   RO         3278    i.HAL_QSPI_Transmit  stm32f7xx_hal_qspi.o
     0x08006e2e   0x08006e2e   0x00000002   PAD
-    0x08006e30   0x08006e30   0x00000134   Code   RO         3507    i.HAL_RCCEx_GetPeriphCLKConfig  stm32f7xx_hal_rcc_ex.o
-    0x08006f64   0x08006f64   0x00000120   Code   RO         3508    i.HAL_RCCEx_GetPeriphCLKFreq  stm32f7xx_hal_rcc_ex.o
-    0x08007084   0x08007084   0x000004fc   Code   RO         3509    i.HAL_RCCEx_PeriphCLKConfig  stm32f7xx_hal_rcc_ex.o
-    0x08007580   0x08007580   0x00000114   Code   RO         6211    i.HAL_RCC_ClockConfig  stm32f7xx_hal_rcc.o
-    0x08007694   0x08007694   0x00000060   Code   RO         6220    i.HAL_RCC_GetSysClockFreq  stm32f7xx_hal_rcc.o
-    0x080076f4   0x080076f4   0x00000338   Code   RO         6223    i.HAL_RCC_OscConfig  stm32f7xx_hal_rcc.o
-    0x08007a2c   0x08007a2c   0x00000026   Code   RO         4897    i.HAL_SAI_DMAPause  stm32f7xx_hal_sai.o
-    0x08007a52   0x08007a52   0x00000036   Code   RO         4898    i.HAL_SAI_DMAResume  stm32f7xx_hal_sai.o
-    0x08007a88   0x08007a88   0x00000058   Code   RO         4899    i.HAL_SAI_DMAStop   stm32f7xx_hal_sai.o
-    0x08007ae0   0x08007ae0   0x00000042   Code   RO         4900    i.HAL_SAI_DeInit    stm32f7xx_hal_sai.o
+    0x08006e30   0x08006e30   0x00000134   Code   RO         3506    i.HAL_RCCEx_GetPeriphCLKConfig  stm32f7xx_hal_rcc_ex.o
+    0x08006f64   0x08006f64   0x00000120   Code   RO         3507    i.HAL_RCCEx_GetPeriphCLKFreq  stm32f7xx_hal_rcc_ex.o
+    0x08007084   0x08007084   0x000004fc   Code   RO         3508    i.HAL_RCCEx_PeriphCLKConfig  stm32f7xx_hal_rcc_ex.o
+    0x08007580   0x08007580   0x00000114   Code   RO         6210    i.HAL_RCC_ClockConfig  stm32f7xx_hal_rcc.o
+    0x08007694   0x08007694   0x00000060   Code   RO         6219    i.HAL_RCC_GetSysClockFreq  stm32f7xx_hal_rcc.o
+    0x080076f4   0x080076f4   0x00000338   Code   RO         6222    i.HAL_RCC_OscConfig  stm32f7xx_hal_rcc.o
+    0x08007a2c   0x08007a2c   0x00000026   Code   RO         4896    i.HAL_SAI_DMAPause  stm32f7xx_hal_sai.o
+    0x08007a52   0x08007a52   0x00000036   Code   RO         4897    i.HAL_SAI_DMAResume  stm32f7xx_hal_sai.o
+    0x08007a88   0x08007a88   0x00000058   Code   RO         4898    i.HAL_SAI_DMAStop   stm32f7xx_hal_sai.o
+    0x08007ae0   0x08007ae0   0x00000042   Code   RO         4899    i.HAL_SAI_DeInit    stm32f7xx_hal_sai.o
     0x08007b22   0x08007b22   0x00000002   PAD
-    0x08007b24   0x08007b24   0x00000034   Code   RO         2090    i.HAL_SAI_ErrorCallback  stm32746g_discovery_audio.o
-    0x08007b58   0x08007b58   0x00000006   Code   RO         4907    i.HAL_SAI_GetState  stm32f7xx_hal_sai.o
+    0x08007b24   0x08007b24   0x00000034   Code   RO         2089    i.HAL_SAI_ErrorCallback  stm32746g_discovery_audio.o
+    0x08007b58   0x08007b58   0x00000006   Code   RO         4906    i.HAL_SAI_GetState  stm32f7xx_hal_sai.o
     0x08007b5e   0x08007b5e   0x00000002   PAD
-    0x08007b60   0x08007b60   0x000001e8   Code   RO         4909    i.HAL_SAI_Init      stm32f7xx_hal_sai.o
-    0x08007d48   0x08007d48   0x00000002   Code   RO         4911    i.HAL_SAI_MspDeInit  stm32f7xx_hal_sai.o
-    0x08007d4a   0x08007d4a   0x00000002   Code   RO         4912    i.HAL_SAI_MspInit   stm32f7xx_hal_sai.o
-    0x08007d4c   0x08007d4c   0x000000ac   Code   RO         4914    i.HAL_SAI_Receive_DMA  stm32f7xx_hal_sai.o
-    0x08007df8   0x08007df8   0x00000008   Code   RO         2091    i.HAL_SAI_RxCpltCallback  stm32746g_discovery_audio.o
-    0x08007e00   0x08007e00   0x00000008   Code   RO         2092    i.HAL_SAI_RxHalfCpltCallback  stm32746g_discovery_audio.o
-    0x08007e08   0x08007e08   0x000000ac   Code   RO         4919    i.HAL_SAI_Transmit_DMA  stm32f7xx_hal_sai.o
-    0x08007eb4   0x08007eb4   0x00000008   Code   RO         2093    i.HAL_SAI_TxCpltCallback  stm32746g_discovery_audio.o
-    0x08007ebc   0x08007ebc   0x00000008   Code   RO         2094    i.HAL_SAI_TxHalfCpltCallback  stm32746g_discovery_audio.o
+    0x08007b60   0x08007b60   0x000001e8   Code   RO         4908    i.HAL_SAI_Init      stm32f7xx_hal_sai.o
+    0x08007d48   0x08007d48   0x00000002   Code   RO         4910    i.HAL_SAI_MspDeInit  stm32f7xx_hal_sai.o
+    0x08007d4a   0x08007d4a   0x00000002   Code   RO         4911    i.HAL_SAI_MspInit   stm32f7xx_hal_sai.o
+    0x08007d4c   0x08007d4c   0x000000ac   Code   RO         4913    i.HAL_SAI_Receive_DMA  stm32f7xx_hal_sai.o
+    0x08007df8   0x08007df8   0x00000008   Code   RO         2090    i.HAL_SAI_RxCpltCallback  stm32746g_discovery_audio.o
+    0x08007e00   0x08007e00   0x00000008   Code   RO         2091    i.HAL_SAI_RxHalfCpltCallback  stm32746g_discovery_audio.o
+    0x08007e08   0x08007e08   0x000000ac   Code   RO         4918    i.HAL_SAI_Transmit_DMA  stm32f7xx_hal_sai.o
+    0x08007eb4   0x08007eb4   0x00000008   Code   RO         2092    i.HAL_SAI_TxCpltCallback  stm32746g_discovery_audio.o
+    0x08007ebc   0x08007ebc   0x00000008   Code   RO         2093    i.HAL_SAI_TxHalfCpltCallback  stm32746g_discovery_audio.o
     0x08007ec4   0x08007ec4   0x0000000c   Code   RO          618    i.HAL_SDRAM_DMA_XferCpltCallback  sdram_dma.o
     0x08007ed0   0x08007ed0   0x00000028   Code   RO          619    i.HAL_SDRAM_DMA_XferErrorCallback  sdram_dma.o
-    0x08007ef8   0x08007ef8   0x00000042   Code   RO         3549    i.HAL_SDRAM_Init    stm32f7xx_hal_sdram.o
-    0x08007f3a   0x08007f3a   0x00000002   Code   RO         3551    i.HAL_SDRAM_MspInit  stm32f7xx_hal_sdram.o
-    0x08007f3c   0x08007f3c   0x00000022   Code   RO         3552    i.HAL_SDRAM_ProgramRefreshRate  stm32f7xx_hal_sdram.o
-    0x08007f5e   0x08007f5e   0x0000003c   Code   RO         3554    i.HAL_SDRAM_Read_32b  stm32f7xx_hal_sdram.o
+    0x08007ef8   0x08007ef8   0x00000042   Code   RO         3548    i.HAL_SDRAM_Init    stm32f7xx_hal_sdram.o
+    0x08007f3a   0x08007f3a   0x00000002   Code   RO         3550    i.HAL_SDRAM_MspInit  stm32f7xx_hal_sdram.o
+    0x08007f3c   0x08007f3c   0x00000022   Code   RO         3551    i.HAL_SDRAM_ProgramRefreshRate  stm32f7xx_hal_sdram.o
+    0x08007f5e   0x08007f5e   0x0000003c   Code   RO         3553    i.HAL_SDRAM_Read_32b  stm32f7xx_hal_sdram.o
     0x08007f9a   0x08007f9a   0x00000002   PAD
-    0x08007f9c   0x08007f9c   0x00000048   Code   RO         3556    i.HAL_SDRAM_Read_DMA  stm32f7xx_hal_sdram.o
-    0x08007fe4   0x08007fe4   0x00000030   Code   RO         3558    i.HAL_SDRAM_SendCommand  stm32f7xx_hal_sdram.o
-    0x08008014   0x08008014   0x0000003c   Code   RO         3563    i.HAL_SDRAM_Write_32b  stm32f7xx_hal_sdram.o
-    0x08008050   0x08008050   0x00000054   Code   RO         3565    i.HAL_SDRAM_Write_DMA  stm32f7xx_hal_sdram.o
-    0x080080a4   0x080080a4   0x00000078   Code   RO         7513    i.HAL_SD_ConfigWideBusOperation  stm32f7xx_hal_sd.o
-    0x0800811c   0x0800811c   0x000000b6   Code   RO         7515    i.HAL_SD_Erase      stm32f7xx_hal_sd.o
-    0x080081d2   0x080081d2   0x000001fa   Code   RO         7518    i.HAL_SD_GetCardCSD  stm32f7xx_hal_sd.o
-    0x080083cc   0x080083cc   0x0000002c   Code   RO         7520    i.HAL_SD_GetCardState  stm32f7xx_hal_sd.o
-    0x080083f8   0x080083f8   0x00000036   Code   RO         7525    i.HAL_SD_Init       stm32f7xx_hal_sd.o
-    0x0800842e   0x0800842e   0x0000005c   Code   RO         7526    i.HAL_SD_InitCard   stm32f7xx_hal_sd.o
-    0x0800848a   0x0800848a   0x00000002   Code   RO         7528    i.HAL_SD_MspInit    stm32f7xx_hal_sd.o
-    0x0800848c   0x0800848c   0x000001b0   Code   RO         7529    i.HAL_SD_ReadBlocks  stm32f7xx_hal_sd.o
-    0x0800863c   0x0800863c   0x000001a2   Code   RO         7534    i.HAL_SD_WriteBlocks  stm32f7xx_hal_sd.o
-    0x080087de   0x080087de   0x00000026   Code   RO         6963    i.HAL_SYSTICK_Config  stm32f7xx_hal_cortex.o
-    0x08008804   0x08008804   0x00000002   Code   RO         1041    i.HardFault_Handler  stm32f7xx_it.o
-    0x08008806   0x08008806   0x00000022   Code   RO         7135    i.I2C_Flush_TXDR    stm32f7xx_hal_i2c.o
-    0x08008828   0x08008828   0x0000007c   Code   RO         7143    i.I2C_IsAcknowledgeFailed  stm32f7xx_hal_i2c.o
-    0x080088a4   0x080088a4   0x0000006e   Code   RO         7146    i.I2C_RequestMemoryRead  stm32f7xx_hal_i2c.o
-    0x08008912   0x08008912   0x0000006e   Code   RO         7147    i.I2C_RequestMemoryWrite  stm32f7xx_hal_i2c.o
-    0x08008980   0x08008980   0x00000024   Code   RO         7150    i.I2C_TransferConfig  stm32f7xx_hal_i2c.o
-    0x080089a4   0x080089a4   0x00000052   Code   RO         7151    i.I2C_WaitOnFlagUntilTimeout  stm32f7xx_hal_i2c.o
-    0x080089f6   0x080089f6   0x00000050   Code   RO         7153    i.I2C_WaitOnSTOPFlagUntilTimeout  stm32f7xx_hal_i2c.o
-    0x08008a46   0x08008a46   0x00000054   Code   RO         7154    i.I2C_WaitOnTXISFlagUntilTimeout  stm32f7xx_hal_i2c.o
-    0x08008a9a   0x08008a9a   0x00000012   Code   RO         1247    i.I2Cx_Error        stm32746g_discovery.o
-    0x08008aac   0x08008aac   0x00000050   Code   RO         1248    i.I2Cx_Init         stm32746g_discovery.o
-    0x08008afc   0x08008afc   0x00000124   Code   RO         1249    i.I2Cx_MspInit      stm32746g_discovery.o
-    0x08008c20   0x08008c20   0x0000002a   Code   RO         1250    i.I2Cx_ReadMultiple  stm32746g_discovery.o
-    0x08008c4a   0x08008c4a   0x0000002a   Code   RO         1251    i.I2Cx_WriteMultiple  stm32746g_discovery.o
-    0x08008c74   0x08008c74   0x0000001a   Code   RO         7745    i.LCD_LOG_ClearTextZone  lcd_log.o
+    0x08007f9c   0x08007f9c   0x00000048   Code   RO         3555    i.HAL_SDRAM_Read_DMA  stm32f7xx_hal_sdram.o
+    0x08007fe4   0x08007fe4   0x00000030   Code   RO         3557    i.HAL_SDRAM_SendCommand  stm32f7xx_hal_sdram.o
+    0x08008014   0x08008014   0x0000003c   Code   RO         3562    i.HAL_SDRAM_Write_32b  stm32f7xx_hal_sdram.o
+    0x08008050   0x08008050   0x00000054   Code   RO         3564    i.HAL_SDRAM_Write_DMA  stm32f7xx_hal_sdram.o
+    0x080080a4   0x080080a4   0x00000078   Code   RO         7512    i.HAL_SD_ConfigWideBusOperation  stm32f7xx_hal_sd.o
+    0x0800811c   0x0800811c   0x000000b6   Code   RO         7514    i.HAL_SD_Erase      stm32f7xx_hal_sd.o
+    0x080081d2   0x080081d2   0x000001fa   Code   RO         7517    i.HAL_SD_GetCardCSD  stm32f7xx_hal_sd.o
+    0x080083cc   0x080083cc   0x0000002c   Code   RO         7519    i.HAL_SD_GetCardState  stm32f7xx_hal_sd.o
+    0x080083f8   0x080083f8   0x00000036   Code   RO         7524    i.HAL_SD_Init       stm32f7xx_hal_sd.o
+    0x0800842e   0x0800842e   0x0000005c   Code   RO         7525    i.HAL_SD_InitCard   stm32f7xx_hal_sd.o
+    0x0800848a   0x0800848a   0x00000002   Code   RO         7527    i.HAL_SD_MspInit    stm32f7xx_hal_sd.o
+    0x0800848c   0x0800848c   0x000001b0   Code   RO         7528    i.HAL_SD_ReadBlocks  stm32f7xx_hal_sd.o
+    0x0800863c   0x0800863c   0x000001a2   Code   RO         7533    i.HAL_SD_WriteBlocks  stm32f7xx_hal_sd.o
+    0x080087de   0x080087de   0x00000026   Code   RO         6962    i.HAL_SYSTICK_Config  stm32f7xx_hal_cortex.o
+    0x08008804   0x08008804   0x00000002   Code   RO         1040    i.HardFault_Handler  stm32f7xx_it.o
+    0x08008806   0x08008806   0x00000022   Code   RO         7134    i.I2C_Flush_TXDR    stm32f7xx_hal_i2c.o
+    0x08008828   0x08008828   0x0000007c   Code   RO         7142    i.I2C_IsAcknowledgeFailed  stm32f7xx_hal_i2c.o
+    0x080088a4   0x080088a4   0x0000006e   Code   RO         7145    i.I2C_RequestMemoryRead  stm32f7xx_hal_i2c.o
+    0x08008912   0x08008912   0x0000006e   Code   RO         7146    i.I2C_RequestMemoryWrite  stm32f7xx_hal_i2c.o
+    0x08008980   0x08008980   0x00000024   Code   RO         7149    i.I2C_TransferConfig  stm32f7xx_hal_i2c.o
+    0x080089a4   0x080089a4   0x00000052   Code   RO         7150    i.I2C_WaitOnFlagUntilTimeout  stm32f7xx_hal_i2c.o
+    0x080089f6   0x080089f6   0x00000050   Code   RO         7152    i.I2C_WaitOnSTOPFlagUntilTimeout  stm32f7xx_hal_i2c.o
+    0x08008a46   0x08008a46   0x00000054   Code   RO         7153    i.I2C_WaitOnTXISFlagUntilTimeout  stm32f7xx_hal_i2c.o
+    0x08008a9a   0x08008a9a   0x00000012   Code   RO         1246    i.I2Cx_Error        stm32746g_discovery.o
+    0x08008aac   0x08008aac   0x00000050   Code   RO         1247    i.I2Cx_Init         stm32746g_discovery.o
+    0x08008afc   0x08008afc   0x00000124   Code   RO         1248    i.I2Cx_MspInit      stm32746g_discovery.o
+    0x08008c20   0x08008c20   0x0000002a   Code   RO         1249    i.I2Cx_ReadMultiple  stm32746g_discovery.o
+    0x08008c4a   0x08008c4a   0x0000002a   Code   RO         1250    i.I2Cx_WriteMultiple  stm32746g_discovery.o
+    0x08008c74   0x08008c74   0x0000001a   Code   RO         7744    i.LCD_LOG_ClearTextZone  lcd_log.o
     0x08008c8e   0x08008c8e   0x00000002   PAD
-    0x08008c90   0x08008c90   0x00000028   Code   RO         7746    i.LCD_LOG_DeInit    lcd_log.o
-    0x08008cb8   0x08008cb8   0x00000012   Code   RO         7747    i.LCD_LOG_Init      lcd_log.o
+    0x08008c90   0x08008c90   0x00000028   Code   RO         7745    i.LCD_LOG_DeInit    lcd_log.o
+    0x08008cb8   0x08008cb8   0x00000012   Code   RO         7746    i.LCD_LOG_Init      lcd_log.o
     0x08008cca   0x08008cca   0x00000002   PAD
-    0x08008ccc   0x08008ccc   0x00000080   Code   RO         7748    i.LCD_LOG_ScrollBack  lcd_log.o
-    0x08008d4c   0x08008d4c   0x00000060   Code   RO         7749    i.LCD_LOG_ScrollForward  lcd_log.o
-    0x08008dac   0x08008dac   0x0000006c   Code   RO         7751    i.LCD_LOG_SetHeader  lcd_log.o
-    0x08008e18   0x08008e18   0x00000084   Code   RO         7752    i.LCD_LOG_UpdateDisplay  lcd_log.o
+    0x08008ccc   0x08008ccc   0x00000080   Code   RO         7747    i.LCD_LOG_ScrollBack  lcd_log.o
+    0x08008d4c   0x08008d4c   0x00000060   Code   RO         7748    i.LCD_LOG_ScrollForward  lcd_log.o
+    0x08008dac   0x08008dac   0x0000006c   Code   RO         7750    i.LCD_LOG_SetHeader  lcd_log.o
+    0x08008e18   0x08008e18   0x00000084   Code   RO         7751    i.LCD_LOG_UpdateDisplay  lcd_log.o
     0x08008e9c   0x08008e9c   0x00000110   Code   RO          548    i.LCD_SetHint       lcd.o
     0x08008fac   0x08008fac   0x000002c8   Code   RO          549    i.LCD_Show_Feature  lcd.o
     0x08009274   0x08009274   0x00000034   Code   RO          550    i.LCD_demo          lcd.o
-    0x080092a8   0x080092a8   0x00000068   Code   RO         1600    i.LL_ConvertLineToARGB8888  stm32746g_discovery_lcd.o
-    0x08009310   0x08009310   0x00000080   Code   RO         1601    i.LL_FillBuffer     stm32746g_discovery_lcd.o
-    0x08009390   0x08009390   0x000001d0   Code   RO         4560    i.LTDC_SetConfig    stm32f7xx_hal_ltdc.o
-    0x08009560   0x08009560   0x000000b4   Code   RO         1160    i.Log_demo          log.o
-    0x08009614   0x08009614   0x00000002   Code   RO         1042    i.MemManage_Handler  stm32f7xx_it.o
-    0x08009616   0x08009616   0x00000002   Code   RO         1043    i.NMI_Handler       stm32f7xx_it.o
-    0x08009618   0x08009618   0x00000022   Code   RO         6965    i.NVIC_SetPriority  stm32f7xx_hal_cortex.o
-    0x0800963a   0x0800963a   0x00000002   Code   RO         1044    i.PendSV_Handler    stm32f7xx_it.o
-    0x0800963c   0x0800963c   0x00000044   Code   RO         1450    i.QSPI_AutoPollingMemReady  stm32746g_discovery_qspi.o
-    0x08009680   0x08009680   0x000001a8   Code   RO         3284    i.QSPI_Config       stm32f7xx_hal_qspi.o
-    0x08009828   0x08009828   0x0000008a   Code   RO         1451    i.QSPI_DummyCyclesCfg  stm32746g_discovery_qspi.o
-    0x080098b2   0x080098b2   0x00000052   Code   RO         1452    i.QSPI_ResetMemory  stm32746g_discovery_qspi.o
-    0x08009904   0x08009904   0x0000012c   Code   RO          927    i.QSPI_SetHint      qspi.o
-    0x08009a30   0x08009a30   0x00000048   Code   RO         3291    i.QSPI_WaitFlagStateUntilTimeout  stm32f7xx_hal_qspi.o
-    0x08009a78   0x08009a78   0x00000066   Code   RO         1453    i.QSPI_WriteEnable  stm32746g_discovery_qspi.o
+    0x080092a8   0x080092a8   0x00000068   Code   RO         1599    i.LL_ConvertLineToARGB8888  stm32746g_discovery_lcd.o
+    0x08009310   0x08009310   0x00000080   Code   RO         1600    i.LL_FillBuffer     stm32746g_discovery_lcd.o
+    0x08009390   0x08009390   0x000001d0   Code   RO         4559    i.LTDC_SetConfig    stm32f7xx_hal_ltdc.o
+    0x08009560   0x08009560   0x000000b4   Code   RO         1159    i.Log_demo          log.o
+    0x08009614   0x08009614   0x00000002   Code   RO         1041    i.MemManage_Handler  stm32f7xx_it.o
+    0x08009616   0x08009616   0x00000002   Code   RO         1042    i.NMI_Handler       stm32f7xx_it.o
+    0x08009618   0x08009618   0x00000022   Code   RO         6964    i.NVIC_SetPriority  stm32f7xx_hal_cortex.o
+    0x0800963a   0x0800963a   0x00000002   Code   RO         1043    i.PendSV_Handler    stm32f7xx_it.o
+    0x0800963c   0x0800963c   0x00000044   Code   RO         1449    i.QSPI_AutoPollingMemReady  stm32746g_discovery_qspi.o
+    0x08009680   0x08009680   0x000001a8   Code   RO         3283    i.QSPI_Config       stm32f7xx_hal_qspi.o
+    0x08009828   0x08009828   0x0000008a   Code   RO         1450    i.QSPI_DummyCyclesCfg  stm32746g_discovery_qspi.o
+    0x080098b2   0x080098b2   0x00000052   Code   RO         1451    i.QSPI_ResetMemory  stm32746g_discovery_qspi.o
+    0x08009904   0x08009904   0x0000012c   Code   RO          926    i.QSPI_SetHint      qspi.o
+    0x08009a30   0x08009a30   0x00000048   Code   RO         3290    i.QSPI_WaitFlagStateUntilTimeout  stm32f7xx_hal_qspi.o
+    0x08009a78   0x08009a78   0x00000066   Code   RO         1452    i.QSPI_WriteEnable  stm32746g_discovery_qspi.o
     0x08009ade   0x08009ade   0x00000002   PAD
-    0x08009ae0   0x08009ae0   0x0000037c   Code   RO          928    i.QSPI_demo         qspi.o
-    0x08009e5c   0x08009e5c   0x00000044   Code   RO         4924    i.SAI_DMAError      stm32f7xx_hal_sai.o
-    0x08009ea0   0x08009ea0   0x0000003a   Code   RO         4925    i.SAI_DMARxCplt     stm32f7xx_hal_sai.o
-    0x08009eda   0x08009eda   0x0000000a   Code   RO         4926    i.SAI_DMARxHalfCplt  stm32f7xx_hal_sai.o
-    0x08009ee4   0x08009ee4   0x0000003c   Code   RO         4927    i.SAI_DMATxCplt     stm32f7xx_hal_sai.o
-    0x08009f20   0x08009f20   0x0000000a   Code   RO         4928    i.SAI_DMATxHalfCplt  stm32f7xx_hal_sai.o
+    0x08009ae0   0x08009ae0   0x0000037c   Code   RO          927    i.QSPI_demo         qspi.o
+    0x08009e5c   0x08009e5c   0x00000044   Code   RO         4923    i.SAI_DMAError      stm32f7xx_hal_sai.o
+    0x08009ea0   0x08009ea0   0x0000003a   Code   RO         4924    i.SAI_DMARxCplt     stm32f7xx_hal_sai.o
+    0x08009eda   0x08009eda   0x0000000a   Code   RO         4925    i.SAI_DMARxHalfCplt  stm32f7xx_hal_sai.o
+    0x08009ee4   0x08009ee4   0x0000003c   Code   RO         4926    i.SAI_DMATxCplt     stm32f7xx_hal_sai.o
+    0x08009f20   0x08009f20   0x0000000a   Code   RO         4927    i.SAI_DMATxHalfCplt  stm32f7xx_hal_sai.o
     0x08009f2a   0x08009f2a   0x00000002   PAD
-    0x08009f2c   0x08009f2c   0x00000040   Code   RO         4929    i.SAI_Disable       stm32f7xx_hal_sai.o
-    0x08009f6c   0x08009f6c   0x00000032   Code   RO         4933    i.SAI_InterruptFlag  stm32f7xx_hal_sai.o
+    0x08009f2c   0x08009f2c   0x00000040   Code   RO         4928    i.SAI_Disable       stm32f7xx_hal_sai.o
+    0x08009f6c   0x08009f6c   0x00000032   Code   RO         4932    i.SAI_InterruptFlag  stm32f7xx_hal_sai.o
     0x08009f9e   0x08009f9e   0x00000002   PAD
-    0x08009fa0   0x08009fa0   0x0000001c   Code   RO         2095    i.SAIx_In_DeInit    stm32746g_discovery_audio.o
-    0x08009fbc   0x08009fbc   0x000000d0   Code   RO         2096    i.SAIx_In_Init      stm32746g_discovery_audio.o
-    0x0800a08c   0x0800a08c   0x0000001c   Code   RO         2097    i.SAIx_Out_DeInit   stm32746g_discovery_audio.o
-    0x0800a0a8   0x0800a0a8   0x00000068   Code   RO         2098    i.SAIx_Out_Init     stm32746g_discovery_audio.o
-    0x0800a110   0x0800a110   0x00000032   Code   RO         2714    i.SDMMC_CmdAppCommand  stm32f7xx_ll_sdmmc.o
+    0x08009fa0   0x08009fa0   0x0000001c   Code   RO         2094    i.SAIx_In_DeInit    stm32746g_discovery_audio.o
+    0x08009fbc   0x08009fbc   0x000000d0   Code   RO         2095    i.SAIx_In_Init      stm32746g_discovery_audio.o
+    0x0800a08c   0x0800a08c   0x0000001c   Code   RO         2096    i.SAIx_Out_DeInit   stm32746g_discovery_audio.o
+    0x0800a0a8   0x0800a0a8   0x00000068   Code   RO         2097    i.SAIx_Out_Init     stm32746g_discovery_audio.o
+    0x0800a110   0x0800a110   0x00000032   Code   RO         2713    i.SDMMC_CmdAppCommand  stm32f7xx_ll_sdmmc.o
     0x0800a142   0x0800a142   0x00000002   PAD
-    0x0800a144   0x0800a144   0x00000034   Code   RO         2715    i.SDMMC_CmdAppOperCommand  stm32f7xx_ll_sdmmc.o
-    0x0800a178   0x0800a178   0x00000032   Code   RO         2716    i.SDMMC_CmdBlockLength  stm32f7xx_ll_sdmmc.o
-    0x0800a1aa   0x0800a1aa   0x00000032   Code   RO         2717    i.SDMMC_CmdBusWidth  stm32f7xx_ll_sdmmc.o
-    0x0800a1dc   0x0800a1dc   0x00000030   Code   RO         2718    i.SDMMC_CmdErase    stm32f7xx_ll_sdmmc.o
-    0x0800a20c   0x0800a20c   0x00000050   Code   RO         2721    i.SDMMC_CmdGoIdleState  stm32f7xx_ll_sdmmc.o
-    0x0800a25c   0x0800a25c   0x00000064   Code   RO         2723    i.SDMMC_CmdOperCond  stm32f7xx_ll_sdmmc.o
-    0x0800a2c0   0x0800a2c0   0x00000032   Code   RO         2724    i.SDMMC_CmdReadMultiBlock  stm32f7xx_ll_sdmmc.o
-    0x0800a2f2   0x0800a2f2   0x00000032   Code   RO         2725    i.SDMMC_CmdReadSingleBlock  stm32f7xx_ll_sdmmc.o
-    0x0800a324   0x0800a324   0x00000032   Code   RO         2726    i.SDMMC_CmdSDEraseEndAdd  stm32f7xx_ll_sdmmc.o
-    0x0800a356   0x0800a356   0x00000032   Code   RO         2727    i.SDMMC_CmdSDEraseStartAdd  stm32f7xx_ll_sdmmc.o
-    0x0800a388   0x0800a388   0x00000030   Code   RO         2728    i.SDMMC_CmdSelDesel  stm32f7xx_ll_sdmmc.o
-    0x0800a3b8   0x0800a3b8   0x0000002a   Code   RO         2729    i.SDMMC_CmdSendCID  stm32f7xx_ll_sdmmc.o
-    0x0800a3e2   0x0800a3e2   0x0000002e   Code   RO         2730    i.SDMMC_CmdSendCSD  stm32f7xx_ll_sdmmc.o
-    0x0800a410   0x0800a410   0x00000030   Code   RO         2731    i.SDMMC_CmdSendSCR  stm32f7xx_ll_sdmmc.o
-    0x0800a440   0x0800a440   0x00000032   Code   RO         2732    i.SDMMC_CmdSendStatus  stm32f7xx_ll_sdmmc.o
-    0x0800a472   0x0800a472   0x00000030   Code   RO         2733    i.SDMMC_CmdSetRelAdd  stm32f7xx_ll_sdmmc.o
+    0x0800a144   0x0800a144   0x00000034   Code   RO         2714    i.SDMMC_CmdAppOperCommand  stm32f7xx_ll_sdmmc.o
+    0x0800a178   0x0800a178   0x00000032   Code   RO         2715    i.SDMMC_CmdBlockLength  stm32f7xx_ll_sdmmc.o
+    0x0800a1aa   0x0800a1aa   0x00000032   Code   RO         2716    i.SDMMC_CmdBusWidth  stm32f7xx_ll_sdmmc.o
+    0x0800a1dc   0x0800a1dc   0x00000030   Code   RO         2717    i.SDMMC_CmdErase    stm32f7xx_ll_sdmmc.o
+    0x0800a20c   0x0800a20c   0x00000050   Code   RO         2720    i.SDMMC_CmdGoIdleState  stm32f7xx_ll_sdmmc.o
+    0x0800a25c   0x0800a25c   0x00000064   Code   RO         2722    i.SDMMC_CmdOperCond  stm32f7xx_ll_sdmmc.o
+    0x0800a2c0   0x0800a2c0   0x00000032   Code   RO         2723    i.SDMMC_CmdReadMultiBlock  stm32f7xx_ll_sdmmc.o
+    0x0800a2f2   0x0800a2f2   0x00000032   Code   RO         2724    i.SDMMC_CmdReadSingleBlock  stm32f7xx_ll_sdmmc.o
+    0x0800a324   0x0800a324   0x00000032   Code   RO         2725    i.SDMMC_CmdSDEraseEndAdd  stm32f7xx_ll_sdmmc.o
+    0x0800a356   0x0800a356   0x00000032   Code   RO         2726    i.SDMMC_CmdSDEraseStartAdd  stm32f7xx_ll_sdmmc.o
+    0x0800a388   0x0800a388   0x00000030   Code   RO         2727    i.SDMMC_CmdSelDesel  stm32f7xx_ll_sdmmc.o
+    0x0800a3b8   0x0800a3b8   0x0000002a   Code   RO         2728    i.SDMMC_CmdSendCID  stm32f7xx_ll_sdmmc.o
+    0x0800a3e2   0x0800a3e2   0x0000002e   Code   RO         2729    i.SDMMC_CmdSendCSD  stm32f7xx_ll_sdmmc.o
+    0x0800a410   0x0800a410   0x00000030   Code   RO         2730    i.SDMMC_CmdSendSCR  stm32f7xx_ll_sdmmc.o
+    0x0800a440   0x0800a440   0x00000032   Code   RO         2731    i.SDMMC_CmdSendStatus  stm32f7xx_ll_sdmmc.o
+    0x0800a472   0x0800a472   0x00000030   Code   RO         2732    i.SDMMC_CmdSetRelAdd  stm32f7xx_ll_sdmmc.o
     0x0800a4a2   0x0800a4a2   0x00000002   PAD
-    0x0800a4a4   0x0800a4a4   0x00000034   Code   RO         2735    i.SDMMC_CmdStopTransfer  stm32f7xx_ll_sdmmc.o
-    0x0800a4d8   0x0800a4d8   0x00000032   Code   RO         2737    i.SDMMC_CmdWriteMultiBlock  stm32f7xx_ll_sdmmc.o
-    0x0800a50a   0x0800a50a   0x00000032   Code   RO         2738    i.SDMMC_CmdWriteSingleBlock  stm32f7xx_ll_sdmmc.o
-    0x0800a53c   0x0800a53c   0x00000026   Code   RO         2739    i.SDMMC_ConfigData  stm32f7xx_ll_sdmmc.o
+    0x0800a4a4   0x0800a4a4   0x00000034   Code   RO         2734    i.SDMMC_CmdStopTransfer  stm32f7xx_ll_sdmmc.o
+    0x0800a4d8   0x0800a4d8   0x00000032   Code   RO         2736    i.SDMMC_CmdWriteMultiBlock  stm32f7xx_ll_sdmmc.o
+    0x0800a50a   0x0800a50a   0x00000032   Code   RO         2737    i.SDMMC_CmdWriteSingleBlock  stm32f7xx_ll_sdmmc.o
+    0x0800a53c   0x0800a53c   0x00000026   Code   RO         2738    i.SDMMC_ConfigData  stm32f7xx_ll_sdmmc.o
     0x0800a562   0x0800a562   0x00000002   PAD
-    0x0800a564   0x0800a564   0x0000011c   Code   RO         2740    i.SDMMC_GetCmdResp1  stm32f7xx_ll_sdmmc.o
-    0x0800a680   0x0800a680   0x00000050   Code   RO         2741    i.SDMMC_GetCmdResp2  stm32f7xx_ll_sdmmc.o
-    0x0800a6d0   0x0800a6d0   0x00000040   Code   RO         2742    i.SDMMC_GetCmdResp3  stm32f7xx_ll_sdmmc.o
-    0x0800a710   0x0800a710   0x00000084   Code   RO         2743    i.SDMMC_GetCmdResp6  stm32f7xx_ll_sdmmc.o
-    0x0800a794   0x0800a794   0x00000008   Code   RO         2747    i.SDMMC_GetPowerState  stm32f7xx_ll_sdmmc.o
-    0x0800a79c   0x0800a79c   0x0000000c   Code   RO         2748    i.SDMMC_GetResponse  stm32f7xx_ll_sdmmc.o
-    0x0800a7a8   0x0800a7a8   0x00000022   Code   RO         2749    i.SDMMC_Init        stm32f7xx_ll_sdmmc.o
-    0x0800a7ca   0x0800a7ca   0x00000008   Code   RO         2751    i.SDMMC_PowerState_ON  stm32f7xx_ll_sdmmc.o
-    0x0800a7d2   0x0800a7d2   0x00000006   Code   RO         2752    i.SDMMC_ReadFIFO    stm32f7xx_ll_sdmmc.o
-    0x0800a7d8   0x0800a7d8   0x00000022   Code   RO         2753    i.SDMMC_SendCommand  stm32f7xx_ll_sdmmc.o
-    0x0800a7fa   0x0800a7fa   0x0000000a   Code   RO         2755    i.SDMMC_WriteFIFO   stm32f7xx_ll_sdmmc.o
+    0x0800a564   0x0800a564   0x0000011c   Code   RO         2739    i.SDMMC_GetCmdResp1  stm32f7xx_ll_sdmmc.o
+    0x0800a680   0x0800a680   0x00000050   Code   RO         2740    i.SDMMC_GetCmdResp2  stm32f7xx_ll_sdmmc.o
+    0x0800a6d0   0x0800a6d0   0x00000040   Code   RO         2741    i.SDMMC_GetCmdResp3  stm32f7xx_ll_sdmmc.o
+    0x0800a710   0x0800a710   0x00000084   Code   RO         2742    i.SDMMC_GetCmdResp6  stm32f7xx_ll_sdmmc.o
+    0x0800a794   0x0800a794   0x00000008   Code   RO         2746    i.SDMMC_GetPowerState  stm32f7xx_ll_sdmmc.o
+    0x0800a79c   0x0800a79c   0x0000000c   Code   RO         2747    i.SDMMC_GetResponse  stm32f7xx_ll_sdmmc.o
+    0x0800a7a8   0x0800a7a8   0x00000022   Code   RO         2748    i.SDMMC_Init        stm32f7xx_ll_sdmmc.o
+    0x0800a7ca   0x0800a7ca   0x00000008   Code   RO         2750    i.SDMMC_PowerState_ON  stm32f7xx_ll_sdmmc.o
+    0x0800a7d2   0x0800a7d2   0x00000006   Code   RO         2751    i.SDMMC_ReadFIFO    stm32f7xx_ll_sdmmc.o
+    0x0800a7d8   0x0800a7d8   0x00000022   Code   RO         2752    i.SDMMC_SendCommand  stm32f7xx_ll_sdmmc.o
+    0x0800a7fa   0x0800a7fa   0x0000000a   Code   RO         2754    i.SDMMC_WriteFIFO   stm32f7xx_ll_sdmmc.o
     0x0800a804   0x0800a804   0x000000fc   Code   RO          620    i.SDRAM_DMA_SetHint  sdram_dma.o
     0x0800a900   0x0800a900   0x0000026c   Code   RO          621    i.SDRAM_DMA_demo    sdram_dma.o
     0x0800ab6c   0x0800ab6c   0x000000f8   Code   RO          405    i.SDRAM_SetHint     sdram.o
     0x0800ac64   0x0800ac64   0x000001cc   Code   RO          406    i.SDRAM_demo        sdram.o
-    0x0800ae30   0x0800ae30   0x000000d6   Code   RO         7542    i.SD_FindSCR        stm32f7xx_hal_sd.o
-    0x0800af06   0x0800af06   0x000000e6   Code   RO         7543    i.SD_InitCard       stm32f7xx_hal_sd.o
-    0x0800afec   0x0800afec   0x000000a6   Code   RO         7544    i.SD_PowerON        stm32f7xx_hal_sd.o
+    0x0800ae30   0x0800ae30   0x000000d6   Code   RO         7541    i.SD_FindSCR        stm32f7xx_hal_sd.o
+    0x0800af06   0x0800af06   0x000000e6   Code   RO         7542    i.SD_InitCard       stm32f7xx_hal_sd.o
+    0x0800afec   0x0800afec   0x000000a6   Code   RO         7543    i.SD_PowerON        stm32f7xx_hal_sd.o
     0x0800b092   0x0800b092   0x00000002   PAD
-    0x0800b094   0x0800b094   0x00000138   Code   RO         1191    i.SD_SetHint        sd.o
-    0x0800b1cc   0x0800b1cc   0x0000004e   Code   RO         7546    i.SD_WideBus_Disable  stm32f7xx_hal_sd.o
-    0x0800b21a   0x0800b21a   0x0000004e   Code   RO         7547    i.SD_WideBus_Enable  stm32f7xx_hal_sd.o
-    0x0800b268   0x0800b268   0x000002ec   Code   RO         1192    i.SD_demo           sd.o
-    0x0800b554   0x0800b554   0x00000002   Code   RO         1045    i.SVC_Handler       stm32f7xx_it.o
-    0x0800b556   0x0800b556   0x00000004   Code   RO         1046    i.SysTick_Handler   stm32f7xx_it.o
+    0x0800b094   0x0800b094   0x00000138   Code   RO         1190    i.SD_SetHint        sd.o
+    0x0800b1cc   0x0800b1cc   0x0000004e   Code   RO         7545    i.SD_WideBus_Disable  stm32f7xx_hal_sd.o
+    0x0800b21a   0x0800b21a   0x0000004e   Code   RO         7546    i.SD_WideBus_Enable  stm32f7xx_hal_sd.o
+    0x0800b268   0x0800b268   0x000002ec   Code   RO         1191    i.SD_demo           sd.o
+    0x0800b554   0x0800b554   0x00000002   Code   RO         1044    i.SVC_Handler       stm32f7xx_it.o
+    0x0800b556   0x0800b556   0x00000004   Code   RO         1045    i.SysTick_Handler   stm32f7xx_it.o
     0x0800b55a   0x0800b55a   0x00000002   PAD
     0x0800b55c   0x0800b55c   0x00000098   Code   RO          823    i.SystemClock_Config  main.o
     0x0800b5f4   0x0800b5f4   0x00000054   Code   RO           14    i.SystemInit        system_stm32f7xx.o
-    0x0800b648   0x0800b648   0x00000004   Code   RO         1252    i.TS_IO_Delay       stm32746g_discovery.o
-    0x0800b64c   0x0800b64c   0x0000000c   Code   RO         1253    i.TS_IO_Init        stm32746g_discovery.o
-    0x0800b658   0x0800b658   0x00000028   Code   RO         1254    i.TS_IO_Read        stm32746g_discovery.o
-    0x0800b680   0x0800b680   0x00000020   Code   RO         1255    i.TS_IO_Write       stm32746g_discovery.o
+    0x0800b648   0x0800b648   0x00000004   Code   RO         1251    i.TS_IO_Delay       stm32746g_discovery.o
+    0x0800b64c   0x0800b64c   0x0000000c   Code   RO         1252    i.TS_IO_Init        stm32746g_discovery.o
+    0x0800b658   0x0800b658   0x00000028   Code   RO         1253    i.TS_IO_Read        stm32746g_discovery.o
+    0x0800b680   0x0800b680   0x00000020   Code   RO         1254    i.TS_IO_Write       stm32746g_discovery.o
     0x0800b6a0   0x0800b6a0   0x00000204   Code   RO          732    i.Touchscreen_DrawBackground  touchscreen.o
     0x0800b8a4   0x0800b8a4   0x0000014c   Code   RO          733    i.Touchscreen_SetHint  touchscreen.o
     0x0800b9f0   0x0800b9f0   0x00000424   Code   RO          734    i.Touchscreen_demo  touchscreen.o
-    0x0800be14   0x0800be14   0x00000002   Code   RO         1047    i.UsageFault_Handler  stm32f7xx_it.o
+    0x0800be14   0x0800be14   0x00000002   Code   RO         1046    i.UsageFault_Handler  stm32f7xx_it.o
     0x0800be16   0x0800be16   0x00000002   PAD
-    0x0800be18   0x0800be18   0x00000020   Code   RO         8723    i.__0printf$6       mc_w.l(printf6.o)
-    0x0800be38   0x0800be38   0x00000030   Code   RO         8724    i.__0snprintf$6     mc_w.l(printf6.o)
-    0x0800be68   0x0800be68   0x00000028   Code   RO         8725    i.__0sprintf$6      mc_w.l(printf6.o)
-    0x0800be90   0x0800be90   0x0000000e   Code   RO         8871    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800be9e   0x0800be9e   0x00000002   Code   RO         8872    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800bea0   0x0800bea0   0x0000000e   Code   RO         8873    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800be18   0x0800be18   0x00000020   Code   RO         8722    i.__0printf$6       mc_w.l(printf6.o)
+    0x0800be38   0x0800be38   0x00000030   Code   RO         8723    i.__0snprintf$6     mc_w.l(printf6.o)
+    0x0800be68   0x0800be68   0x00000028   Code   RO         8724    i.__0sprintf$6      mc_w.l(printf6.o)
+    0x0800be90   0x0800be90   0x0000000e   Code   RO         8870    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800be9e   0x0800be9e   0x00000002   Code   RO         8871    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800bea0   0x0800bea0   0x0000000e   Code   RO         8872    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0800beae   0x0800beae   0x00000002   PAD
-    0x0800beb0   0x0800beb0   0x000002f0   Code   RO         8730    i._printf_core      mc_w.l(printf6.o)
-    0x0800c1a0   0x0800c1a0   0x00000024   Code   RO         8731    i._printf_post_padding  mc_w.l(printf6.o)
-    0x0800c1c4   0x0800c1c4   0x0000002e   Code   RO         8732    i._printf_pre_padding  mc_w.l(printf6.o)
-    0x0800c1f2   0x0800c1f2   0x00000016   Code   RO         8733    i._snputc           mc_w.l(printf6.o)
-    0x0800c208   0x0800c208   0x0000000a   Code   RO         8734    i._sputc            mc_w.l(printf6.o)
-    0x0800c212   0x0800c212   0x00000102   Code   RO         7998    i.arm_convolve_HWC_q7_RGB  arm_convolve_hwc_q7_rgb.o
-    0x0800c314   0x0800c314   0x00000114   Code   RO         8070    i.arm_convolve_HWC_q7_fast  arm_convolve_hwc_q7_fast.o
-    0x0800c428   0x0800c428   0x00000212   Code   RO         8334    i.arm_fully_connected_q7_opt  arm_fully_connected_q7_opt.o
-    0x0800c63a   0x0800c63a   0x000000b2   Code   RO         8483    i.arm_maxpool_q7_HWC  arm_pool_q7_hwc.o
-    0x0800c6ec   0x0800c6ec   0x0000001a   Code   RO         7902    i.arm_relu_q7       arm_relu_q7.o
-    0x0800c706   0x0800c706   0x00000074   Code   RO         8536    i.arm_softmax_q7    arm_softmax_q7.o
+    0x0800beb0   0x0800beb0   0x000002f0   Code   RO         8729    i._printf_core      mc_w.l(printf6.o)
+    0x0800c1a0   0x0800c1a0   0x00000024   Code   RO         8730    i._printf_post_padding  mc_w.l(printf6.o)
+    0x0800c1c4   0x0800c1c4   0x0000002e   Code   RO         8731    i._printf_pre_padding  mc_w.l(printf6.o)
+    0x0800c1f2   0x0800c1f2   0x00000016   Code   RO         8732    i._snputc           mc_w.l(printf6.o)
+    0x0800c208   0x0800c208   0x0000000a   Code   RO         8733    i._sputc            mc_w.l(printf6.o)
+    0x0800c212   0x0800c212   0x00000102   Code   RO         7997    i.arm_convolve_HWC_q7_RGB  arm_convolve_hwc_q7_rgb.o
+    0x0800c314   0x0800c314   0x00000114   Code   RO         8069    i.arm_convolve_HWC_q7_fast  arm_convolve_hwc_q7_fast.o
+    0x0800c428   0x0800c428   0x00000212   Code   RO         8333    i.arm_fully_connected_q7_opt  arm_fully_connected_q7_opt.o
+    0x0800c63a   0x0800c63a   0x000000b2   Code   RO         8482    i.arm_maxpool_q7_HWC  arm_pool_q7_hwc.o
+    0x0800c6ec   0x0800c6ec   0x0000001a   Code   RO         7901    i.arm_relu_q7       arm_relu_q7.o
+    0x0800c706   0x0800c706   0x00000074   Code   RO         8535    i.arm_softmax_q7    arm_softmax_q7.o
     0x0800c77a   0x0800c77a   0x00000002   PAD
-    0x0800c77c   0x0800c77c   0x0000010c   Code   RO         7753    i.fputc             lcd_log.o
+    0x0800c77c   0x0800c77c   0x0000010c   Code   RO         7752    i.fputc             lcd_log.o
     0x0800c888   0x0800c888   0x00000018   Code   RO          216    i.ft5336_I2C_InitializeIfRequired  ft5336.o
     0x0800c8a0   0x0800c8a0   0x00000010   Code   RO          217    i.ft5336_Init       ft5336.o
     0x0800c8b0   0x0800c8b0   0x0000003a   Code   RO          218    i.ft5336_ReadID     ft5336.o
@@ -5204,91 +5205,92 @@ Memory Map of the image
     0x0800cc98   0x0800cc98   0x000000ac   Code   RO          178    i.ov9655_ConvertValue  ov9655.o
     0x0800cd44   0x0800cd44   0x000000a0   Code   RO          179    i.ov9655_Init       ov9655.o
     0x0800cde4   0x0800cde4   0x00000014   Code   RO          180    i.ov9655_ReadID     ov9655.o
-    0x0800cdf8   0x0800cdf8   0x000001e0   Code   RO          825    i.run_nn            main.o
-    0x0800cfd8   0x0800cfd8   0x00000004   Code   RO          310    i.wm8994_DeInit     wm8994.o
-    0x0800cfdc   0x0800cfdc   0x00000610   Code   RO          311    i.wm8994_Init       wm8994.o
-    0x0800d5ec   0x0800d5ec   0x0000001a   Code   RO          312    i.wm8994_Pause      wm8994.o
-    0x0800d606   0x0800d606   0x00000006   Code   RO          313    i.wm8994_Play       wm8994.o
-    0x0800d60c   0x0800d60c   0x00000014   Code   RO          314    i.wm8994_ReadID     wm8994.o
-    0x0800d620   0x0800d620   0x0000001c   Code   RO          315    i.wm8994_Reset      wm8994.o
-    0x0800d63c   0x0800d63c   0x00000006   Code   RO          316    i.wm8994_Resume     wm8994.o
-    0x0800d642   0x0800d642   0x00000082   Code   RO          317    i.wm8994_SetFrequency  wm8994.o
-    0x0800d6c4   0x0800d6c4   0x00000058   Code   RO          318    i.wm8994_SetMute    wm8994.o
-    0x0800d71c   0x0800d71c   0x000000bc   Code   RO          319    i.wm8994_SetOutputMode  wm8994.o
-    0x0800d7d8   0x0800d7d8   0x0000011c   Code   RO          320    i.wm8994_SetVolume  wm8994.o
-    0x0800d8f4   0x0800d8f4   0x0000007c   Code   RO          321    i.wm8994_Stop       wm8994.o
-    0x0800d970   0x0800d970   0x00000010   Data   RO           15    .constdata          system_stm32f7xx.o
-    0x0800d980   0x0800d980   0x0000037e   Data   RO          181    .constdata          ov9655.o
-    0x0800dcfe   0x0800dcfe   0x00000002   PAD
-    0x0800dd00   0x0800dd00   0x00000018   Data   RO          551    .constdata          lcd.o
-    0x0800dd18   0x0800dd18   0x000023f0   Data   RO          827    .constdata          main.o
-    0x08010108   0x08010108   0x00000018   Data   RO         1257    .constdata          stm32746g_discovery.o
-    0x08010120   0x08010120   0x00001ab8   Data   RO         1603    .constdata          stm32746g_discovery_lcd.o
-    0x08011bd8   0x08011bd8   0x00000ed8   Data   RO         1604    .constdata          stm32746g_discovery_lcd.o
-    0x08012ab0   0x08012ab0   0x00000be0   Data   RO         1605    .constdata          stm32746g_discovery_lcd.o
-    0x08013690   0x08013690   0x00000474   Data   RO         1606    .constdata          stm32746g_discovery_lcd.o
-    0x08013b04   0x08013b04   0x00000008   Data   RO         3891    .constdata          stm32f7xx_hal_dma.o
-    0x08013b0c   0x08013b0c   0x00000020   Data   RO         8869    Region$$Table       anon$$obj.o
+    0x0800cdf8   0x0800cdf8   0x00000200   Code   RO          825    i.run_nn            main.o
+    0x0800cff8   0x0800cff8   0x00000004   Code   RO          310    i.wm8994_DeInit     wm8994.o
+    0x0800cffc   0x0800cffc   0x00000610   Code   RO          311    i.wm8994_Init       wm8994.o
+    0x0800d60c   0x0800d60c   0x0000001a   Code   RO          312    i.wm8994_Pause      wm8994.o
+    0x0800d626   0x0800d626   0x00000006   Code   RO          313    i.wm8994_Play       wm8994.o
+    0x0800d62c   0x0800d62c   0x00000014   Code   RO          314    i.wm8994_ReadID     wm8994.o
+    0x0800d640   0x0800d640   0x0000001c   Code   RO          315    i.wm8994_Reset      wm8994.o
+    0x0800d65c   0x0800d65c   0x00000006   Code   RO          316    i.wm8994_Resume     wm8994.o
+    0x0800d662   0x0800d662   0x00000082   Code   RO          317    i.wm8994_SetFrequency  wm8994.o
+    0x0800d6e4   0x0800d6e4   0x00000058   Code   RO          318    i.wm8994_SetMute    wm8994.o
+    0x0800d73c   0x0800d73c   0x000000bc   Code   RO          319    i.wm8994_SetOutputMode  wm8994.o
+    0x0800d7f8   0x0800d7f8   0x0000011c   Code   RO          320    i.wm8994_SetVolume  wm8994.o
+    0x0800d914   0x0800d914   0x0000007c   Code   RO          321    i.wm8994_Stop       wm8994.o
+    0x0800d990   0x0800d990   0x00000010   Data   RO           15    .constdata          system_stm32f7xx.o
+    0x0800d9a0   0x0800d9a0   0x0000037e   Data   RO          181    .constdata          ov9655.o
+    0x0800dd1e   0x0800dd1e   0x00000002   PAD
+    0x0800dd20   0x0800dd20   0x00000018   Data   RO          551    .constdata          lcd.o
+    0x0800dd38   0x0800dd38   0x000023f0   Data   RO          827    .constdata          main.o
+    0x08010128   0x08010128   0x00000018   Data   RO         1256    .constdata          stm32746g_discovery.o
+    0x08010140   0x08010140   0x00001ab8   Data   RO         1602    .constdata          stm32746g_discovery_lcd.o
+    0x08011bf8   0x08011bf8   0x00000ed8   Data   RO         1603    .constdata          stm32746g_discovery_lcd.o
+    0x08012ad0   0x08012ad0   0x00000be0   Data   RO         1604    .constdata          stm32746g_discovery_lcd.o
+    0x080136b0   0x080136b0   0x00000474   Data   RO         1605    .constdata          stm32746g_discovery_lcd.o
+    0x08013b24   0x08013b24   0x00000008   Data   RO         3890    .constdata          stm32f7xx_hal_dma.o
+    0x08013b2c   0x08013b2c   0x00000050   Data   RO          828    .conststring        main.o
+    0x08013b7c   0x08013b7c   0x00000020   Data   RO         8868    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08013b2c, Size: 0x0003bdf0, Max: 0x00050000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08013b9c, Size: 0x0003be18, Max: 0x00050000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08013b2c   0x00000004   Data   RW           17    .data               system_stm32f7xx.o
-    0x20000004   0x08013b30   0x0000000c   Data   RW          182    .data               ov9655.o
-    0x20000010   0x08013b3c   0x00000028   Data   RW          229    .data               ft5336.o
-    0x20000038   0x08013b64   0x00000005   Data   RW          230    .data               ft5336.o
-    0x2000003d   0x08013b69   0x00000003   PAD
-    0x20000040   0x08013b6c   0x00000030   Data   RW          322    .data               wm8994.o
-    0x20000070   0x08013b9c   0x0000000c   Data   RW          323    .data               wm8994.o
-    0x2000007c   0x08013ba8   0x0000020a   Data   RW          509    .data               eeprom.o
-    0x20000286   0x08013db2   0x00000001   Data   RW          552    .data               lcd.o
-    0x20000287   0x08013db3   0x00000001   PAD
-    0x20000288   0x08013db4   0x00000004   Data   RW          623    .data               sdram_dma.o
-    0x2000028c   0x08013db8   0x00000038   Data   RW          673    .data               audio_play.o
-    0x200002c4   0x08013df0   0x00000004   Data   RW          774    .data               audio_rec.o
-    0x200002c8   0x08013df4   0x0000845c   Data   RW          829    .data               main.o
-    0x20008724   0x0801c250   0x00000001   Data   RW          830    .data               main.o
-    0x20008725   0x0801c251   0x00000003   PAD
-    0x20008728   0x0801c254   0x00000034   Data   RW          969    .data               camera.o
-    0x2000875c   0x0801c288   0x00000018   Data   RW         1258    .data               stm32746g_discovery.o
-    0x20008774   0x0801c2a0   0x0000000c   Data   RW         1608    .data               stm32746g_discovery_lcd.o
-    0x20008780   0x0801c2ac   0x00000008   Data   RW         1609    .data               stm32746g_discovery_lcd.o
-    0x20008788   0x0801c2b4   0x00000008   Data   RW         1610    .data               stm32746g_discovery_lcd.o
-    0x20008790   0x0801c2bc   0x00000008   Data   RW         1611    .data               stm32746g_discovery_lcd.o
-    0x20008798   0x0801c2c4   0x0000000c   Data   RW         1935    .data               stm32746g_discovery_ts.o
-    0x200087a4   0x0801c2d0   0x00000006   Data   RW         2002    .data               stm32746g_discovery_eeprom.o
-    0x200087aa   0x0801c2d6   0x00000002   PAD
-    0x200087ac   0x0801c2d8   0x00000008   Data   RW         2101    .data               stm32746g_discovery_audio.o
-    0x200087b4   0x0801c2e0   0x0000000c   Data   RW         2350    .data               stm32746g_discovery_camera.o
-    0x200087c0   0x0801c2ec   0x00000002   Data   RW         2496    .data               stm32746g_discovery_sdram.o
-    0x200087c2   0x0801c2ee   0x00000002   PAD
-    0x200087c4   0x0801c2f0   0x00000004   Data   RW         3725    .data               stm32f7xx_hal.o
-    0x200087c8   0x0801c2f4   0x00000014   Data   RW         7755    .data               lcd_log.o
-    0x200087dc   0x0801c308   0x00000004   Data   RW         8843    .data               mc_w.l(stdout.o)
-    0x200087e0        -       0x00000800   Zero   RW          407    .bss                sdram.o
-    0x20008fe0        -       0x0000041e   Zero   RW          508    .bss                eeprom.o
-    0x200093fe   0x0801c30c   0x00000002   PAD
-    0x20009400        -       0x00000800   Zero   RW          622    .bss                sdram_dma.o
-    0x20009c00        -       0x00000808   Zero   RW          672    .bss                audio_play.o
-    0x2000a408        -       0x0000002c   Zero   RW          735    .bss                touchscreen.o
-    0x2000a434        -       0x0001fffc   Zero   RW          773    .bss                audio_rec.o
-    0x2002a430        -       0x0000ac8a   Zero   RW          826    .bss                main.o
-    0x200350ba   0x0801c30c   0x00000002   PAD
-    0x200350bc        -       0x00000414   Zero   RW          929    .bss                qspi.o
-    0x200354d0        -       0x00000c40   Zero   RW          968    .bss                camera.o
-    0x20036110        -       0x00001400   Zero   RW         1193    .bss                sd.o
-    0x20037510        -       0x00000098   Zero   RW         1256    .bss                stm32746g_discovery.o
-    0x200375a8        -       0x0000004c   Zero   RW         1454    .bss                stm32746g_discovery_qspi.o
-    0x200375f4        -       0x00000184   Zero   RW         1602    .bss                stm32746g_discovery_lcd.o
-    0x20037778        -       0x00000028   Zero   RW         1934    .bss                stm32746g_discovery_ts.o
-    0x200377a0        -       0x00000228   Zero   RW         2099    .bss                stm32746g_discovery_audio.o
-    0x200379c8        -       0x000000b0   Zero   RW         2349    .bss                stm32746g_discovery_camera.o
-    0x20037a78        -       0x00000120   Zero   RW         2495    .bss                stm32746g_discovery_sdram.o
-    0x20037b98        -       0x00000204   Zero   RW         2587    .bss                stm32746g_discovery_sd.o
-    0x20037d9c        -       0x00003c54   Zero   RW         7754    .bss                lcd_log.o
-    0x2003b9f0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f746xx.o
+    0x20000000   0x08013b9c   0x00000004   Data   RW           17    .data               system_stm32f7xx.o
+    0x20000004   0x08013ba0   0x0000000c   Data   RW          182    .data               ov9655.o
+    0x20000010   0x08013bac   0x00000028   Data   RW          229    .data               ft5336.o
+    0x20000038   0x08013bd4   0x00000005   Data   RW          230    .data               ft5336.o
+    0x2000003d   0x08013bd9   0x00000003   PAD
+    0x20000040   0x08013bdc   0x00000030   Data   RW          322    .data               wm8994.o
+    0x20000070   0x08013c0c   0x0000000c   Data   RW          323    .data               wm8994.o
+    0x2000007c   0x08013c18   0x0000020a   Data   RW          509    .data               eeprom.o
+    0x20000286   0x08013e22   0x00000001   Data   RW          552    .data               lcd.o
+    0x20000287   0x08013e23   0x00000001   PAD
+    0x20000288   0x08013e24   0x00000004   Data   RW          623    .data               sdram_dma.o
+    0x2000028c   0x08013e28   0x00000038   Data   RW          673    .data               audio_play.o
+    0x200002c4   0x08013e60   0x00000004   Data   RW          774    .data               audio_rec.o
+    0x200002c8   0x08013e64   0x00008484   Data   RW          829    .data               main.o
+    0x2000874c   0x0801c2e8   0x00000001   Data   RW          830    .data               main.o
+    0x2000874d   0x0801c2e9   0x00000003   PAD
+    0x20008750   0x0801c2ec   0x00000034   Data   RW          968    .data               camera.o
+    0x20008784   0x0801c320   0x00000018   Data   RW         1257    .data               stm32746g_discovery.o
+    0x2000879c   0x0801c338   0x0000000c   Data   RW         1607    .data               stm32746g_discovery_lcd.o
+    0x200087a8   0x0801c344   0x00000008   Data   RW         1608    .data               stm32746g_discovery_lcd.o
+    0x200087b0   0x0801c34c   0x00000008   Data   RW         1609    .data               stm32746g_discovery_lcd.o
+    0x200087b8   0x0801c354   0x00000008   Data   RW         1610    .data               stm32746g_discovery_lcd.o
+    0x200087c0   0x0801c35c   0x0000000c   Data   RW         1934    .data               stm32746g_discovery_ts.o
+    0x200087cc   0x0801c368   0x00000006   Data   RW         2001    .data               stm32746g_discovery_eeprom.o
+    0x200087d2   0x0801c36e   0x00000002   PAD
+    0x200087d4   0x0801c370   0x00000008   Data   RW         2100    .data               stm32746g_discovery_audio.o
+    0x200087dc   0x0801c378   0x0000000c   Data   RW         2349    .data               stm32746g_discovery_camera.o
+    0x200087e8   0x0801c384   0x00000002   Data   RW         2495    .data               stm32746g_discovery_sdram.o
+    0x200087ea   0x0801c386   0x00000002   PAD
+    0x200087ec   0x0801c388   0x00000004   Data   RW         3724    .data               stm32f7xx_hal.o
+    0x200087f0   0x0801c38c   0x00000014   Data   RW         7754    .data               lcd_log.o
+    0x20008804   0x0801c3a0   0x00000004   Data   RW         8842    .data               mc_w.l(stdout.o)
+    0x20008808        -       0x00000800   Zero   RW          407    .bss                sdram.o
+    0x20009008        -       0x0000041e   Zero   RW          508    .bss                eeprom.o
+    0x20009426   0x0801c3a4   0x00000002   PAD
+    0x20009428        -       0x00000800   Zero   RW          622    .bss                sdram_dma.o
+    0x20009c28        -       0x00000808   Zero   RW          672    .bss                audio_play.o
+    0x2000a430        -       0x0000002c   Zero   RW          735    .bss                touchscreen.o
+    0x2000a45c        -       0x0001fffc   Zero   RW          773    .bss                audio_rec.o
+    0x2002a458        -       0x0000ac8a   Zero   RW          826    .bss                main.o
+    0x200350e2   0x0801c3a4   0x00000002   PAD
+    0x200350e4        -       0x00000414   Zero   RW          928    .bss                qspi.o
+    0x200354f8        -       0x00000c40   Zero   RW          967    .bss                camera.o
+    0x20036138        -       0x00001400   Zero   RW         1192    .bss                sd.o
+    0x20037538        -       0x00000098   Zero   RW         1255    .bss                stm32746g_discovery.o
+    0x200375d0        -       0x0000004c   Zero   RW         1453    .bss                stm32746g_discovery_qspi.o
+    0x2003761c        -       0x00000184   Zero   RW         1601    .bss                stm32746g_discovery_lcd.o
+    0x200377a0        -       0x00000028   Zero   RW         1933    .bss                stm32746g_discovery_ts.o
+    0x200377c8        -       0x00000228   Zero   RW         2098    .bss                stm32746g_discovery_audio.o
+    0x200379f0        -       0x000000b0   Zero   RW         2348    .bss                stm32746g_discovery_camera.o
+    0x20037aa0        -       0x00000120   Zero   RW         2494    .bss                stm32746g_discovery_sdram.o
+    0x20037bc0        -       0x00000204   Zero   RW         2586    .bss                stm32746g_discovery_sd.o
+    0x20037dc4        -       0x00003c54   Zero   RW         7753    .bss                lcd_log.o
+    0x2003ba18        -       0x00000400   Zero   RW            1    STACK               startup_stm32f746xx.o
 
 
 ==============================================================================
@@ -5313,7 +5315,7 @@ Image component sizes
       1036        220         24          1          0       2099   lcd.o
        816         48          0         20      15444       7846   lcd_log.o
        180         42          0          0          0        731   log.o
-      1340        226       9200      33885      44170      53542   main.o
+      1372        232       9280      33925      44170      53554   main.o
        526         42        894         12          0       5947   ov9655.o
       1192        576          0          0       1044       2564   qspi.o
       1060        466          0          0       5120       2580   sd.o
@@ -5353,7 +5355,7 @@ Image component sizes
       2466         26          0         60          0      12426   wm8994.o
 
     ----------------------------------------------------------------------
-     54018       6712      25476      34780     210448    1379826   Object Totals
+     54050       6718      25556      34820     210448    1379838   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         72          0          2         11          4          0   (incl. Padding)
 
@@ -5397,15 +5399,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     55208       6752      25476      34784     210448    1340642   Grand Totals
-     55208       6752      25476      34784     210448    1340642   ELF Image Totals
-     55208       6752      25476      34784          0          0   ROM Totals
+     55240       6758      25556      34824     210448    1340654   Grand Totals
+     55240       6758      25556      34824     210448    1340654   ELF Image Totals
+     55240       6758      25556      34824          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                80684 (  78.79kB)
-    Total RW  Size (RW Data + ZI Data)            245232 ( 239.48kB)
-    Total ROM Size (Code + RO Data + RW Data)     115468 ( 112.76kB)
+    Total RO  Size (Code + RO Data)                80796 (  78.90kB)
+    Total RW  Size (RW Data + ZI Data)            245272 ( 239.52kB)
+    Total ROM Size (Code + RO Data + RW Data)     115620 ( 112.91kB)
 
 ==============================================================================
 
