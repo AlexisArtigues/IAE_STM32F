@@ -85,6 +85,8 @@ typedef enum
 #define CAMERA_BRIGHTNESS_MIN     CAMERA_BRIGHTNESS_LEVEL0
 #define CAMERA_BRIGHTNESS_MAX     CAMERA_BRIGHTNESS_LEVEL4
 
+#define CROP_CAMERA_START_X (480/2)-(32/2)
+#define CROP_CAMERA_START_Y (272/2)-(32/2)
 /* Private macro -------------------------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
@@ -452,13 +454,9 @@ static void Camera_SetHint(void)
   BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
   BSP_LCD_SetBackColor(LCD_COLOR_BLUE);
   BSP_LCD_SetFont(&Font24);
-  BSP_LCD_DisplayStringAt(0, 0, (uint8_t *)"CAMERA EXAMPLE", CENTER_MODE);
+  BSP_LCD_DisplayStringAt(0, 0, (uint8_t *)"IAE", CENTER_MODE);
   BSP_LCD_SetFont(&Font12);
-  BSP_LCD_DisplayStringAt(0, 30, (uint8_t *)"     Press 3 fingers for next resolution     ", CENTER_MODE);
-  BSP_LCD_DisplayStringAt(0, 45, (uint8_t *)"Press Top/Bottom screen to change brightness ", CENTER_MODE);
-  BSP_LCD_DisplayStringAt(0, 60, (uint8_t *)"Press Left/Right screen to change contrast   ", CENTER_MODE);
-  BSP_LCD_DisplayStringAt(0, 75, (uint8_t *)"Press 2 fingers to change visual effect      ", CENTER_MODE);
-
+  BSP_LCD_DisplayStringAt(0, 30, (uint8_t *)"     *     ", CENTER_MODE);
   /* Set the LCD Text Color */
   BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
   BSP_LCD_DrawRect(10, 100, BSP_LCD_GetXSize() - 20, BSP_LCD_GetYSize() - 110);
@@ -577,6 +575,15 @@ void BSP_CAMERA_LineEventCallback(void)
 {
   uint32_t LcdResX = BSP_LCD_GetXSize();
   uint32_t LcdResY = BSP_LCD_GetYSize();
+  uint16_t x = 0;
+  uint16_t y = 0;
+  uint32_t* current_pixel_ptr;
+  uint32_t current_pixel_data;
+  uint8_t current_pixel_data_alpha;
+  uint8_t current_pixel_data_red;
+  uint8_t current_pixel_data_green;
+  uint8_t current_pixel_data_blue;
+  uint32_t* crop_display32_ptr;
 #if 0
   uint32_t           bgr, i, sizex;
   uint32_t           *ptr;
@@ -590,7 +597,6 @@ void BSP_CAMERA_LineEventCallback(void)
       offset_lcd =   ((((LcdResY - CameraResY) / 2) * LcdResX)   /* Middle of the screen on Y axis */
                       +   ((LcdResX - CameraResX) / 2))             /* Middle of the screen on X axis */
                      * sizeof(uint32_t);
-
       if (CameraResY == CAMERA_QQVGA_RES_Y)
       { /* Add offset for QQVGA */
         offset_lcd += 40 * LcdResX * sizeof(uint32_t);
@@ -613,23 +619,6 @@ void BSP_CAMERA_LineEventCallback(void)
                                                    (uint32_t *)(LCD_FRAME_BUFFER + offset_lcd),
                                                    LcdResX);
         }
-
-#if 0
-        /* Convert RGB -> BGR */
-        ptr = (uint32_t*)(LCD_FRAME_BUFFER + offset_lcd);
-        if (CameraResX < LcdResX)
-          sizex = CameraResX;
-        else
-          sizex = LcdResX;
-
-        for (i = 0; i < sizex; i++)
-        {
-          bgr = ptr[i] & 0xFF00FF00;  /* Alpha and green */
-          bgr |= (ptr[i] & 0x00FF0000) >> 16 ; /* blue */
-          bgr |= (ptr[i] & 0x000000FF) << 16 ; /* red  */
-          ptr[i] = bgr;
-        }
-#endif
         offset_cam  = offset_cam + (CameraResX * sizeof(uint16_t));
         offset_lcd  = offset_lcd + (LcdResX * sizeof(uint32_t));
       }
@@ -637,6 +626,20 @@ void BSP_CAMERA_LineEventCallback(void)
     }
     else
     {
+      for(y=0;y<32;y++){
+        for(x=0;x<32;x++){
+          current_pixel_ptr = (uint32_t*)(LCD_FRAME_BUFFER + 4*((CROP_CAMERA_START_Y + y)*LcdResX + CROP_CAMERA_START_X + x));
+          current_pixel_data = (uint32_t)(*(current_pixel_ptr));
+          current_pixel_data_alpha = (uint8_t)(current_pixel_data & 0xFF000000) >> 24;
+          current_pixel_data_red   = (uint8_t)(current_pixel_data & 0x00FF0000) >> 16;
+          current_pixel_data_green = (uint8_t)(current_pixel_data & 0x0000FF00) >> 8;
+          current_pixel_data_blue  = (uint8_t)current_pixel_data & 0x000000FF;
+          //crop_display32_ptr = (uint32_t *)(LCD_FRAME_BUFFER + 4*(LcdResX*y + x));
+          BSP_LCD_DrawPixel(x,y,(uint32_t)current_pixel_data);
+          //*crop_display32_ptr = (uint32_t)current_pixel_data;
+        }
+      }
+
       offset_cam = 0;
       offset_lcd = 0;
       display_line_counter = 0;

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32746G_DISCOVERY\STM32746G_DISCOVERY.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32746G_DISCOVERY\STM32746G_DISCOVERY.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Dec 04 12:02:52 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Dec 06 10:15:07 2018
 <BR><P>
 <H3>Maximum Stack Usage =        680 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -698,9 +698,9 @@ Global Symbols
 <P><STRONG><a name="[d9]"></a>BSP_AUDIO_IN_MspInit</STRONG> (Thumb, 232 bytes, Stack size 48 bytes, stm32746g_discovery_audio.o(i.BSP_AUDIO_IN_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = BSP_AUDIO_IN_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_DeInit
 </UL>
@@ -806,9 +806,9 @@ Global Symbols
 <P><STRONG><a name="[d8]"></a>BSP_AUDIO_OUT_MspInit</STRONG> (Thumb, 290 bytes, Stack size 64 bytes, stm32746g_discovery_audio.o(i.BSP_AUDIO_OUT_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = BSP_AUDIO_OUT_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_DeInit
 </UL>
@@ -926,11 +926,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_demo
 </UL>
 
-<P><STRONG><a name="[f9]"></a>BSP_CAMERA_LineEventCallback</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, camera.o(i.BSP_CAMERA_LineEventCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
+<P><STRONG><a name="[f9]"></a>BSP_CAMERA_LineEventCallback</STRONG> (Thumb, 204 bytes, Stack size 32 bytes, camera.o(i.BSP_CAMERA_LineEventCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetYSize
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2_Stream1_IRQHandler
@@ -940,92 +941,92 @@ Global Symbols
 <P><STRONG><a name="[f4]"></a>BSP_CAMERA_MspInit</STRONG> (Thumb, 326 bytes, Stack size 48 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = BSP_CAMERA_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Init
 </UL>
 
-<P><STRONG><a name="[fb]"></a>BSP_CAMERA_PwrDown</STRONG> (Thumb, 64 bytes, Stack size 40 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_PwrDown))
+<P><STRONG><a name="[fc]"></a>BSP_CAMERA_PwrDown</STRONG> (Thumb, 64 bytes, Stack size 40 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_PwrDown))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_CAMERA_PwrDown &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
 </UL>
 
 <P><STRONG><a name="[f3]"></a>BSP_CAMERA_PwrUp</STRONG> (Thumb, 70 bytes, Stack size 40 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_PwrUp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_CAMERA_PwrUp &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Init
 </UL>
 
-<P><STRONG><a name="[fd]"></a>BSP_CAMERA_Stop</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_Stop))
+<P><STRONG><a name="[fe]"></a>BSP_CAMERA_Stop</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32746g_discovery_camera.o(i.BSP_CAMERA_Stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = BSP_CAMERA_Stop &rArr; BSP_CAMERA_PwrDown &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DCMI_Stop
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
+<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DCMI_Stop
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_demo
 </UL>
 
-<P><STRONG><a name="[ff]"></a>BSP_EEPROM_Init</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_Init))
+<P><STRONG><a name="[100]"></a>BSP_EEPROM_Init</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = BSP_EEPROM_Init &rArr; EEPROM_IO_Init &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_Init
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
 </UL>
 
-<P><STRONG><a name="[102]"></a>BSP_EEPROM_ReadBuffer</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_ReadBuffer))
+<P><STRONG><a name="[103]"></a>BSP_EEPROM_ReadBuffer</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_ReadBuffer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = BSP_EEPROM_ReadBuffer &rArr; EEPROM_IO_ReadData &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_ReadData
+<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_ReadData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
 </UL>
 
-<P><STRONG><a name="[104]"></a>BSP_EEPROM_TIMEOUT_UserCallback</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, eeprom.o(i.BSP_EEPROM_TIMEOUT_UserCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
+<P><STRONG><a name="[105]"></a>BSP_EEPROM_TIMEOUT_UserCallback</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, eeprom.o(i.BSP_EEPROM_TIMEOUT_UserCallback))
+<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
 </UL>
 
-<P><STRONG><a name="[105]"></a>BSP_EEPROM_WaitEepromStandbyState</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WaitEepromStandbyState))
+<P><STRONG><a name="[106]"></a>BSP_EEPROM_WaitEepromStandbyState</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WaitEepromStandbyState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = BSP_EEPROM_WaitEepromStandbyState &rArr; EEPROM_IO_IsDeviceReady &rArr; HAL_I2C_IsDeviceReady &rArr; I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
+<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
 </UL>
 
-<P><STRONG><a name="[106]"></a>BSP_EEPROM_WriteBuffer</STRONG> (Thumb, 240 bytes, Stack size 40 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WriteBuffer))
+<P><STRONG><a name="[107]"></a>BSP_EEPROM_WriteBuffer</STRONG> (Thumb, 240 bytes, Stack size 40 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WriteBuffer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = BSP_EEPROM_WriteBuffer &rArr; BSP_EEPROM_WritePage &rArr; EEPROM_IO_WriteData &rArr; I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
+<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
 </UL>
 
-<P><STRONG><a name="[107]"></a>BSP_EEPROM_WritePage</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WritePage))
+<P><STRONG><a name="[108]"></a>BSP_EEPROM_WritePage</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32746g_discovery_eeprom.o(i.BSP_EEPROM_WritePage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = BSP_EEPROM_WritePage &rArr; EEPROM_IO_WriteData &rArr; I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_WriteData
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_TIMEOUT_UserCallback
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_WriteData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WriteBuffer
+<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WriteBuffer
 </UL>
 
 <P><STRONG><a name="[b3]"></a>BSP_LCD_Clear</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_Clear))
@@ -1033,7 +1034,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetYSize
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_DMA_SetHint
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioLoopback_SetHint
@@ -1050,7 +1051,7 @@ Global Symbols
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Audio_SetHint
 </UL>
 
-<P><STRONG><a name="[10a]"></a>BSP_LCD_ClearStringLine</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_ClearStringLine))
+<P><STRONG><a name="[10b]"></a>BSP_LCD_ClearStringLine</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_ClearStringLine))
 <BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = BSP_LCD_ClearStringLine &rArr; BSP_LCD_FillRect &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
@@ -1060,7 +1061,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_ClearTextZone
 </UL>
 
-<P><STRONG><a name="[10b]"></a>BSP_LCD_ClockConfig</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_ClockConfig))
+<P><STRONG><a name="[10c]"></a>BSP_LCD_ClockConfig</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_ClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BSP_LCD_ClockConfig &rArr; HAL_RCCEx_PeriphCLKConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
@@ -1068,18 +1069,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 </UL>
 
-<P><STRONG><a name="[10c]"></a>BSP_LCD_DMA2D_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, camera.o(i.BSP_LCD_DMA2D_IRQHandler))
+<P><STRONG><a name="[10d]"></a>BSP_LCD_DMA2D_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, camera.o(i.BSP_LCD_DMA2D_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = BSP_LCD_DMA2D_IRQHandler &rArr; HAL_DMA2D_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_IRQHandler
 </UL>
 
-<P><STRONG><a name="[10e]"></a>BSP_LCD_DisplayChar</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DisplayChar))
+<P><STRONG><a name="[10f]"></a>BSP_LCD_DisplayChar</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DisplayChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = BSP_LCD_DisplayChar &rArr; DrawChar &rArr; BSP_LCD_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawChar
+<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
 </UL>
@@ -1088,7 +1089,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = BSP_LCD_DisplayStringAt &rArr; BSP_LCD_DisplayChar &rArr; DrawChar &rArr; BSP_LCD_DrawPixel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayChar
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_DMA_SetHint
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioLoopback_demo
@@ -1129,20 +1130,20 @@ Global Symbols
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_UpdateDisplay
 </UL>
 
-<P><STRONG><a name="[110]"></a>BSP_LCD_DrawBitmap</STRONG> (Thumb, 198 bytes, Stack size 40 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawBitmap))
+<P><STRONG><a name="[111]"></a>BSP_LCD_DrawBitmap</STRONG> (Thumb, 198 bytes, Stack size 40 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawBitmap))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = BSP_LCD_DrawBitmap &rArr; LL_ConvertLineToARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Display_DemoDescription
 </UL>
 
-<P><STRONG><a name="[112]"></a>BSP_LCD_DrawCircle</STRONG> (Thumb, 270 bytes, Stack size 52 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawCircle))
+<P><STRONG><a name="[113]"></a>BSP_LCD_DrawCircle</STRONG> (Thumb, 270 bytes, Stack size 52 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawCircle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = BSP_LCD_DrawCircle &rArr; BSP_LCD_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillCircle
 <LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
@@ -1151,7 +1152,7 @@ Global Symbols
 <P><STRONG><a name="[114]"></a>BSP_LCD_DrawEllipse</STRONG> (Thumb, 276 bytes, Stack size 36 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawEllipse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = BSP_LCD_DrawEllipse &rArr; BSP_LCD_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
 </UL>
@@ -1160,7 +1161,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = BSP_LCD_DrawHLine &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillEllipse
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillCircle
@@ -1171,22 +1172,23 @@ Global Symbols
 <P><STRONG><a name="[116]"></a>BSP_LCD_DrawLine</STRONG> (Thumb, 186 bytes, Stack size 44 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawLine))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = BSP_LCD_DrawLine &rArr; BSP_LCD_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPolygon
 <LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FillTriangle
 </UL>
 
-<P><STRONG><a name="[113]"></a>BSP_LCD_DrawPixel</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawPixel))
+<P><STRONG><a name="[fb]"></a>BSP_LCD_DrawPixel</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawPixel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = BSP_LCD_DrawPixel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawLine
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawEllipse
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawChar
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawChar
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_LineEventCallback
 </UL>
 
 <P><STRONG><a name="[117]"></a>BSP_LCD_DrawPolygon</STRONG> (Thumb, 56 bytes, Stack size 12 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_DrawPolygon))
@@ -1221,7 +1223,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = BSP_LCD_DrawVLine &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawRect
 </UL>
@@ -1230,7 +1232,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = BSP_LCD_FillCircle &rArr; BSP_LCD_DrawHLine &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawHLine
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
@@ -1259,7 +1261,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_DMA_SetHint
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioLoopback_SetHint
@@ -1268,6 +1270,7 @@ Global Symbols
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_SetHint
 <LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_SetHint
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_SetHint
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_SetHeader
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_SetHint
@@ -1276,7 +1279,6 @@ Global Symbols
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioRec_SetHint
 <LI><a href="#[1f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_SetHint
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Audio_SetHint
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 </UL>
 
 <P><STRONG><a name="[d2]"></a>BSP_LCD_GetFont</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32746g_discovery_lcd.o(i.BSP_LCD_GetFont))
@@ -1289,7 +1291,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_DMA_SetHint
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioLoopback_SetHint
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawHLine
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
 <LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Show_Feature
 <LI><a href="#[1d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetHint
 <LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_Show_Feature
@@ -1298,8 +1300,11 @@ Global Symbols
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Clear
 <LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_SetHint
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawVLine
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_SetHint
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_SetHeader
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_LineEventCallback
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_SetHint
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_SetHint
@@ -1312,9 +1317,6 @@ Global Symbols
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_DrawBackground
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioPlay_demo
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Audio_SetHint
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawVLine
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
@@ -1351,10 +1353,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_Init
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetFont
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_MspInit
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClockConfig
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClockConfig
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_Init
 <LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_GetState
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1435,6 +1437,7 @@ Global Symbols
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_SetHint
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillRect
 <LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDRAM_SetHint
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_SetHint
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_SetHeader
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_SetHint
@@ -1450,14 +1453,13 @@ Global Symbols
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AudioPlay_demo
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Audio_SetHint
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_DMA_XferErrorCallback
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_UpdateDisplay
 </UL>
 
 <P><STRONG><a name="[124]"></a>BSP_LED_Init</STRONG> (Thumb, 68 bytes, Stack size 40 bytes, stm32746g_discovery.o(i.BSP_LED_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_LED_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1474,9 +1476,9 @@ Global Symbols
 <P><STRONG><a name="[126]"></a>BSP_PB_Init</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, stm32746g_discovery.o(i.BSP_PB_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_PB_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1512,9 +1514,9 @@ Global Symbols
 <P><STRONG><a name="[12d]"></a>BSP_QSPI_MspInit</STRONG> (Thumb, 262 bytes, Stack size 40 bytes, stm32746g_discovery_qspi.o(i.BSP_QSPI_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_QSPI_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Init
 </UL>
@@ -1564,9 +1566,9 @@ Global Symbols
 <P><STRONG><a name="[135]"></a>BSP_SDRAM_MspInit</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, stm32746g_discovery_sdram.o(i.BSP_SDRAM_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = BSP_SDRAM_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_DeInit
 </UL>
@@ -1653,9 +1655,9 @@ Global Symbols
 <P><STRONG><a name="[149]"></a>BSP_SD_MspInit</STRONG> (Thumb, 310 bytes, Stack size 64 bytes, stm32746g_discovery_sd.o(i.BSP_SD_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = BSP_SD_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_DeInit
 </UL>
@@ -1756,7 +1758,7 @@ Global Symbols
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetYSize
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetXSize
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Init
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_ContrastBrightnessConfig
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_ContinuousStart
@@ -1791,7 +1793,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7c]"></a>DCMI_IRQHandler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.DCMI_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = DCMI_IRQHandler &rArr; BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = DCMI_IRQHandler &rArr; BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_LineEventCallback
 </UL>
@@ -1800,7 +1802,7 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>DMA2D_IRQHandler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.DMA2D_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = DMA2D_IRQHandler &rArr; BSP_LCD_DMA2D_IRQHandler &rArr; HAL_DMA2D_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DMA2D_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DMA2D_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
@@ -1812,7 +1814,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
 <P><STRONG><a name="[67]"></a>DMA2_Stream1_IRQHandler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.DMA2_Stream1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = DMA2_Stream1_IRQHandler &rArr; BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = DMA2_Stream1_IRQHandler &rArr; BSP_CAMERA_LineEventCallback &rArr; ConvertCameraLineRgb565ToLcdLineARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_LineEventCallback
 </UL>
@@ -1835,37 +1837,37 @@ Global Symbols
 <P><STRONG><a name="[2b]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f746xx.o(RESET)
 </UL>
-<P><STRONG><a name="[100]"></a>EEPROM_IO_Init</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32746g_discovery.o(i.EEPROM_IO_Init))
+<P><STRONG><a name="[101]"></a>EEPROM_IO_Init</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32746g_discovery.o(i.EEPROM_IO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = EEPROM_IO_Init &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
 </UL>
 
-<P><STRONG><a name="[101]"></a>EEPROM_IO_IsDeviceReady</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32746g_discovery.o(i.EEPROM_IO_IsDeviceReady))
+<P><STRONG><a name="[102]"></a>EEPROM_IO_IsDeviceReady</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32746g_discovery.o(i.EEPROM_IO_IsDeviceReady))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = EEPROM_IO_IsDeviceReady &rArr; HAL_I2C_IsDeviceReady &rArr; I2C_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 </UL>
-<BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
+<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
 </UL>
 
-<P><STRONG><a name="[103]"></a>EEPROM_IO_ReadData</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, stm32746g_discovery.o(i.EEPROM_IO_ReadData))
+<P><STRONG><a name="[104]"></a>EEPROM_IO_ReadData</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, stm32746g_discovery.o(i.EEPROM_IO_ReadData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = EEPROM_IO_ReadData &rArr; I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadMultiple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
+<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
 </UL>
 
-<P><STRONG><a name="[108]"></a>EEPROM_IO_WriteData</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, stm32746g_discovery.o(i.EEPROM_IO_WriteData))
+<P><STRONG><a name="[109]"></a>EEPROM_IO_WriteData</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, stm32746g_discovery.o(i.EEPROM_IO_WriteData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = EEPROM_IO_WriteData &rArr; I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteMultiple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
+<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WritePage
 </UL>
 
 <P><STRONG><a name="[22]"></a>EEPROM_demo</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, eeprom.o(i.EEPROM_demo))
@@ -1970,33 +1972,33 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_ContinuousStart
 </UL>
 
-<P><STRONG><a name="[fe]"></a>HAL_DCMI_Stop</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32f7xx_hal_dcmi.o(i.HAL_DCMI_Stop))
+<P><STRONG><a name="[ff]"></a>HAL_DCMI_Stop</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32f7xx_hal_dcmi.o(i.HAL_DCMI_Stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_DCMI_Stop &rArr; HAL_DMA_Abort
 </UL>
 <BR>[Calls]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_Stop
 </UL>
 
 <P><STRONG><a name="[175]"></a>HAL_DMA2D_CLUTLoadingCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_CLUTLoadingCpltCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
 </UL>
 
 <P><STRONG><a name="[160]"></a>HAL_DMA2D_ConfigLayer</STRONG> (Thumb, 158 bytes, Stack size 16 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_ConfigLayer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_DMA2D_ConfigLayer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
 </UL>
 
-<P><STRONG><a name="[10d]"></a>HAL_DMA2D_IRQHandler</STRONG> (Thumb, 284 bytes, Stack size 32 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_IRQHandler))
+<P><STRONG><a name="[10e]"></a>HAL_DMA2D_IRQHandler</STRONG> (Thumb, 284 bytes, Stack size 32 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_DMA2D_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_LineEventCallback
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_CLUTLoadingCpltCallback
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DMA2D_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DMA2D_IRQHandler
 </UL>
 
 <P><STRONG><a name="[159]"></a>HAL_DMA2D_Init</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_Init))
@@ -2004,14 +2006,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
 <LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CameraFrameBufferRgb565_Init
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
 </UL>
 
 <P><STRONG><a name="[174]"></a>HAL_DMA2D_LineEventCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_LineEventCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_IRQHandler
 </UL>
 
 <P><STRONG><a name="[176]"></a>HAL_DMA2D_MspInit</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, camera.o(i.HAL_DMA2D_MspInit))
@@ -2028,9 +2030,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
 </UL>
 
 <P><STRONG><a name="[161]"></a>HAL_DMA2D_Start</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_Start))
@@ -2038,9 +2040,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FillBuffer
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ConvertLineToARGB8888
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ConvertCameraLineRgb565ToLcdLineARGB8888
 </UL>
 
 <P><STRONG><a name="[15a]"></a>HAL_DMA2D_Start_IT</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, stm32f7xx_hal_dma2d.o(i.HAL_DMA2D_Start_IT))
@@ -2068,7 +2070,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DCMI_Stop
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DCMI_Stop
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SAI_DMAStop
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
 </UL>
@@ -2136,9 +2138,9 @@ Global Symbols
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Log_demo
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Camera_demo
 <LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Touchscreen_demo
+<LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_Initialization_sequence
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrUp
-<LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
 </UL>
 
 <P><STRONG><a name="[ea]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 292 bytes, Stack size 36 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit))
@@ -2168,17 +2170,17 @@ Global Symbols
 <P><STRONG><a name="[db]"></a>HAL_GPIO_Init</STRONG> (Thumb, 418 bytes, Stack size 40 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_MspInit
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_MspInit
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_MspInit
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_Detect_MspInit
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_MspInit
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_MspInit
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrUp
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_OUT_MspInit
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_IN_MspInit
 </UL>
@@ -2188,20 +2190,15 @@ Global Symbols
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_GetState
 </UL>
 
-<P><STRONG><a name="[fc]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin))
+<P><STRONG><a name="[fd]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrUp
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_PwrDown
 </UL>
 
 <P><STRONG><a name="[16e]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_hal.o(i.HAL_GetTick))
 <BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_PollForTransfer
-<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
-<LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
-<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Receive
@@ -2211,6 +2208,15 @@ Global Symbols
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_PollForTransfer
+<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
+<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnSTOPFlagUntilTimeout
+<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
@@ -2219,10 +2225,6 @@ Global Symbols
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
 <LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_IsAcknowledgeFailed
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
-<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnSTOPFlagUntilTimeout
-<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
 
 <P><STRONG><a name="[17d]"></a>HAL_I2C_DeInit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f7xx_hal_i2c.o(i.HAL_I2C_DeInit))
@@ -2251,7 +2253,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
+<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_IsDeviceReady
 </UL>
 
 <P><STRONG><a name="[182]"></a>HAL_I2C_Mem_Read</STRONG> (Thumb, 360 bytes, Stack size 64 bytes, stm32f7xx_hal_i2c.o(i.HAL_I2C_Mem_Read))
@@ -2314,8 +2316,8 @@ Global Symbols
 <P><STRONG><a name="[123]"></a>HAL_LTDC_ConfigLayer</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, stm32f7xx_hal_ltdc.o(i.HAL_LTDC_ConfigLayer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_LTDC_ConfigLayer &rArr; LTDC_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_SetConfig
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_SetConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_LayerDefaultInit
 </UL>
@@ -2359,10 +2361,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[df]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<BR><BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_MspInit
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_MspInit
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_MspInit
@@ -2375,10 +2377,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_MspInit
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_MspInit
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_CAMERA_MspInit
@@ -2430,12 +2432,12 @@ Global Symbols
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_Config
 </UL>
-<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
-<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Read
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Erase_Block
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WriteEnable
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WriteEnable
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_ResetMemory
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Read
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Erase_Block
 </UL>
 
 <P><STRONG><a name="[12c]"></a>HAL_QSPI_DeInit</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, stm32f7xx_hal_qspi.o(i.HAL_QSPI_DeInit))
@@ -2471,8 +2473,8 @@ Global Symbols
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Read
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Read
 </UL>
 
 <P><STRONG><a name="[134]"></a>HAL_QSPI_Transmit</STRONG> (Thumb, 186 bytes, Stack size 40 bytes, stm32f7xx_hal_qspi.o(i.HAL_QSPI_Transmit))
@@ -2482,8 +2484,8 @@ Global Symbols
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
 </UL>
 
 <P><STRONG><a name="[e3]"></a>HAL_RCCEx_GetPeriphCLKConfig</STRONG> (Thumb, 298 bytes, Stack size 12 bytes, stm32f7xx_hal_rcc_ex.o(i.HAL_RCCEx_GetPeriphCLKConfig))
@@ -2503,7 +2505,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClockConfig
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClockConfig
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_OUT_ClockConfig
 </UL>
 
@@ -2584,9 +2586,9 @@ Global Symbols
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAI_Disable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_OUT_SetAudioFrameSlot
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_OUT_SetFrequency
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAIx_Out_Init
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SAIx_In_Init
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_AUDIO_OUT_SetFrequency
 </UL>
 
 <P><STRONG><a name="[19d]"></a>HAL_SAI_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_hal_sai.o(i.HAL_SAI_MspDeInit))
@@ -2648,8 +2650,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9b]"></a>HAL_SDRAM_DMA_XferCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sdram_dma.o(i.HAL_SDRAM_DMA_XferCpltCallback))
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Read_DMA)
-<LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Write_DMA)
+<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Write_DMA)
+<LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Read_DMA)
 </UL>
 <P><STRONG><a name="[9c]"></a>HAL_SDRAM_DMA_XferErrorCallback</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, sdram_dma.o(i.HAL_SDRAM_DMA_XferErrorCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = HAL_SDRAM_DMA_XferErrorCallback &rArr; BSP_LCD_DisplayStringAt &rArr; BSP_LCD_DisplayChar &rArr; DrawChar &rArr; BSP_LCD_DrawPixel
@@ -2657,8 +2659,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayStringAt
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Read_DMA)
-<LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Write_DMA)
+<BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Write_DMA)
+<LI> stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Read_DMA)
 </UL>
 <P><STRONG><a name="[136]"></a>HAL_SDRAM_Init</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = HAL_SDRAM_Init &rArr; FMC_SDRAM_Timing_Init
@@ -2721,9 +2723,9 @@ Global Symbols
 <P><STRONG><a name="[14b]"></a>HAL_SD_ConfigWideBusOperation</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, stm32f7xx_hal_sd.o(i.HAL_SD_ConfigWideBusOperation))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = HAL_SD_ConfigWideBusOperation &rArr; SD_WideBus_Enable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
-<LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Enable
+<BR>[Calls]<UL><LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Enable
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Disable
+<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_Init
 </UL>
@@ -2767,10 +2769,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = HAL_SD_InitCard &rArr; SD_InitCard &rArr; SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6 &rArr; SDMMC_GetResponse
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[1b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_PowerState_ON
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
 <LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[1b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_PowerState_ON
+<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Init
 </UL>
@@ -2825,7 +2827,7 @@ Global Symbols
 <P><STRONG><a name="[1c9]"></a>LCD_LOG_ClearTextZone</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lcd_log.o(i.LCD_LOG_ClearTextZone))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = LCD_LOG_ClearTextZone &rArr; BSP_LCD_ClearStringLine &rArr; BSP_LCD_FillRect &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_ClearStringLine
 <LI><a href="#[1ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LOG_DeInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Log_demo
@@ -2963,9 +2965,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 <LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_SendCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
+<BR>[Called By]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 
 <P><STRONG><a name="[1da]"></a>SDMMC_CmdBusWidth</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_CmdBusWidth))
@@ -3124,9 +3126,9 @@ Global Symbols
 <P><STRONG><a name="[1bc]"></a>SDMMC_ConfigData</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_ConfigData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SDMMC_ConfigData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
+<BR>[Called By]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 
 <P><STRONG><a name="[1e7]"></a>SDMMC_GetPowerState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_GetPowerState))
@@ -3136,22 +3138,22 @@ Global Symbols
 <P><STRONG><a name="[1b1]"></a>SDMMC_GetResponse</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_GetResponse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SDMMC_GetResponse
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
-<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
-<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Erase
-<LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Enable
+<BR>[Called By]<UL><LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Enable
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_WideBus_Disable
 <LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp6
+<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Erase
 </UL>
 
 <P><STRONG><a name="[1b0]"></a>SDMMC_Init</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SDMMC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
-<LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<BR>[Called By]<UL><LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 </UL>
 
 <P><STRONG><a name="[1b8]"></a>SDMMC_PowerState_ON</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_PowerState_ON))
@@ -3159,8 +3161,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1bf]"></a>SDMMC_ReadFIFO</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_ReadFIFO))
-<BR><BR>[Called By]<UL><LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<BR><BR>[Called By]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks
 </UL>
 
 <P><STRONG><a name="[1d6]"></a>SDMMC_SendCommand</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_SendCommand))
@@ -3701,10 +3703,10 @@ Local Symbols
 <P><STRONG><a name="[16a]"></a>EEPROM_Show_Feature</STRONG> (Thumb, 654 bytes, Stack size 40 bytes, eeprom.o(i.EEPROM_Show_Feature))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = EEPROM_Show_Feature &rArr; BSP_EEPROM_WriteBuffer &rArr; BSP_EEPROM_WritePage &rArr; EEPROM_IO_WriteData &rArr; I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WriteBuffer
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
+<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WriteBuffer
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_WaitEepromStandbyState
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_ReadBuffer
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_EEPROM_Init
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetBackColor
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_GetYSize
@@ -3742,8 +3744,8 @@ Local Symbols
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawLine
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawHLine
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawEllipse
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawCircle
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetFont
@@ -3864,7 +3866,7 @@ Local Symbols
 <P><STRONG><a name="[166]"></a>Display_DemoDescription</STRONG> (Thumb, 230 bytes, Stack size 72 bytes, main.o(i.Display_DemoDescription))
 <BR><BR>[Stack]<UL><LI>Max Depth = 188<LI>Call Chain = Display_DemoDescription &rArr; BSP_LCD_DrawBitmap &rArr; LL_ConvertLineToARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
+<BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetFont
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetBackColor
@@ -3920,7 +3922,7 @@ Local Symbols
 <P><STRONG><a name="[93]"></a>Camera_FrameBuffer_Init_TransferError</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, camera.o(i.Camera_FrameBuffer_Init_TransferError))
 <BR>[Address Reference Count : 1]<UL><LI> camera.o(i.CameraFrameBufferRgb565_Init)
 </UL>
-<P><STRONG><a name="[15b]"></a>Camera_SetHint</STRONG> (Thumb, 182 bytes, Stack size 16 bytes, camera.o(i.Camera_SetHint))
+<P><STRONG><a name="[15b]"></a>Camera_SetHint</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, camera.o(i.Camera_SetHint))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = Camera_SetHint &rArr; BSP_LCD_DrawRect &rArr; BSP_LCD_DrawHLine &rArr; LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetTextColor
@@ -3975,22 +3977,22 @@ Local Symbols
 <P><STRONG><a name="[a9]"></a>I2Cx_Init</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, stm32746g_discovery.o(i.I2Cx_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
+<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 <LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_GetState
+<LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Init
 <LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAMERA_IO_Init
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_Init
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_Init
 </UL>
 
 <P><STRONG><a name="[1c8]"></a>I2Cx_MspInit</STRONG> (Thumb, 266 bytes, Stack size 48 bytes, stm32746g_discovery.o(i.I2Cx_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = I2Cx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
@@ -3998,25 +4000,25 @@ Local Symbols
 <P><STRONG><a name="[ab]"></a>I2Cx_ReadMultiple</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, stm32746g_discovery.o(i.I2Cx_ReadMultiple))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2Cx_ReadMultiple &rArr; HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<BR>[Calls]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Read
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Read
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAMERA_IO_Read
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_ReadData
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_ReadData
 </UL>
 
 <P><STRONG><a name="[ad]"></a>I2Cx_WriteMultiple</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, stm32746g_discovery.o(i.I2Cx_WriteMultiple))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = I2Cx_WriteMultiple &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<BR>[Calls]<UL><LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Write
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TS_IO_Write
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAMERA_IO_Write
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_WriteData
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IO_WriteData
 </UL>
 
 <P><STRONG><a name="[12a]"></a>QSPI_AutoPollingMemReady</STRONG> (Thumb, 68 bytes, Stack size 96 bytes, stm32746g_discovery_qspi.o(i.QSPI_AutoPollingMemReady))
@@ -4024,9 +4026,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
 </UL>
-<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
+<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_ResetMemory
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Erase_Block
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_ResetMemory
 </UL>
 
 <P><STRONG><a name="[130]"></a>QSPI_DummyCyclesCfg</STRONG> (Thumb, 138 bytes, Stack size 72 bytes, stm32746g_discovery_qspi.o(i.QSPI_DummyCyclesCfg))
@@ -4055,17 +4057,17 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
 </UL>
-<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Write
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_Erase_Block
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
 </UL>
 
-<P><STRONG><a name="[10f]"></a>DrawChar</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, stm32746g_discovery_lcd.o(i.DrawChar))
+<P><STRONG><a name="[110]"></a>DrawChar</STRONG> (Thumb, 168 bytes, Stack size 48 bytes, stm32746g_discovery_lcd.o(i.DrawChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = DrawChar &rArr; BSP_LCD_DrawPixel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawPixel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayChar
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DisplayChar
 </UL>
 
 <P><STRONG><a name="[11c]"></a>FillTriangle</STRONG> (Thumb, 190 bytes, Stack size 60 bytes, stm32746g_discovery_lcd.o(i.FillTriangle))
@@ -4076,7 +4078,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillPolygon
 </UL>
 
-<P><STRONG><a name="[111]"></a>LL_ConvertLineToARGB8888</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, stm32746g_discovery_lcd.o(i.LL_ConvertLineToARGB8888))
+<P><STRONG><a name="[112]"></a>LL_ConvertLineToARGB8888</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, stm32746g_discovery_lcd.o(i.LL_ConvertLineToARGB8888))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = LL_ConvertLineToARGB8888 &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Start
@@ -4084,10 +4086,10 @@ Local Symbols
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Init
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_ConfigLayer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
+<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawBitmap
 </UL>
 
-<P><STRONG><a name="[109]"></a>LL_FillBuffer</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, stm32746g_discovery_lcd.o(i.LL_FillBuffer))
+<P><STRONG><a name="[10a]"></a>LL_FillBuffer</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, stm32746g_discovery_lcd.o(i.LL_FillBuffer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = LL_FillBuffer &rArr; HAL_DMA2D_Start &rArr; DMA2D_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Start
@@ -4402,14 +4404,14 @@ Local Symbols
 <P><STRONG><a name="[1ba]"></a>SD_InitCard</STRONG> (Thumb, 230 bytes, Stack size 72 bytes, stm32f7xx_hal_sd.o(i.SD_InitCard))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = SD_InitCard &rArr; SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
+<BR>[Calls]<UL><LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardCSD
+<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetResponse
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetPowerState
 <LI><a href="#[1e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdSetRelAdd
 <LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdSendCSD
 <LI><a href="#[1de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdSendCID
 <LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdSelDesel
-<LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardCSD
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
 </UL>
@@ -4429,10 +4431,10 @@ Local Symbols
 <P><STRONG><a name="[1af]"></a>SD_WideBus_Disable</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, stm32f7xx_hal_sd.o(i.SD_WideBus_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = SD_WideBus_Disable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdBusWidth
+<BR>[Calls]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdBusWidth
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdAppCommand
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetResponse
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 </UL>
@@ -4440,10 +4442,10 @@ Local Symbols
 <P><STRONG><a name="[1ae]"></a>SD_WideBus_Enable</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, stm32f7xx_hal_sd.o(i.SD_WideBus_Enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = SD_WideBus_Enable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdBusWidth
+<BR>[Calls]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdBusWidth
 <LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdAppCommand
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetResponse
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 </UL>
