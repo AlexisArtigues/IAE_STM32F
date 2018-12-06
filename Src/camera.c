@@ -86,7 +86,7 @@ typedef enum
 #define CAMERA_BRIGHTNESS_MAX     CAMERA_BRIGHTNESS_LEVEL4
 
 #define CROP_CAMERA_START_X (480/2)-(32/2)
-#define CROP_CAMERA_START_Y (272/2)-(32/2)
+#define CROP_CAMERA_START_Y (272/2)-(32/2)+50
 /* Private macro -------------------------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
@@ -104,6 +104,7 @@ static uint32_t          color_effect = CAMERA_COLOR_EFFECT_BLUE;
 static uint32_t          contrast = CAMERA_CONTRAST_LEVEL2;          /* Mid-level brightness */
 static uint32_t          brightness = CAMERA_BRIGHTNESS_LEVEL2;      /* Mid-level contrast */
 static DMA2D_HandleTypeDef hdma2d_camera;
+uint8_t image_data_cam[32*32*3];
 
 /* Private function prototypes -----------------------------------------------*/
 static void Camera_SetHint(void);
@@ -122,6 +123,7 @@ static uint32_t CameraFrameBufferRgb565_Init(uint32_t sizeX,
 
 void BSP_CAMERA_LineEventCallback(void);
 void HAL_DMA2D_MspInit(DMA2D_HandleTypeDef *hdma2d);
+extern void run_nn(void);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -584,6 +586,7 @@ void BSP_CAMERA_LineEventCallback(void)
   uint8_t current_pixel_data_green;
   uint8_t current_pixel_data_blue;
   uint32_t* crop_display32_ptr;
+  uint16_t offset_image_data_cam;
 #if 0
   uint32_t           bgr, i, sizex;
   uint32_t           *ptr;
@@ -626,6 +629,7 @@ void BSP_CAMERA_LineEventCallback(void)
     }
     else
     {
+      BSP_LCD_DrawRect(CROP_CAMERA_START_X,CROP_CAMERA_START_Y,32,32);
       for(y=0;y<32;y++){
         for(x=0;x<32;x++){
           current_pixel_ptr = (uint32_t*)(LCD_FRAME_BUFFER + 4*((CROP_CAMERA_START_Y + y)*LcdResX + CROP_CAMERA_START_X + x));
@@ -634,12 +638,16 @@ void BSP_CAMERA_LineEventCallback(void)
           current_pixel_data_red   = (uint8_t)(current_pixel_data & 0x00FF0000) >> 16;
           current_pixel_data_green = (uint8_t)(current_pixel_data & 0x0000FF00) >> 8;
           current_pixel_data_blue  = (uint8_t)current_pixel_data & 0x000000FF;
-          //crop_display32_ptr = (uint32_t *)(LCD_FRAME_BUFFER + 4*(LcdResX*y + x));
-          BSP_LCD_DrawPixel(x,y,(uint32_t)current_pixel_data);
-          //*crop_display32_ptr = (uint32_t)current_pixel_data;
+          offset_image_data_cam = y*96 + x*3;
+          image_data_cam[offset_image_data_cam] = current_pixel_data_red;
+          image_data_cam[offset_image_data_cam+1] = current_pixel_data_green;
+          image_data_cam[offset_image_data_cam+2] = current_pixel_data_blue;
+          crop_display32_ptr = (uint32_t *)(LCD_FRAME_BUFFER + 4*(LcdResX*y + x));
+          //BSP_LCD_DrawPixel(x,y,(uint32_t)current_pixel_data);
+          *crop_display32_ptr = (uint32_t)current_pixel_data;
         }
       }
-
+			run_nn();
       offset_cam = 0;
       offset_lcd = 0;
       display_line_counter = 0;

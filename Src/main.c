@@ -74,7 +74,7 @@ static void CPU_CACHE_Enable(void);
 void run_nn(void);
 
 // include the input and weights
-
+extern uint8_t image_data_cam [32*32*3];
 static q7_t conv1_wt[CONV1_IM_CH * CONV1_KER_DIM * CONV1_KER_DIM * CONV1_OUT_CH] = CONV1_WT;
 static q7_t conv1_bias[CONV1_OUT_CH] = CONV1_BIAS;
 
@@ -91,11 +91,23 @@ static q7_t ip1_bias[IP1_OUT] = IP1_BIAS;
 uint8_t   image_data[CONV1_IM_CH * CONV1_IM_DIM * CONV1_IM_DIM] = IMG_DATA;
 q7_t      output_data[IP1_OUT];
 
+char* classes[] = {
+  "airplane",
+  "automobile",
+  "bird",
+  "cat",
+  "deer",
+  "dog",
+  "frog",
+  "horse",
+  "ship",
+  "truck"
+};
+
 //vector buffer: max(im2col buffer,average pool buffer, fully connected buffer)
 q7_t      col_buffer[2 * 5 * 5 * 32 * 2];
 
 q7_t      scratch_buffer[32 * 32 * 10 * 4];
-
 
 BSP_DemoTypedef  BSP_examples[] =
   {
@@ -153,28 +165,25 @@ int main(void)
   BSP_LCD_LayerDefaultInit(LTDC_ACTIVE_LAYER, LCD_FRAME_BUFFER);
 
   Display_DemoDescription();
-
  Camera_demo();
- run_nn();
 }
 
 void run_nn(void)
 {
-  printf("start execution\n");
   /* start the execution */
 
   q7_t     *img_buffer1 = scratch_buffer;
   q7_t     *img_buffer2 = img_buffer1 + 32 * 32 * 32;
-
+	char* text;
   /* input pre-processing */
   int mean_data[3] = INPUT_MEAN_SHIFT;
   unsigned int scale_data[3] = INPUT_RIGHT_SHIFT;
   for (int i=0;i<32*32*3; i+=3) {
-    img_buffer2[i] =   (q7_t)__SSAT( ((((int)image_data[i]   - mean_data[0])<<7) + (0x1<<(scale_data[0]-1)))
+    img_buffer2[i] =   (q7_t)__SSAT( ((((int)image_data_cam[i]   - mean_data[0])<<7) + (0x1<<(scale_data[0]-1)))
                              >> scale_data[0], 8);
-    img_buffer2[i+1] = (q7_t)__SSAT( ((((int)image_data[i+1] - mean_data[1])<<7) + (0x1<<(scale_data[1]-1)))
+    img_buffer2[i+1] = (q7_t)__SSAT( ((((int)image_data_cam[i+1] - mean_data[1])<<7) + (0x1<<(scale_data[1]-1)))
                              >> scale_data[1], 8);
-    img_buffer2[i+2] = (q7_t)__SSAT( ((((int)image_data[i+2] - mean_data[2])<<7) + (0x1<<(scale_data[2]-1)))
+    img_buffer2[i+2] = (q7_t)__SSAT( ((((int)image_data_cam[i+2] - mean_data[2])<<7) + (0x1<<(scale_data[2]-1)))
                              >> scale_data[2], 8);
   }
   
@@ -217,6 +226,8 @@ void run_nn(void)
   for (int i = 0; i < 10; i++)
   {
       printf("%d: %d\n", i, output_data[i]);
+		//sprintf((char*)text, "%s : %d    ", classes[i], output_data[i]);
+		//BSP_LCD_DisplayStringAt(0, 110 + i*15, (uint8_t *)&text, LEFT_MODE);
   }
 }
 
