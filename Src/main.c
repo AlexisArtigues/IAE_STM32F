@@ -59,6 +59,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 static uint8_t DemoIndex = 0;
+volatile uint8_t run_nn_flag = 0;
 
 /* Global extern variables ---------------------------------------------------*/
 uint8_t NbLoop = 1;
@@ -165,7 +166,10 @@ int main(void)
   BSP_LCD_LayerDefaultInit(LTDC_ACTIVE_LAYER, LCD_FRAME_BUFFER);
 
   Display_DemoDescription();
- Camera_demo();
+ Launch_Camera();
+ while(1){
+   //run_nn();
+ };
 }
 
 void run_nn(void)

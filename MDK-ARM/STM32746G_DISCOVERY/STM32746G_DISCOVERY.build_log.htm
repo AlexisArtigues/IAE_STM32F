@@ -27,10 +27,31 @@ Project File Date:  12/04/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32746G_DISCOVERY'
+compiling camera.c...
+../Src/camera.c(138): warning:  #177-D: variable "exit"  was declared but never referenced
+    uint32_t exit = 0;
+../Src/camera.c(141): warning:  #177-D: variable "TS_State"  was declared but never referenced
+    TS_StateTypeDef  TS_State;
+../Src/camera.c(383): warning:  #177-D: variable "current_pixel_ptr"  was declared but never referenced
+    uint32_t* current_pixel_ptr;
+../Src/camera.c(385): warning:  #177-D: variable "current_pixel_data_alpha"  was declared but never referenced
+    uint8_t current_pixel_data_alpha;
+../Src/camera.c(102): warning:  #550-D: variable "special_effect"  was set but never used
+  static uint32_t          special_effect = CAMERA_BLACK_WHITE;        /* No special effect applied */
+../Src/camera.c: 8 warnings, 0 errors
+#550-D: variable "color_effect"  was set but never used
+  static uint32_t          color_effect = CAMERA_COLOR_EFFECT_BLUE;
+../Src/camera.c(104): warning:  #550-D: variable "contrast"  was set but never used
+  static uint32_t          contrast = CAMERA_CONTRAST_LEVEL2;          /* Mid-level brightness */
+../Src/camera.c(105): warning:  #550-D: variable "brightness"  was set but never used
+  static uint32_t          brightness = CAMERA_BRIGHTNESS_LEVEL2;      /* Mid-level contrast */
 compiling main.c...
+../Src/main.c(169): warning:  #223-D: function "Launch_Camera" declared implicitly
+   Launch_Camera();
+../Src/main.c: 1 warning, 0 errors
 linking...
-Program Size: Code=55240 RO-data=25556 RW-data=34824 ZI-data=210448  
-"STM32746G_DISCOVERY\STM32746G_DISCOVERY.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=53932 RO-data=25556 RW-data=34824 ZI-data=210448  
+"STM32746G_DISCOVERY\STM32746G_DISCOVERY.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -88,7 +109,7 @@ Package Vendor: Keil
       Source file:   CMSIS\NN\Source\SoftmaxFunctions\arm_softmax_q7.c
 
    * Component: ARM::CMSIS:CORE:5.1.2
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

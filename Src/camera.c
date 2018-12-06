@@ -132,14 +132,13 @@ extern void run_nn(void);
   * @param  None
   * @retval None
   */
-void Camera_demo (void)
+void Launch_Camera(void)
 {
   uint8_t  status = 0;
   uint32_t exit = 0;
   uint32_t camera_status = CAMERA_OK;
   uint32_t argb8888_Value = 0x00FF00FF; /* = 0xF81F in RGB565 format */
   TS_StateTypeDef  TS_State;
-  uint32_t TS_command = TS_RESOLUTION;
 
   Camera_SetHint();
 
@@ -158,13 +157,6 @@ void Camera_demo (void)
   CameraResIndex = CAMERA_R160x120;     /* Set QQVGA default resolution */
   CameraResX = CAMERA_QQVGA_RES_X;
   CameraResY = CAMERA_QQVGA_RES_Y;
-
-  /* Infinite loop */
-  while (exit == 0)
-  {
-    if (TS_command == TS_RESOLUTION)  /* A camera change resolution has been asked */
-    {
-      TS_command = TS_NO_COMMAND;
 
       BSP_LCD_SetBackColor(LCD_COLOR_BLUE);
       BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
@@ -247,197 +239,6 @@ void Camera_demo (void)
         /* Allow DMA2D copy from Camera frame buffer to LCD Frame buffer location */
         Camera_AllowDma2dCopyCamFrmBuffToLcdFrmBuff = 1;
       }
-    }  /* (CameraResIndex != CameraCurrentResIndex) */
-
-    if (camera_status == CAMERA_OK)
-    {
-      /* Check in polling mode in touch screen the touch status and coordinates */
-      /* if touch occurred                                                      */
-      BSP_TS_GetState(&TS_State);
-      if(TS_State.touchDetected >= 1)
-      {
-        /* Check touch position to apply brightness or contrast change */
-        if (TS_State.touchDetected == 1)
-        {
-          if ((TS_State.touchY[0] < 30) && (brightness < CAMERA_BRIGHTNESS_MAX))
-          {
-            TS_command = TS_BRIGHTNESS_INC;
-            brightness++;
-          }
-          else if ((TS_State.touchY[0] > (BSP_LCD_GetYSize() - 30)) && (brightness > CAMERA_BRIGHTNESS_MIN) )
-          {
-            TS_command = TS_BRIGHTNESS_DEC;
-            brightness--;
-          }
-          else if ((TS_State.touchX[0] < 30) && (contrast > CAMERA_CONTRAST_MIN))
-          {
-            TS_command = TS_CONTRAST_DEC;
-            contrast--;
-          }
-          else if ((TS_State.touchX[0] > (BSP_LCD_GetXSize() - 30)) && (contrast < CAMERA_CONTRAST_MAX))
-          {
-            TS_command = TS_CONTRAST_INC;
-            contrast++;
-          }
-          else
-          {
-            TS_command = TS_NO_COMMAND;
-          }
-        }
-
-        /* Special effect change */
-        if (TS_State.touchDetected == 2)
-        {
-          TS_command = TS_EFFECT;
-          switch (special_effect)
-          {
-            case CAMERA_BLACK_WHITE :
-              if (color_effect < CAMERA_BLACK_WHITE_NORMAL)
-              {
-                /* From BW effect to another BW effect */
-                color_effect++;
-              }
-              else
-              {
-                /* From BW or none effect to color effect */
-                special_effect = CAMERA_COLOR_EFFECT;
-                color_effect = CAMERA_COLOR_EFFECT_BLUE;
-              }
-              break;
-
-            case CAMERA_COLOR_EFFECT :
-              if (color_effect < CAMERA_COLOR_EFFECT_ANTIQUE)
-              {
-                /* From color effect to another color effect */
-                color_effect++;
-              }
-              else
-              {
-                /* From color effect to BW effect */
-                special_effect = CAMERA_BLACK_WHITE;
-                color_effect = CAMERA_BLACK_WHITE_BW;
-              }
-              break;
-
-            default :
-              /* None effect */
-              special_effect = CAMERA_BLACK_WHITE;
-              color_effect = CAMERA_BLACK_WHITE_NORMAL;
-              break;
-          }
-        }
-
-        if (TS_command == TS_NO_COMMAND)
-        {
-          BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"                                 ", CENTER_MODE);
-        }
-
-        if ((TS_command == TS_BRIGHTNESS_INC) || (TS_command == TS_BRIGHTNESS_DEC) || (TS_command == TS_CONTRAST_INC) || (TS_command == TS_CONTRAST_DEC))
-        {
-          /* A brightness change has been asked */
-          BSP_CAMERA_ContrastBrightnessConfig(contrast, brightness);
-          if ((TS_command == TS_BRIGHTNESS_INC) || (TS_command == TS_BRIGHTNESS_DEC))
-          {
-            BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"        Brightness change        ", CENTER_MODE);
-          }
-          else
-          {
-            BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"         Contrast change         ", CENTER_MODE);
-          }
-        }
-
-        if (TS_command == TS_EFFECT)
-        {
-          /* A color effect change has been asked */
-          switch (special_effect)
-          {
-            case CAMERA_BLACK_WHITE :
-              BSP_CAMERA_BlackWhiteConfig(color_effect);
-              switch (color_effect)
-              {
-                case CAMERA_BLACK_WHITE_NORMAL :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"        No effect applied        ", CENTER_MODE);
-                  break;
-                case CAMERA_BLACK_WHITE_BW :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)" Black and white effect applied  ", CENTER_MODE);
-                  break;
-                case CAMERA_BLACK_WHITE_NEGATIVE :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"     Negative effect applied     ", CENTER_MODE);
-                  break;
-                case CAMERA_BLACK_WHITE_BW_NEGATIVE :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"   BW negative effect applied    ", CENTER_MODE);
-                  break;
-              }
-              break;
-
-            case CAMERA_COLOR_EFFECT :
-              BSP_CAMERA_ColorEffectConfig(color_effect);
-              switch (color_effect)
-              {
-                case CAMERA_COLOR_EFFECT_ANTIQUE :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"   Sepia color effect applied    ", CENTER_MODE);
-                  break;
-                case CAMERA_COLOR_EFFECT_BLUE :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"    Blue color effect applied    ", CENTER_MODE);
-                  break;
-                case CAMERA_COLOR_EFFECT_GREEN :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"   Green color effect applied    ", CENTER_MODE);
-                  break;
-                case CAMERA_COLOR_EFFECT_RED :
-                  BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize() - CAMERA_STATUS_TEXT_POS, (uint8_t *)"     Red color effect applied    ", CENTER_MODE);
-                  break;
-              }
-              break;
-          }
-        }
-
-        if (TS_State.touchDetected >= 3)  /* 3 or more fingers touch to change resolution */
-        {
-          TS_command = TS_RESOLUTION;
-          if (CameraResIndex < CAMERA_RES_INDEX_MAX)
-          {
-            CameraResIndex++;     /* Switch to higher resolution */
-          }
-          else
-          {
-            CameraResIndex = CAMERA_RES_INDEX_MIN;
-          }
-
-          /* Disallow DMA2D copy from Camera frame buffer to LCD Frame buffer location */
-          Camera_AllowDma2dCopyCamFrmBuffToLcdFrmBuff = 0;
-
-          /* Insert 10 ms delay */
-          HAL_Delay(10);
-
-          /* Stop camera stream */
-          camera_status = BSP_CAMERA_Stop();
-          ASSERT(camera_status != CAMERA_OK);
-
-          /* Clear screen */
-          Camera_SetHint();
-        }
-
-        /* Wait for touch screen no touch detected */
-        do
-        {
-          BSP_TS_GetState(&TS_State);
-        }while(TS_State.touchDetected > 0);
-      }
-    }
-
-    if (CheckForUserInput() > 0)
-    {
-      exit = 1;
-    }
-  }
-
-  if (camera_status == CAMERA_OK)
-  {
-    /* Stop camera stream */
-    camera_status = BSP_CAMERA_Stop();
-    ASSERT(camera_status != CAMERA_OK);
-  }
-  /* End of camera demo */
 }
 
 /**
@@ -632,9 +433,9 @@ void BSP_CAMERA_LineEventCallback(void)
       BSP_LCD_DrawRect(CROP_CAMERA_START_X,CROP_CAMERA_START_Y,32,32);
       for(y=0;y<32;y++){
         for(x=0;x<32;x++){
-          current_pixel_ptr = (uint32_t*)(LCD_FRAME_BUFFER + 4*((CROP_CAMERA_START_Y + y)*LcdResX + CROP_CAMERA_START_X + x));
-          current_pixel_data = (uint32_t)(*(current_pixel_ptr));
-          current_pixel_data_alpha = (uint8_t)(current_pixel_data & 0xFF000000) >> 24;
+          //current_pixel_ptr = (uint32_t*)(LCD_FRAME_BUFFER + 4*((CROP_CAMERA_START_Y + y)*LcdResX + CROP_CAMERA_START_X + x));
+          current_pixel_data = *((uint32_t*)(LCD_FRAME_BUFFER + 4*((CROP_CAMERA_START_Y + y)*LcdResX + CROP_CAMERA_START_X + x)));
+         // current_pixel_data_alpha = (uint8_t)(current_pixel_data & 0xFF000000) >> 24;
           current_pixel_data_red   = (uint8_t)(current_pixel_data & 0x00FF0000) >> 16;
           current_pixel_data_green = (uint8_t)(current_pixel_data & 0x0000FF00) >> 8;
           current_pixel_data_blue  = (uint8_t)current_pixel_data & 0x000000FF;
